@@ -1,0 +1,198 @@
+:root {
+  --grey-400: rgb(16, 18, 18);
+  --grey-300: rgb(46, 46, 47);
+  --grey-200: rgb(99, 99, 99);
+  --grey-100: rgb(167, 167, 167);
+  --grey-50: rgb(219, 219, 219);
+  --grey-10: rgb(245, 245, 245);
+
+}
+
+.justify-content-between {
+  justify-content: space-between !important;
+}
+.justify-content-center {
+  justify-content: center !important;
+}
+.align-items-center {
+  align-items: center !important;
+}
+.d-flex {
+  display: flex !important;
+  flex-wrap: wrap;
+}
+.flex-1 {
+  flex:1;
+}
+
+.flex-2 {
+  flex:2;
+}
+.flex-column {
+  flex-direction: column !important;
+}
+.flex-row {
+  flex-direction: row !important;
+}
+.gap-16 {
+  gap: 16px;
+}
+
+
+.mb-4 {
+  margin-bottom: 0.25rem !important;
+}
+.me-1 {
+  margin-right: 0.25rem !important;
+}
+
+.d-inline-block {
+  display: inline-block !important;
+}
+
+
+.autoscroller {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0;
+  background-image: url(/images/jackpot/bg-customer3.png);
+  background-size: cover;
+  background-position: center;
+  /* margin-bottom: 10vh; */
+	opacity: 0.1;
+	height: 100px;
+}
+
+.autoscroller-d {
+  flex:2;
+  margin: 32px 10vw;
+  min-width: 300px;
+}
+
+.autoscroller-d .ps-card{
+  background-color: transparent;    
+  position: relative;
+  min-width: 300px;
+  padding: 0 1vw;
+}
+
+
+@media (max-width:780px) {
+  .ps-realtime {
+    width: 100%;
+  }
+}
+
+
+.ps-realtime .autoscroll-container {
+  padding: 16px;
+  padding-top: 0px;
+
+}
+
+.ps-realtime .inner {
+  position: relative;
+  height: 80%;
+}
+
+.Loop {
+  position: relative;
+  /* position: absolute; */
+  height: 100%;
+  overflow: auto;
+  /* -webkit-overflow-scrolling: touch; */
+  /* white-space: nowrap; */
+  /* display: inline-block; */
+  animation-name: pan;
+  animation-duration: 30s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.Loop::-webkit-scrollbar,
+.inner::-webkit-scrollbar {
+  display: none;
+}
+
+.Loop,
+.inner {
+  -ms-overflow-style: none;  
+  scrollbar-width: none; 
+  
+}
+
+.ps-realtime .ps-card-body {
+  display: relative;
+  height: 212px;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+  position: relative;
+
+}
+
+.ps-realtime .item {
+  padding: 16px 0px;
+  font-size: 14px;
+  color: var(--grey-400);
+}
+
+.ps-realtime .item {
+  border-bottom: 1px solid var(--grey-200);
+}
+
+.ps-realtime .section-heading {
+  color: var(--primary-50);
+}
+
+.ps-realtime .item .item-username {
+  color: #fefefe;
+}
+
+.ps-realtime .item .item-amount {
+  color: #dac179;
+  font-weight: bold;
+  text-align: end;
+}
+
+.ps-realtime .item .item-date {
+  color: #fefefe;
+  /* flex:1.5; */
+  text-align: end;
+}
+
+.scroller-header {
+  position: relative;
+  margin: 30px 0;
+  color: #e1c272;
+  font-size: 15px;
+  line-height: 38px;
+  text-align: center;
+  background: #000;
+  border: solid 1px #443209;
+  font-weight: 700;
+}
+
+@keyframes pan {
+  0% {
+    transform: translateY(0);
+	}
+	
+  100% {
+    transform: translateY(-230px);
+	}
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(720deg);
+}
+}
+@media screen and (max-width:720px){
+	.MainBanner-container .BannerSlider-list .BannerSlider-bgDesktop> div{
+		background-position: 11% 50% !important;
+	}
+}

@@ -1,0 +1,5639 @@
+@charset "utf-8";
+
+/* FED */
+
+
+/*============================
+	상단 공지
+============================*/
+
+.top_notice {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    z-index: 1001;
+}
+
+.top_notice .inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0 50px 0 140px;
+    margin: 0 auto;
+}
+
+.top_notice .tit {
+    position: absolute;
+    left: 20px;
+    top: 14px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.top_notice .tit img {
+    vertical-align: top;
+}
+
+.top_notice .con {
+    font-size: 12px;
+    line-height: 40px;
+    letter-spacing: -0.2px;
+}
+
+.top_notice .top_notice_close {
+    position: absolute;
+    right: 20px;
+    top: 13px;
+    width: 14px;
+    height: 14px;
+}
+
+
+/*==================
+	메시지
+==================*/
+
+.message_wrap {
+    position: fixed;
+    bottom: -100%;
+    right: 15px;
+    width: 330px;
+    height: 100px;
+    border-radius: 0px;
+    z-index: 1110;
+    border-radius: 20px;
+}
+
+.message_wrap .message_con {
+    height: 100%;
+    padding: 14px 0 14px 135px;
+}
+
+.message_wrap .message_con p {
+    font-size: 13px;
+    line-height: 30px;
+}
+
+.message_wrap .message_con .message_btn {
+    display: inline-block;
+    width: 150px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 13px;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 4px;
+}
+
+.message_wrap02 {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    border-top: 1px solid;
+    margin-left: -150px;
+    margin-top: -103px;
+    z-index: 99999;
+}
+
+.message_wrap02 .inner {
+    position: relative;
+}
+
+.message_wrap02 .message_top {
+    position: relative;
+    height: 40px;
+    padding: 0 20px;
+}
+
+.message_wrap02 .message_top h2 {
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 40px;
+}
+
+.message_wrap02 .message_top .message_close_btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    width: 10px;
+    height: 10px;
+}
+
+.message_wrap02 .message_bot {
+    text-align: center;
+    padding: 75px 0 19px;
+}
+
+.message_wrap02 .message_bot p {
+    font-size: 13px;
+}
+
+.message_wrap02 .message_bot .message_btn {
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    font-size: 13px;
+    border-radius: 0px;
+    margin-top: 22px;
+    padding: 0 30px;
+}
+
+
+/*==================
+	경고창
+==================*/
+
+.alert_wrap {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    margin-left: -250px;
+    margin-top: -150px;
+    border-radius: 0px;
+    padding: 40px 20px;
+    z-index: 999999;
+}
+
+.alert_wrap .inner {
+    position: relative;
+}
+
+.alert_wrap .alert_top {
+    position: relative;
+    text-align: center;
+}
+
+.alert_wrap .alert_bot {
+    text-align: center;
+    /*margin-top:30px;*/
+}
+
+.alert_wrap .alert_bot .list_wrap {
+    padding: 0;
+}
+
+.alert_wrap .alert_bot .list_wrap p {
+    min-height: auto;
+}
+
+.alert_wrap .alert_bot p {
+    min-height: 60px;
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: bold;
+    text-align: center;
+    padding: 15px 30px 0;
+}
+
+.alert_wrap .alert_bot .list {
+    text-align: left;
+}
+
+.alert_wrap .alert_bot .question_ico .errors>ul>li {
+    color: #000;
+}
+
+
+/* .alert_wrap .alert_bot .warning_ico {background:url(/assets/img/content/warning_ico.png) no-repeat left top; }
+.alert_wrap .alert_bot .question_ico {background:url(/assets/img/content/question_ico.png) no-repeat left top; } */
+
+.alert_wrap .alert_bot .btn_wrap {
+    display: block;
+    margin-top: 40px;
+}
+
+
+/*==================
+	퀵메뉴
+==================*/
+
+.quick_partner {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 80px;
+    height: 80px;
+    z-index: 2;
+}
+
+.quick_partner.message_true {
+    bottom: 130px;
+}
+
+.quick_partner .quick_partner_btn {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background: url(/assets/img/ico/quick_partner.png) no-repeat left top;
+    background-size: cover;
+}
+
+
+/*==================
+	로그인확인
+==================*/
+
+#container .redirect {
+    min-height: 600px;
+    text-align: center;
+    padding-top: 190px;
+}
+
+#container .redirect p {
+    margin-bottom: 30px;
+}
+
+#container .redirect input[type="text"],
+#container .redirect input[type="password"],
+#container .redirect input[type="number"] {
+    float: none;
+    width: 290px;
+    height: 50px;
+    background: transparent;
+    padding: 0 30px;
+}
+
+#container .redirect .btn_wrap {
+    justify-content: center;
+}
+
+#container .redirect .btn_wrap .btn {
+    flex: none;
+    width: 140px;
+    height: 50px;
+    line-height: 50px;
+}
+
+
+/*==================
+	컨텐츠
+==================*/
+
+#container .content h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+#container .search_tab {
+    margin: 0 0 10px;
+    overflow: hidden;
+}
+
+#container .search_tab ul {
+    float: left;
+    overflow: hidden;
+}
+
+#container .search_tab ul li {
+    float: left;
+    margin-left: 10px;
+}
+
+#container .search_tab ul li:first-child {
+    margin-left: 0;
+}
+
+#container .search_tab ul li a {
+    display: inline-block;
+    line-height: 30px;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 10px;
+    padding: 0 12px;
+}
+
+#container .search_tab ul li a.on {
+    font-weight: 600;
+}
+
+#container .search_tab .btn_wrap {
+    float: right;
+    font-size: 0;
+    margin-top: 0;
+}
+
+#container .search_tab .detele_btn {
+    float: right;
+    width: 64px;
+    font-size: 12px;
+    line-height: 30px;
+    border-radius: 10px;
+}
+
+#container .game_area_bg {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+
+/*==================
+	검색
+==================*/
+
+.ui-datepicker-title span {
+    color: initial;
+}
+
+#container .search_wrap {
+    display: flex;
+    margin: 0 0 10px 0;
+}
+
+#container .search_wrap .tit {
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    font-weight: 700;
+    border-radius: 20px;
+    padding: 0 10px;
+    margin-right: 5px;
+}
+
+#container .search_wrap .tit.bg_none {
+    background: none;
+}
+
+#container .search_wrap .search_inner {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: auto;
+}
+
+#container .search_wrap .search_inner>* {
+    margin-left: 20px;
+}
+
+#container .search_wrap .search_inner>*:first-child {
+    margin-left: 0;
+}
+
+#container .search_wrap .radio_list {
+    margin-right: 0;
+}
+
+#container .search_wrap .radio_list ul li {
+    padding-top: 8px;
+}
+
+#container .search_wrap .search_area {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+#container .search_wrap .search_area input {
+    text-align: right;
+    margin-left: 2px;
+}
+
+#container .search_wrap .search_area button {
+    width: 80px;
+    height: 30px;
+    line-height: 28px;
+    border-radius: 10px;
+    padding: 0 22px;
+    margin-left: 2px;
+}
+
+
+/*==================
+	인포
+==================*/
+
+.content_info {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.content_info .content_info_box {
+    display: flex;
+    justify-content: left;
+    flex: 1;
+    border-radius: 10px;
+}
+
+.content_info .content_info_box span {
+    display: inline-block;
+    line-height: 38px;
+    font-size: 12px;
+    font-weight: 700;
+    margin: 0 auto 0 20px
+}
+
+.content_info .content_info_box dl {
+    display: flex;
+    line-height: 38px;
+    font-size: 12px;
+    margin: 0 20px 0 0;
+}
+
+.content_info .content_info_box dl dd {
+    font-weight: 700;
+}
+
+.content_info .content_info_box dl dd input,
+.content_info .content_info_box dl dd select {
+    margin: 6px 5px 0 10px;
+}
+
+
+/*==================
+	게임리스트
+==================*/
+
+#container .game_list {
+    margin-bottom: 0px;
+}
+
+#container .game_list ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+#container .game_list ul li {
+    flex: 1;
+    position: relative;
+    display: inline-block;
+    border-radius: 20px;
+    padding: 20px 20px 17px 107px;
+    margin-left: 10px;
+    overflow: hidden;
+}
+
+#container .game_list ul li:first-child {
+    margin-left: 0;
+}
+
+#container .game_list ul li .game_name {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+#container .game_list ul li .img_area {
+    position: absolute;
+    top: 11px;
+    left: 20px;
+}
+
+#container .game_list ul li .game_time {
+    display: inline-block;
+    line-height: 30px;
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 4px;
+}
+
+#container .game_list ul li .start_btn {
+    float: right;
+    width: 100%;
+    max-width: 70px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    font-weight: 800;
+    text-align: center;
+    border-radius: 8px;
+    margin-top: 4px;
+}
+
+#container .all_game_list {
+    display: flex;
+    padding: 20px;
+}
+
+#container .all_game_list .all_game_list_left {
+    width: 210px;
+    height: 855px;
+    padding-right: 20px;
+    overflow-y: scroll;
+}
+
+#container .all_game_list .all_game_list_left ul li {
+    margin-top: 5px;
+    border-radius: 10px;
+}
+
+#container .all_game_list .all_game_list_left ul li:first-child {
+    margin-top: 0;
+}
+
+#container .all_game_list .all_game_list_left ul li a {
+    display: inline-block;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+}
+
+#container .all_game_list .all_game_list_right {
+    flex: 1;
+    height: 855px;
+    padding: 0 0 0 20px;
+    overflow-y: scroll;
+}
+
+#container .all_game_list .all_game_list_right ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#container .all_game_list .all_game_list_right ul li {
+    padding: 5px;
+}
+
+#container .all_game_list .all_game_list_right ul li a {
+    display: inline-block;
+    width: 170px;
+    height: 170px;
+    line-height: 170px;
+    text-align: center;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#container .all_game_list .all_game_list_right ul li img {
+    height: 100%;
+}
+
+#container .all_game_list .all_game_list_right ul li p {
+    text-align: center;
+    margin-top: 5px;
+}
+
+#container .all_game_list_m {
+    display: none;
+    padding: 0 5px;
+    margin-bottom: 10px;
+}
+
+#container .all_game_list_m ul {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 10px;
+    /*-ms-overflow-style:none; scrollbar-width:none;*/
+}
+
+
+/* #container .all_game_list_m ul::-webkit-scrollbar {display:none; } */
+
+#container .all_game_list_m ul li {
+    border-radius: 5px;
+    padding: 0 10px;
+    margin-left: 5px;
+    border-radius: 10px;
+}
+
+#container .all_game_list_m ul li:first-child {
+    margin-left: 0;
+}
+
+#container .all_game_list_m ul li a {
+    display: inline-block;
+    height: 40px;
+    background-position: 0 50%;
+}
+
+
+/*==================
+	축구
+==================*/
+
+#container .cross_list>ul>li {
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+#container .cross_list>ul>li:first-child {
+    margin-top: 0;
+}
+
+#container .cross_list>ul>li .score_tit {
+    line-height: 40px;
+    border-radius: 10px 10px 0 0;
+    padding: 0 20px;
+    font-size: 0;
+}
+
+#container .cross_list>ul>li .score_tit img {
+    margin-right: 10px;
+}
+
+#container .cross_list>ul>li .score_tit .tit {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+#container .cross_list>ul>li .score_tit .time {
+    display: none;
+    float: right;
+    width: 55px;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+}
+
+#container .cross_list>ul>li .score_con {
+    border-radius: 0 0 10px 10px;
+}
+
+#container .cross_list>ul>li .score_con ul li {
+    border-top: 1px solid;
+}
+
+#container .cross_list>ul>li .score_con ul li>div {
+    position: relative;
+    height: 60px;
+    padding: 0 140px 0 190px;
+    box-sizing: border-box;
+}
+
+#container .cross_list>ul>li .score_con ul li>div:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+#container .cross_list>ul>li .score_con ul li .active.open {
+    /*background:#fffdeb; */
+}
+
+#container .cross_list>ul>li .score_con ul li>.detail {
+    display: none;
+    /*background:#fffdeb; */
+}
+
+#container .cross_list>ul>li .score_con ul li>.detail .stats {
+    margin-right: 47px;
+}
+
+#container .cross_list>ul>li .score_con ul li p {
+    padding: 0;
+    font-weight: 600;
+}
+
+#container .cross_list>ul>li .score_con ul li em {
+    vertical-align: top;
+}
+
+#container .cross_list>ul>li .score_con ul li .ab_left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    line-height: 60px;
+    font-size: 0;
+}
+
+#container .cross_list>ul>li .score_con ul li .ab_right {
+    position: absolute;
+    top: 8px;
+    right: 140px;
+    font-size: 0;
+}
+
+#container .cross_list>ul>li .score_con ul li .abs_area {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 0;
+}
+
+#container .cross_list>ul>li .score_con ul li .stats {
+    float: left;
+    width: 65px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+#container .cross_list>ul>li .score_con ul li .date {
+    display: inline-block;
+    width: 90px;
+    font-size: 12px;
+    text-align: left;
+    margin-left: 20px;
+}
+
+#container .cross_list>ul>li .score_con ul li .tit {
+    display: inline-block;
+    width: 80px;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+}
+
+#container .cross_list>ul>li .score_con ul li .detail_btn {
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 30px;
+    margin-left: 18px;
+}
+
+#container .cross_list>ul>li .score_con ul li .competing .dividend_team {
+    display: inline-block;
+    width: 100px;
+    height: 44px;
+    text-align: center;
+    /*background:#3e4243;*/
+    border-radius: 10px;
+    padding: 6px 0 0;
+    margin-left: 3px;
+    cursor: pointer;
+}
+
+#container .cross_list>ul>li .score_con ul li .competing .dividend_team:first-child {
+    margin-left: 0;
+}
+
+#container .cross_list>ul>li .score_con ul li .competing .dividend_team.select {}
+
+#container .cross_list>ul>li .score_con ul li .competing .dividend_team .num {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    line-height: 16px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+#container .cross_list>ul>li .score_con ul li .competing .dividend_team .name {
+    display: inline-block;
+    width: 100%;
+    line-height: 11px;
+    font-size: 11px;
+    font-weight: 600;
+    vertical-align: top;
+    margin-top: 3px;
+}
+
+#container .cross_list>ul>li .score_con ul li .competing .dividend_team .num .high {
+    display: inline-block;
+    width: 7.5px;
+    height: 5px;
+    background: url(/assets/img/ico/high_ico.gif) no-repeat left top;
+    background-size: cover;
+}
+
+#container .cross_list>ul>li .score_con ul li .competing .dividend_team .num .low {
+    display: inline-block;
+    width: 7.5px;
+    height: 5px;
+    background: url(/assets/img/ico/low_ico.gif) no-repeat left top;
+    background-size: cover;
+}
+
+#container .cross_list>ul>li .score_con ul li .competing .dividend_team.hd,
+#container .cross_list>ul>li .score_con ul li .competing .dividend_team.uo,
+#container .betting_history .cross_betting_list .score_con ul li .competing .dividend_team.hd,
+#container .betting_history .cross_betting_list .score_con ul li .competing .dividend_team.uo {
+    line-height: 42px;
+    border: 1px solid !important;
+    padding-top: 0;
+    cursor: inherit;
+}
+
+#container .cross_list>ul>li .score_con ul li .competing .score {
+    display: inline-block;
+    width: 100px;
+    height: 44px;
+    line-height: 44px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+#container .cross_list>ul>li .score_con ul li .competing .score span {
+    font-size: 30px;
+}
+
+#container .cross_list>ul>li .score_con ul li .vs_team {
+    display: inline-block;
+    width: 100px;
+    height: 44px;
+    text-align: center;
+    border-radius: 3px;
+    margin-left: 3px;
+}
+
+#container .cross_list>ul>li .score_con ul li .vs_team .vs {
+    display: inline-block;
+    width: 100%;
+    line-height: 44px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+#container .cross_list>ul>li .score_con ul li .ab_con {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    padding: 8px 21%;
+    overflow: hidden;
+}
+
+#container .cross_list>ul>li .score_con ul li .ab_con .team {
+    line-height: 60px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#container .cross_list>ul>li .score_con ul li .ab_con .team.select {
+    font-weight: 600;
+}
+
+#container .cross_list>ul>li .score_con ul li .ab_con .team.win {}
+
+#container .cross_list>ul>li .score_con ul li .ab_con .team_l {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 21%;
+    text-align: left;
+    padding-left: 10px;
+}
+
+#container .cross_list>ul>li .score_con ul li .ab_con .team_vs {
+    display: none;
+}
+
+#container .cross_list>ul>li .score_con ul li .ab_con .team_r {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 21%;
+    text-align: right;
+    padding-right: 10px;
+}
+
+#container .cross_list>ul>li .score_con ul li .ab_con .competing {
+    width: 100%;
+    font-size: 0;
+}
+
+#container .cross_list>ul>li .score_con ul li .ab_con .competing .dividend_team:first-child .num .arr {
+    position: absolute;
+    top: 5px;
+    left: 20px;
+}
+
+#container .cross_list>ul>li .score_con ul li .ab_con .competing .dividend_team:last-child .num .arr {
+    position: absolute;
+    top: 5px;
+    right: 20px;
+}
+
+#container .cross_list>ul>li .score_con ul li .ab_con .select .num,
+#container .cross_list>ul>li .score_con ul li .ab_con .select .name,
+#container .cross_list>ul>li .score_con ul li.end .competing .dividend_team {
+    cursor: default;
+}
+
+#container .cross_list>ul>li .score_con ul li.none p {
+    line-height: 60px;
+    width: 100%;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.score_area .rate_up:after {
+    position: absolute;
+    content: "";
+    width: 7.5px;
+    height: 5px;
+    background: url(/assets/img/ico/high_ico.gif) no-repeat left top;
+    background-size: cover;
+}
+
+.score_area .rate_down:after {
+    position: absolute;
+    content: "";
+    width: 7.5px;
+    height: 5px;
+    background: url(/assets/img/ico/low_ico.gif) no-repeat left top;
+    background-size: cover;
+}
+
+.score_area .score_l .rate_up:after {
+    top: 2px;
+    right: 7px;
+}
+
+.score_area .score_l .rate_down:after {
+    bottom: 2px;
+    right: 7px;
+}
+
+.score_area .score_c .rate_up:after {
+    top: 2px;
+    left: 50%;
+    margin-left: -3.5px;
+}
+
+.score_area .score_c .rate_down:after {
+    bottom: 2px;
+    left: 50%;
+    margin-left: -3.5px;
+}
+
+.score_area .score_r .rate_up:after {
+    top: 2px;
+    left: 10px;
+}
+
+.score_area .score_r .rate_down:after {
+    bottom: 2px;
+    left: 10px;
+}
+
+
+/*==================
+	미니 게임
+==================*/
+
+#container .inspection_none {
+    min-height: 570px;
+    font-size: 20px;
+    text-align: center;
+    padding-top: 350px
+}
+
+#container .close_none {
+    min-height: 570px;
+    font-size: 20px;
+    text-align: center;
+    padding-top: 350px
+}
+
+#container .betting_area {
+    position: relative;
+    margin-top: 30px;
+}
+
+#container .betting_area h3 {
+    padding: 0 5px;
+}
+
+#container .betting_area h3 .betting_board_round {
+    display: inline-block;
+    font-size: 12px;
+    vertical-align: top;
+    margin-left: 3.5px;
+}
+
+#container .betting_area .betting_board_top {
+    display: none;
+}
+
+#container .betting_area .betting_con {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#container .betting_area .betting_con>div {
+    display: flex;
+    flex: auto;
+    position: relative;
+    background: transparent;
+    border-radius: 10px;
+    margin: 5px;
+    overflow: hidden;
+}
+
+#container .betting_area .betting_con .tit {
+    width: 70px;
+    height: 100%;
+    border-right: 1px solid;
+    text-align: center;
+    overflow: hidden;
+}
+
+#container .betting_area .betting_con .tit .num {
+    line-height: 39px;
+}
+
+#container .betting_area .betting_con .tit .name {
+    height: calc(100% - 39px);
+    font-size: 12px;
+    font-weight: 600;
+    padding-top: 10px;
+}
+
+#container .betting_area .betting_con .tit .name span {
+    display: block;
+    vertical-align: top;
+    margin-top: 5px;
+}
+
+#container .betting_area .betting_con .btn_area {
+    text-align: center;
+    padding: 17px 20px 13px;
+    margin: auto;
+}
+
+#container .betting_area .betting_con .btn_area ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+#container .betting_area .betting_con .btn_area ul.type02 {
+    display: inline-flex;
+    margin: 0 0 0 5px;
+}
+
+#container .betting_area .betting_con .btn_area ul.type03 li {
+    margin-left: 20px;
+}
+
+#container .betting_area .betting_con .btn_area ul.type04 li {
+    width: 50%;
+}
+
+#container .betting_area .betting_con .btn_area ul:first-child {
+    margin-top: 0;
+}
+
+#container .betting_area .betting_con .btn_area ul li {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-left: 10px;
+}
+
+#container .betting_area .betting_con .btn_area ul li:first-child {
+    margin-left: 0;
+}
+
+#container .betting_area .betting_con .btn_area .rate_area {
+    display: flex;
+    justify-content: center;
+}
+
+#container .betting_area .betting_con .btn_area .rate_area .rate {
+    width: 56px;
+    text-align: center;
+    margin-left: 10px;
+}
+
+#container .betting_area .betting_con .btn_area .rate_area .rate:first-child {
+    margin-left: 0;
+}
+
+#container .betting_area .betting_con .btn_area .name {
+    margin-top: 5px;
+}
+
+#container .betting_area .betting_con .btn_area .rate {
+    line-height: 1;
+    font-size: 13px;
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+#container .betting_area .betting_con02 ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#container .betting_area .betting_con02 ul li {
+    display: flex;
+    width: calc(50% - 10px);
+    margin: 5px;
+    border: 2px solid;
+    border-radius: 10px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+#container .betting_area .betting_con02 ul li:hover,
+#container .betting_area .betting_con02 ul li.on {
+    border: 2px solid;
+}
+
+#container .betting_area .betting_con02 ul li .img_area {
+    width: 110px;
+    text-align: center;
+    padding: 7px 0;
+}
+
+#container .betting_area .betting_con02 ul li .img_area span {
+    display: inline-block;
+}
+
+#container .betting_area .betting_con02 ul li .txt_area {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 20px;
+}
+
+#container .betting_area .betting_con02 ul li .txt_area .info .num {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+#container .betting_area .betting_con02 ul li .txt_area .info .name {
+    font-size: 12px;
+    font-weight: 500;
+    margin-top: 3px;
+}
+
+#container .betting_area .betting_con02 ul li .txt_area .rate {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+#container .betting_area .cross_list>ul>li .score_con ul li .competing .dividend_team:hover,
+#container .betting_area .cross_list>ul>li .score_con ul li .competing .dividend_team:hover {}
+
+#container .betting_area .betting_con .game_none:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: " ";
+    background: #000;
+    opacity: 0.8;
+}
+
+#container .betting_area .betting_none_txt {
+    display: none;
+}
+
+#container .betting_area.betting_none>div {
+    opacity: 0.2;
+}
+
+#container .betting_area.betting_none .betting_none_txt {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+#container .betting_area.betting_none .betting_none_txt span {
+    display: inline-block;
+    line-height: 100%;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 150px;
+}
+
+
+/* new powerball */
+
+#container .betting_area_flex {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#container .betting_area_flex.hide_video {
+    margin-top: 0px!important;
+}
+
+#container .betting_area_flex .col_right {
+    width: 340px;
+    position: relative;
+}
+
+#container .betting_area_flex .col_left {
+    width: calc(100% - 360px);
+    position: relative;
+}
+
+#container .betting_area_flex .col_left.col_full {
+    width: 100%;
+}
+
+#container .betting_area_flex .game_item {
+    margin-bottom: 10px;
+    border: solid 2px #222;
+    border-radius: 12px;
+}
+
+#container .betting_area_flex .game_item:last-child {
+    margin-bottom: 0;
+}
+
+#container .betting_area_flex .game_item .game_title {
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px 10px 0 0;
+}
+
+#container .betting_area_flex .game_item .game_title span {
+    line-height: 40px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    padding: 0 15px;
+    font-family: S-CoreDream-4;
+}
+
+#container .betting_area_flex .game_item .game_title span em {
+    font-size: 16px;
+    font-weight: bold;
+    vertical-align: top;
+}
+
+#container .betting_area_flex .game_item .game_title .time {
+    margin-left: auto;
+}
+
+#container .betting_area_flex .game_item .game_title .btn_hide_video {
+    font-size: 14px;
+    font-weight: bold;
+    height: 35px;
+    margin: 2px 10px;
+    width: 90px;
+    line-height: 30px;
+    border-radius: 5px;
+}
+
+#container .betting_area_flex .game_item .game_content {
+    position: relative;
+    border-top: 0px;
+    border-radius: 0 0 10px 10px;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#container .betting_area_flex .game_item .game_content.game_content_with_sub {
+    display: block;
+}
+
+#container .betting_area_flex .game_item .game_content ul {
+    width: 760px;
+    padding: 10px 0;
+}
+
+#container .betting_area_flex .game_item .game_content ul li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+#container .betting_area_flex .game_item .game_content ul li:last-child {
+    margin-bottom: 0px;
+}
+
+#container .betting_area_flex .game_item .game_content ul li .bet {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    font-weight: normal;
+    /* line-height: 60px; */
+    padding: 0 5px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer
+}
+
+#container .betting_area_flex .game_item .game_content ul li .bet span {
+    font-size: 16px;
+    font-weight: 500;
+    /* line-height: 60px; */
+    text-align: center;
+    cursor: pointer
+}
+
+#container .betting_area_flex .game_item .game_content ul li .bet > span {
+    padding-right: 5px;
+}
+
+#container .betting_area_flex .game_item .game_content ul li .bet_selected > span{
+    color:#000;
+}
+
+#container .betting_area_flex .game_item .game_content ul li .bet .game_side {
+    display: inline-block;
+    color: white;
+    margin: 5px 2px;
+    min-width: 36px;
+    height: 36px;
+    padding: 0 5px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 200;
+    font-style: normal;
+    color: #fff;
+    line-height: 34px;
+    text-align: center;
+    font-family: S-CoreDream-4, Do Hyeon, gothic;
+}
+
+#container .betting_area_flex .game_item .game_content ul li .bet .game_side.blue {
+    /* background-color: #004a80; */
+    background: #004c86;
+    border: 1px solid #004478;
+    border-top-color: #001728;
+    border-bottom-color: #5f8fb3;
+}
+
+#container .betting_area_flex .game_item .game_content ul li .bet .game_side.red {
+    /* background-color: #790000; */
+    background: #740007;
+    border: 1px solid #680006;
+    border-top-color: #230002;
+    border-bottom-color: #a85f63;
+}
+
+#container .betting_area_flex .game_item .game_content ul li .bet .game_side.green {
+    /* background-color: #008000; */
+    background: #008000;
+    border: 1px solid #005700;
+    border-top-color: #002d00;
+    border-bottom-color: #5dae5d;
+}
+
+#container .betting_area_flex .game_item .game_content ul li .vs {
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 50px;
+    text-align: center;
+}
+
+#container .betting_area_flex .game_item .game_content ul li .large {
+    width: 310px
+}
+
+#container .betting_area_flex .game_item .game_content ul li .medium {
+    /* width: 178.33px */
+    /* width: 193.33px */
+    width: 223.33px
+}
+
+#container .betting_area_flex .game_item .game_content ul li .small {
+    /* width: 132.5px */
+    /* width: 142.5px */
+    width: 167.5px
+}
+
+#container .betting_area_flex .game_item .game_content ul li .x_small {
+    width: 130px
+}
+
+#container .betting_area_flex .game_item .game_content ul li .x_small b {
+    font-size: 20px;
+    font-weight: normal;
+}
+
+#container .betting_area_flex.hide_video .col_right {
+    margin-top: 580px
+}
+
+#container .betting_area_flex .betting_history {
+    width: 100%;
+    margin-top: 20px!important;
+    position: relative;
+}
+
+#container .betting_area_flex .game_item .sub_game_item {
+    padding: 10px 20px;
+    width: 100%;
+}
+
+#container .betting_area_flex .game_item .sub_game_item:first-child {
+    margin-top: 10px;
+}
+
+#container .betting_area_flex .game_item .sub_game_item:last-child {
+    margin-bottom: 10px;
+}
+
+#container .betting_area_flex .game_item .sub_game_item .game_title {
+    justify-content: center;
+    line-height: 40px;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+#container .betting_area_flex .game_item .sub_game_item .game_title .color_special {
+    padding: 0;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+#container .betting_area_flex .game_item .sub_game_item .game_content {
+    padding: 5px;
+}
+
+#container .betting_area_flex .game_item .sub_game_item .game_content .result_num {
+    line-height: 30px;
+    width: 30px;
+    display: inline-block;
+    margin-left: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+/* new powerball */
+
+#container .content_mini .all_result {
+    margin-top: 30px;
+}
+
+#container .all_result .all_result_wrap {
+    position: relative;
+    font-size: 0;
+}
+
+#container .all_result .all_result_wrap p {
+    width: 15%;
+    line-height: 40px;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+    padding: 0 5px;
+}
+
+#container .all_result .all_result_wrap em {
+    vertical-align: top;
+}
+
+#container .all_result .all_result_wrap .rst {
+    flex: 1;
+    text-align: right;
+}
+
+#container .all_result .all_result_wrap .rst_c {
+    flex: 1;
+}
+
+#container .all_result .all_result_wrap .vs {
+    flex: none;
+    width: 30px;
+}
+
+#container .all_result .all_result_wrap .team {
+    flex: 2;
+}
+
+#container .all_result .all_result_wrap .round {
+    flex: none;
+    width: 80px;
+}
+
+#container .all_result .all_result_wrap .button {
+    flex: none;
+    width: 100px;
+}
+
+#container .all_result .all_result_wrap .all_result_tit {
+    display: flex;
+    border-bottom: none;
+    border-radius: 10px 10px 0 0;
+    padding: 0 20px;
+}
+
+#container .all_result .all_result_wrap .all_result_tit p {
+    font-size: 13px;
+}
+
+#container .all_result .all_result_wrap .all_result_con {
+    border-top: 0;
+    border-radius: 0 0 10px 10px;
+}
+
+#container .all_result .all_result_wrap .all_result_con ul li {
+    display: flex;
+    min-height: 40px;
+    border-top: 1px solid;
+    padding: 0 20px;
+}
+
+#container .all_result .all_result_wrap .all_result_con ul li input {
+    width: 150px;
+    padding: 0 10px;
+}
+
+#container .all_result .all_result_wrap .all_result_con ul li button {
+    vertical-align: middle;
+}
+
+#container .all_result .all_result_wrap .all_result_con ul li.none p {
+    line-height: 40px;
+    width: 100%;
+}
+
+#container .all_result_m {
+    display: none;
+}
+
+#container .all_result_m .all_result_wrap .row {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    margin-top: 5px;
+}
+
+#container .all_result_m .all_result_wrap .row:first-child {
+    margin-top: 0;
+}
+
+#container .all_result_m .all_result_wrap .row p {
+    flex: 1;
+    text-align: center;
+}
+
+#container .all_result_m .all_result_wrap p {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+#container .all_result_m .all_result_wrap em {
+    vertical-align: top;
+}
+
+#container .all_result_m .all_result_wrap .info {
+    margin-top: 5px;
+}
+
+#container .all_result_m .all_result_wrap .rst {
+    flex: 1;
+    text-align: right;
+    padding-top: 4px;
+}
+
+#container .all_result_m .all_result_wrap .all_result_tit {
+    line-height: 40px;
+    border-radius: 10px 10px 0 0;
+    padding: 0 10px;
+}
+
+#container .all_result_m .all_result_wrap .all_result_con {
+    border-top: 0;
+    border-radius: 0 0 10px 10px;
+}
+
+#container .all_result_m .all_result_wrap .all_result_con ul li {
+    display: flex;
+    min-height: 40px;
+    border-top: 1px solid;
+    padding: 5px 10px;
+}
+
+#container .all_result_m .all_result_wrap .all_result_con ul li.row_wrap {
+    display: block;
+}
+
+#container .all_result_m .all_result_wrap .all_result_con ul li.none p {
+    line-height: 40px;
+    text-align: center;
+}
+
+#container .content_mini .betting_history {
+    margin-top: 30px;
+}
+
+#container .betting_history {
+    margin-top: 20px;
+}
+
+#container .betting_history .betting_history_wrap {
+    position: relative;
+    font-size: 0;
+}
+
+#container .betting_history .betting_history_wrap p {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+}
+
+#container .betting_history .betting_history_wrap p span {
+    display: inline-block;
+}
+
+#container .betting_history .betting_history_wrap p em {
+    vertical-align: top;
+}
+
+#container .betting_history .betting_history_wrap .checkbox {
+    width: 50px;
+    padding: 0 10px;
+}
+
+#container .betting_history .betting_history_wrap .round {
+    width: 80px;
+}
+
+#container .betting_history .betting_history_wrap .time,
+#container .betting_history .betting_history_wrap .play {
+    width: 110px;
+}
+
+#container .betting_history .betting_history_wrap .money {
+    width: 100px;
+}
+
+#container .betting_history .betting_history_wrap .btn {
+    color:#fff;
+    width: 90px;
+    height: 30px;
+    line-height: 30px;
+    margin-top:5px;
+}
+
+#container .betting_history .betting_history_wrap .rst {
+    width: 80px;
+}
+
+#container .betting_history .betting_history_wrap .con {
+    display: flex;
+    flex: 1;
+    padding: 0;
+}
+
+#container .betting_history .betting_history_wrap .con>p {
+    flex: 1;
+}
+
+#container .betting_history .betting_history_wrap .con .game {
+    flex: 2;
+}
+
+#container .betting_history .betting_history_wrap .con .league {
+    width: 60px;
+    flex: none;
+}
+
+#container .betting_history .betting_history_wrap .con .rate {
+    width: 120px;
+    flex: none;
+}
+
+#container .betting_history .betting_history_wrap .con .control {
+    width: 50px;
+    line-height: 30px;
+}
+
+#container .betting_history .betting_history_wrap input[type="checkbox"]+label {
+    padding-left: 16px;
+}
+
+#container .betting_history .betting_history_wrap .betting_history_tit {
+    display: flex;
+    border-radius: 10px 10px 0 0;
+}
+
+#container .betting_history .betting_history_wrap .betting_history_tit p {
+    line-height: 40px;
+    font-size: 13px;
+    padding: 0 5px;
+}
+
+#container .betting_history .betting_history_wrap .betting_history_con {
+    border-radius: 0 0 10px 10px;
+}
+
+#container .betting_history .betting_history_wrap .betting_history_con ul li {
+    display: flex;
+}
+
+#container .betting_history .betting_history_wrap .betting_history_con p {
+    line-height: 40px;
+    padding: 0 5px;
+}
+
+#container .betting_history .betting_history_wrap .betting_history_con .flag span {
+    margin-left: 5px;
+}
+
+#container .betting_history .betting_history_wrap .betting_history_con .flag span:first-child {
+    margin-left: 0;
+}
+
+#container .betting_history .betting_history_wrap .betting_history_con .team_wrap {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    max-width: 400px;
+    margin: 0 10px;
+}
+
+#container .betting_history .betting_history_wrap .betting_history_con .team_wrap .team {
+    display: inline-block;
+    line-height: 40px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#container .betting_history .betting_history_wrap .betting_history_con .team_wrap .team.team_l,
+#container .betting_history .betting_history_wrap .betting_history_con .team_wrap .team.team_r {
+    flex: 1;
+}
+
+#container .betting_history .betting_history_wrap .betting_history_con .team_wrap .team.team_r {
+    text-align: right;
+}
+
+#container .betting_history .betting_history_wrap .betting_history_con .team_wrap .team.team_vs {
+    font-weight: 100;
+    padding: 0 10px;
+}
+
+#container .betting_history .betting_history_wrap .betting_history_con .competing {
+    width: 155px;
+    text-align: right;
+    padding: 5px 0;
+    margin-left: auto;
+}
+
+#container .betting_history .betting_history_wrap .betting_history_con .competing .dividend_team {
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    line-height: inherit;
+    text-align: center;
+    border-radius: 10px;
+    cursor: default;
+}
+
+#container .betting_history .betting_history_wrap .betting_history_con .competing .dividend_team:first-child {
+    margin-left: 0;
+}
+
+#container .betting_history .betting_history_wrap .betting_history_con .dividend_team .num {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 700;
+    vertical-align: top;
+    margin-top: 4px;
+    cursor: default;
+}
+
+#container .betting_history .betting_history_wrap .betting_history_con .dividend_team .name {
+    display: inline-block;
+    width: 100%;
+    line-height: 11px;
+    font-size: 11px;
+    font-weight: 600;
+    vertical-align: top;
+}
+
+#container .betting_history .betting_history_wrap .betting_history_con .dividend_team .num .arr {
+    top: 6px;
+    right: 12px;
+}
+
+#container .betting_history .betting_history_wrap .betting_history_con .dividend_team .num .high {
+    display: inline-block;
+    width: 7.5px;
+    height: 5px;
+    background: url(/assets/img/ico/high_ico.gif) no-repeat left top;
+    background-size: cover;
+}
+
+#container .betting_history .betting_history_wrap .betting_history_con .dividend_team .num .low {
+    display: inline-block;
+    width: 7.5px;
+    height: 5px;
+    background: url(/assets/img/ico/low_ico.gif) no-repeat left top;
+    background-size: cover;
+}
+
+#container .betting_history .betting_history_wrap .betting_history_con .none p {
+    width: 100%;
+    line-height: 40px !important;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+}
+
+#container .betting_history .betting_history_wrap .betting_history_con ul li.multiple {
+    align-items: center;
+}
+
+#container .betting_history .betting_history_wrap .betting_history_con ul li.multiple .rate {
+    width: 120px;
+}
+
+#container .betting_history .betting_history_wrap .betting_history_con ul li.multiple .play {
+    padding: 5px 0;
+}
+
+#container .betting_history .betting_history_wrap .betting_history_con ul li.multiple .con {
+    flex: 2;
+    display: block;
+    padding: 5px 0;
+}
+
+#container .betting_history .betting_history_wrap .betting_history_con ul li.multiple .con p {
+    display: block;
+    line-height: 20px;
+    text-align: left;
+}
+
+#container .betting_history .betting_history_wrap .betting_history_con ul li.multiple .bet {
+    flex: 1;
+    padding: 5px 0;
+}
+
+#container .betting_history .betting_history_wrap .betting_history_con ul li.multiple .bet p,
+#container .betting_history .betting_history_wrap .betting_history_con ul li.multiple .play p {
+    display: block;
+    line-height: 20px;
+}
+
+#container .betting_history .cross_betting_list {
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+#container .betting_history .cross_betting_list p {
+    flex: none;
+}
+
+#container .betting_history .cross_betting_list .date {
+    width: 110px;
+}
+
+#container .betting_history .cross_betting_list .league {
+    width: 80px;
+}
+
+#container .betting_history .cross_betting_list .bet_rate {
+    width: 60px;
+}
+
+#container .betting_history .cross_betting_list .bet_control {
+    width: 50px;
+}
+
+#container .betting_history .cross_betting_list .bet_time {
+    width: 120px;
+}
+
+#container .betting_history .cross_betting_list .bet_money,
+#container .betting_history .cross_betting_list .hit_money {
+    width: 90px;
+    padding: 0 10px;
+}
+
+#container .betting_history .cross_betting_list .rst {
+    width: 80px;
+}
+
+#container .betting_history .cross_betting_list .score_tit {
+    display: flex;
+    justify-content: space-between;
+    line-height: 40px;
+    border-radius: 10px 10px 0 0;
+    font-size: 0;
+}
+
+#container .betting_history .cross_betting_list .score_tit img {
+    margin-right: 10px;
+}
+
+#container .betting_history .cross_betting_list .score_tit .tit {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+#container .betting_history .cross_betting_list .score_con {
+    border-radius: 0 0 10px 10px;
+}
+
+#container .betting_history .cross_betting_list .score_con ul li {
+    border-top: 1px solid;
+}
+
+#container .betting_history .cross_betting_list .score_con ul li>div {
+    display: flex;
+    position: relative;
+    height: 60px;
+    box-sizing: border-box;
+}
+
+#container .betting_history .cross_betting_list .score_con ul li .con_left {
+    display: flex;
+    line-height: 60px;
+}
+
+#container .betting_history .cross_betting_list .score_con ul li .con_center {
+    display: flex;
+    flex: 1;
+    padding: 8px 0;
+}
+
+#container .betting_history .cross_betting_list .score_con ul li .con_right {
+    display: flex;
+    line-height: 60px;
+}
+
+#container .betting_history .cross_betting_list .score_con ul li .date {
+    font-size: 12px;
+}
+
+#container .betting_history .cross_betting_list .score_con ul li .tit {
+    display: inline-block;
+    width: 80px;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+}
+
+#container .betting_history .cross_betting_list .score_con ul li .bet_money,
+#container .betting_history .cross_betting_list .score_con ul li .hit_money {
+    text-align: right;
+}
+
+#container .betting_history .cross_betting_list .score_con ul li .team_wrap {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    max-width: 400px;
+    margin: 0 10px;
+}
+
+#container .betting_history .cross_betting_list .score_con ul li .team_wrap .team {
+    display: inline-block;
+    line-height: 44px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#container .betting_history .cross_betting_list .score_con ul li .team_wrap .team.team_l,
+#container .betting_history .cross_betting_list .score_con ul li .team_wrap .team.team_r {
+    flex: 1;
+}
+
+#container .betting_history .cross_betting_list .score_con ul li .team_wrap .team.team_r {
+    text-align: right;
+}
+
+#container .betting_history .cross_betting_list .score_con ul li .team_wrap .team.team_vs {
+    font-weight: 100;
+    padding: 0 10px;
+}
+
+#container .betting_history .cross_betting_list .score_con ul li .competing {
+    width: 153px;
+    text-align: right;
+    margin-left: auto;
+}
+
+#container .betting_history .cross_betting_list .score_con ul li .competing .dividend_team {
+    display: inline-block;
+    width: 100px;
+    height: 44px;
+    text-align: center;
+    /*background:#3e4243; border:1px solid #3d3c38;*/
+    border-radius: 10px;
+    padding: 6px 0 0;
+    margin-left: 3px;
+    cursor: pointer;
+}
+
+#container .betting_history .cross_betting_list .score_con ul li .competing .dividend_team:first-child {
+    margin-left: 0;
+}
+
+#container .betting_history .cross_betting_list .score_con ul li .competing .dividend_team .num {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    line-height: 16px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+#container .betting_history .cross_betting_list .score_con ul li .competing .dividend_team .name {
+    display: inline-block;
+    width: 100%;
+    line-height: 11px;
+    font-size: 11px;
+    font-weight: 600;
+    vertical-align: top;
+}
+
+#container .betting_history .cross_betting_list .score_con ul li .competing .dividend_team .num .high {
+    display: inline-block;
+    width: 7.5px;
+    height: 5px;
+    background: url(/assets/img/ico/high_ico.gif) no-repeat left top;
+    background-size: cover;
+}
+
+#container .betting_history .cross_betting_list .score_con ul li .competing .dividend_team .num .low {
+    display: inline-block;
+    width: 7.5px;
+    height: 5px;
+    background: url(/assets/img/ico/low_ico.gif) no-repeat left top;
+    background-size: cover;
+}
+
+#container .betting_history .cross_betting_list .score_con ul li.none p {
+    line-height: 60px;
+    width: 100%;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+}
+
+#container .betting_list>ul>li .score_con ul li .score_area p .name {
+    font-size: 13px;
+    font-weight: 700;
+}
+
+#container .betting_list>ul>li .score_con ul li .score_area p .num {
+    position: relative;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+#container .betting_list>ul>li .score_con ul li .score_area p .high {
+    display: inline-block;
+    width: 9px;
+    height: 15px;
+    background: url(/assets/img/ico/high_ico.gif) no-repeat left top;
+}
+
+#container .betting_list>ul>li .score_con ul li .score_area p .low {
+    display: inline-block;
+    width: 9px;
+    height: 15px;
+    background: url(/assets/img/ico/low_ico.gif) no-repeat left top;
+}
+
+#container .betting_list>ul>li .score_con ul li .score_area .score_l .arr {
+    margin-right: 5px;
+}
+
+#container .betting_list>ul>li .score_con ul li .score_area .score_r .arr {
+    margin-left: 5px;
+}
+
+#container .betting_list>ul>li .score_con ul li .score_area p.on {}
+
+#container .betting_list>ul>li .score_con ul li .score_area p.on span {
+    font-weight: 600;
+}
+
+#container .competing .dividend_team:first-child .num .arr,
+#container .competing .dividend_team:first-child .num .arr {
+    position: absolute;
+    top: 5px;
+    left: 20px;
+}
+
+#container .competing .dividend_team:last-child .num .arr,
+#container .competing .dividend_team:last-child .num .arr {
+    position: absolute;
+    top: 5px;
+    right: 20px;
+}
+
+#container .all_result .all_result_wrap .as_l,
+#container .betting_history .betting_history_wrap .as_l {
+    top: -9px;
+    left: -6px;
+}
+
+#container .all_result .all_result_wrap .as_c,
+#container .betting_history .betting_history_wrap .as_c {
+    top: -9px;
+}
+
+#container .all_result .all_result_wrap .as_r,
+#container .betting_history .betting_history_wrap .as_r {
+    top: -9px;
+    right: -6px;
+}
+
+#container .betting_history_m {
+    display: none;
+    margin-top:10px;
+}
+
+#container .betting_history_m ul li {
+    border-radius: 10px;
+    margin-top: 5px;
+    overflow: hidden;
+}
+
+#container .betting_history_m ul li:first-child {
+    margin-top: 0;
+}
+
+#container .betting_history_m ul li .betting_history_m_top {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+#container .betting_history_m ul li .betting_history_m_top p {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+#container .betting_history_m ul li .betting_history_m_con {
+    padding: 10px;
+}
+
+#container .betting_history_m ul li .betting_history_m_con div {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#container .betting_history_m ul li .betting_history_m_con div dl {
+    margin-right: 10px;
+}
+
+#container .betting_history_m ul li .betting_history_m_con div dl:last-child {
+    margin-right: 0;
+}
+
+#container .betting_history_m ul li .betting_history_m_con dl dt {
+    line-height: 25px;
+}
+
+#container .betting_history_m ul li .betting_history_m_con dl dd {
+    line-height: 25px;
+}
+
+#container .betting_history_m ul li .betting_history_m_bot {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+}
+
+#container .betting_history_m ul li dl {
+    display: flex;
+}
+
+#container .betting_history_m ul li dl.full_area {
+    flex: 1;
+}
+
+#container .betting_history_m ul li dl dt {
+    font-size: 12px;
+}
+
+#container .betting_history_m ul li dl dd {
+    font-size: 14px;
+    font-weight: 700;
+    margin-left: 5px;
+}
+
+#container .betting_history_m ul li dl dd {
+    flex: 1;
+}
+
+#container .betting_history_m ul li dl dd p {
+    text-align: left;
+}
+
+#container .betting_history_m ul li dl dd .bet_control {
+    vertical-align: top;
+}
+
+#container .betting_history_m ul li dl dd .team_wrap {
+    display: flex;
+}
+
+#container .betting_history_m ul li dl dd .team_wrap .team {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#container .betting_history_m ul li dl dd .team_wrap .team.team_l,
+#container .betting_history_m ul li dl dd .team_wrap .team.team_r {
+    max-width: 45%;
+}
+
+#container .betting_history_m ul li dl dd .team_wrap .team.team_vs {
+    width: 10%;
+    font-weight: 100;
+    text-align: center;
+}
+
+#container .betting_history_m ul li p {
+    font-size: 12px;
+    text-align: center;
+}
+
+#container .betting_history_m ul li em {
+    font-size: inherit;
+    font-weight: inherit;
+    vertical-align: top;
+}
+
+#container .betting_history_m ul li.none p {
+    line-height: 40px;
+    width: 100%;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+}
+
+#container .content .betting_board {
+    position: absolute;
+    top: 40px;
+    right: 30px;
+    width: 340px;
+    height: 550px;
+    background: none !important;
+    z-index: 10;
+}
+
+#container .content .betting_board .betting_board_inner {
+    height: 100%;
+    border-radius: 10px;
+    padding: 15px 12px;
+}
+
+#container .content .betting_board .betting_board_inner.betting_board_none:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: "지금은 베팅을 하실 수 없습니다.";
+    line-height: 550px;
+    color: #fff;
+    text-align: center;
+    background: #000;
+    opacity: 0.8;
+    border-radius: 10px;
+}
+
+#container .content .betting_board .betting_board_m_close {
+    display: none;
+}
+
+#container .content .betting_board .betting_board_top {
+    padding: 0 10px;
+    margin-bottom: 5px;
+    overflow: hidden;
+}
+
+#container .content .betting_board .betting_board_top .betting_board_day {
+    float: left;
+}
+
+#container .content .betting_board .betting_board_top .betting_board_day .betting_board_date {
+    line-height: 18px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+#container .content .betting_board .betting_board_top .betting_board_day .betting_board_round {
+    font-size: 16px;
+    margin-left: 6px;
+}
+
+#container .content .betting_board .betting_board_top .betting_board_time {
+    float: right;
+    line-height: 18px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+#container .content .betting_board .betting_board_top .betting_board_time .betting_board_count {}
+
+#container .content .betting_board .betting_board_top .betting_board_time .betting_board_refresh_btn {
+    width: 18px;
+    height: 18px;
+    vertical-align: top;
+    margin-left: 18px;
+}
+
+#container .content .betting_board .betting_board_txt ul li {
+    display: flex;
+    justify-content: space-between;
+    height: 34px;
+    line-height: 34px;
+    font-size: 12px;
+    padding: 0 20px;
+}
+
+#container .content .betting_board .betting_board_txt ul li:first-child {
+    border-radius: 10px 10px 0 0;
+}
+
+#container .content .betting_board .betting_board_txt ul li:last-child {
+    border-radius: 0 0 10px 10px;
+    margin-top: 3px;
+}
+
+#container .content .betting_board .betting_board_txt ul li span {
+    display: inline-block;
+    width: 50px;
+}
+
+#container .content .betting_board .betting_board_txt ul li p {
+    font-weight: 600;
+    line-height: 34px;
+}
+
+#container .content .betting_board .betting_board_info {
+    margin-top: 5px;
+}
+
+#container .content .betting_board .betting_board_info ul {
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+#container .content .betting_board .betting_board_info ul li {
+    float: left;
+    width: 50%;
+}
+
+#container .content .betting_board .betting_board_info ul li:first-child,
+#container .content .betting_board .betting_board_info ul li:nth-child(3) {
+    padding-right: 1px;
+}
+
+#container .content .betting_board .betting_board_info ul li:nth-child(2),
+#container .content .betting_board .betting_board_info ul li:nth-child(4) {
+    padding-left: 1px;
+}
+
+#container .content .betting_board .betting_board_info ul li:nth-child(3),
+#container .content .betting_board .betting_board_info ul li:nth-child(4) {
+    margin-top: 2px;
+}
+
+#container .content .betting_board .betting_board_info ul li dl {
+    height: 45px;
+    text-align: center;
+    padding-top: 9px;
+    margin-bottom: 0px;
+}
+
+#container .content .betting_board .betting_board_info ul li dl dt {
+    line-height: 12px;
+    font-size: 12px;
+}
+
+#container .content .betting_board .betting_board_info ul li dl dd {
+    font-size: 12px;
+    font-weight: 700;
+    margin-top: 5px;
+}
+
+#container .content .betting_board .betting_board_box input {
+    float: none;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    font-size: 13px;
+    font-weight: 700;
+    text-align: right;
+    border-radius: 7px;
+    padding: 0 19px;
+}
+
+#container .content .betting_board .betting_board_box .betting_board_box_input {
+    position: relative;
+    margin-top: 3px;
+}
+
+#container .content .betting_board .betting_board_box .betting_board_box_input .tit {
+    position: absolute;
+    top: 13px;
+    left: 20px;
+    font-size: 12px;
+}
+
+#container .content .betting_board .betting_board_box .betting_board_box_btn ul {
+    display: flex;
+    margin-top: 3px;
+    margin-bottom:0px;
+}
+
+#container .content .betting_board .betting_board_box .betting_board_box_btn ul li {
+    flex: 1;
+    padding-left: 3px;
+}
+
+#container .content .betting_board .betting_board_box .betting_board_box_btn ul li:first-child {
+    padding-left: 0;
+}
+
+#container .content .betting_board .betting_board_box .betting_board_box_btn ul li button {
+    width: 100%;
+    height: 34px;
+    font-weight: 600;
+    border-radius: 5px;
+}
+
+#container .content .betting_board .betting_btn {
+    width: 100%;
+    height: 50px;
+    font-size: 32px;
+    /* font-weight: 800; */
+    border-radius: 5px;
+    margin-top: 8px;
+    font-family: Do Hyeon, gothic, sans-serif
+}
+
+#container .content .betting_board.simple .betting_board_txt ul li {
+    height: 46px;
+    line-height: 46px;
+}
+
+#container .content .betting_board.simple .betting_board_txt ul li p {
+    font-size: 14px;
+}
+
+#container .content .betting_board.simple .betting_board_box input {
+    height: 46px;
+    line-height: 46px;
+}
+
+#container .content .betting_board.simple .betting_board_box .betting_board_box_btn ul li button {
+    height: 46px;
+}
+
+#container .content .betting_board.simple .betting_btn {
+    height: 76px;
+}
+
+#container .auto_wrap {
+    margin: 10px 0;
+}
+
+#container .auto_wrap .auto_left {
+    position: relative;
+    float: left;
+    width: 50%;
+    height: 100%;
+    padding-right: 5px;
+}
+
+#container .auto_wrap .auto_left .auto_tit {
+    float: left;
+}
+
+#container .auto_wrap .auto_left .type_select {
+    float: right;
+    margin-bottom: 5px;
+    overflow: hidden;
+}
+
+#container .auto_wrap .auto_left .type_select ul li button {
+    padding: 0 12px;
+}
+
+#container .auto_wrap .auto_left .auto_table {
+    width: 100%;
+    /*height:427px; overflow-y:scroll;*/
+}
+
+#container .auto_wrap .auto_left .auto_table table {
+    width: 100%;
+    text-align: center;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+#container .auto_wrap .auto_left .auto_table table thead {
+    width: 100%;
+}
+
+#container .auto_wrap .auto_left .auto_table table thead tr {
+    display: block;
+    position: relative;
+}
+
+#container .auto_wrap .auto_left .auto_table table tbody {
+    display: block;
+    overflow: auto;
+    width: 100%;
+    height: 423px;
+}
+
+#container .auto_wrap .auto_left .auto_table table tbody::-webkit-scrollbar {
+    width: 0px;
+}
+
+#container .auto_wrap .auto_left .auto_table th:nth-child(1) {
+    width: 11%;
+}
+
+#container .auto_wrap .auto_left .auto_table th:nth-child(2) {
+    width: 15%;
+}
+
+#container .auto_wrap .auto_left .auto_table th:nth-child(3) {
+    width: 6%;
+}
+
+#container .auto_wrap .auto_left .auto_table th:nth-child(4) {
+    width: 6%;
+}
+
+#container .auto_wrap .auto_left .auto_table th:nth-child(5) {
+    width: 6%;
+}
+
+#container .auto_wrap .auto_left .auto_table th:nth-child(6) {
+    width: 43%;
+}
+
+#container .auto_wrap .auto_left .auto_table th:nth-child(7) {
+    width: 13%;
+}
+
+#container .auto_wrap .auto_left .auto_table td:nth-child(1) {
+    width: 11%;
+}
+
+#container .auto_wrap .auto_left .auto_table td:nth-child(2) {
+    width: 15%;
+}
+
+#container .auto_wrap .auto_left .auto_table td:nth-child(3) {
+    width: 6%;
+}
+
+#container .auto_wrap .auto_left .auto_table td:nth-child(4) {
+    width: 6%;
+}
+
+#container .auto_wrap .auto_left .auto_table td:nth-child(5) {
+    width: 8%;
+}
+
+#container .auto_wrap .auto_left .auto_table td:nth-child(6) {
+    width: 41.5%;
+}
+
+#container .auto_wrap .auto_left .auto_table td:nth-child(7) {
+    width: 12.5%;
+}
+
+#container .auto_wrap .auto_left .btn {
+    width: 100%;
+}
+
+#container .auto_wrap .auto_right {
+    float: right;
+    width: 50%;
+    height: 100%;
+    padding-left: 5px;
+}
+
+#container .auto_wrap .auto_right .type_select {
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+
+#container .auto_wrap .auto_right .type_select span {
+    float: left;
+    font-size: 13px;
+    line-height: 30px;
+}
+
+#container .auto_wrap .auto_right .type_select ul li button {
+    min-width: 63px;
+}
+
+#container .auto_wrap .auto_right .auto_table th td:last_child {
+    border-right: 2px solid;
+}
+
+#container .auto_wrap .inner {
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+#container .auto_wrap .auto_tit {
+    line-height: 30px;
+    font-size: 14px;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+#container .auto_wrap .turn {
+    line-height: 30px;
+    font-weight: 600;
+}
+
+#container .auto_wrap .time {
+    line-height: 30px;
+    font-weight: 600;
+}
+
+#container .auto_wrap .type_select ul {
+    float: right;
+    overflow: hidden;
+}
+
+#container .auto_wrap .type_select ul li {
+    float: left;
+    margin-left: 5px;
+}
+
+#container .auto_wrap .type_select ul li:first-child {
+    margin-left: 0;
+}
+
+#container .auto_wrap .type_select ul li button {
+    display: inline-block;
+    line-height: 30px;
+    font-size: 13px;
+    border-radius: 0px;
+    padding: 0 5px;
+}
+
+#container .auto_wrap .type_select ul li button:hover {}
+
+#container .auto_wrap .type_select ul li button.on {}
+
+
+/* #container .auto_wrap .auto_table .point_bg td {background:#646464; }
+#container .auto_wrap .auto_table .disabled_bg td {} */
+
+#container .auto_wrap .auto_table ul {
+    max-width: 520px;
+    overflow: hidden;
+}
+
+#container .auto_wrap .auto_table ul li {
+    position: relative;
+    float: left;
+    margin: 5px 0 0 10px;
+}
+
+#container .auto_wrap .auto_table ul li:first-child,
+#container .auto_wrap .auto_table ul li:nth-child(5),
+#container .auto_wrap .auto_table ul li:nth-child(9),
+#container .auto_wrap .auto_table ul li:nth-child(13) {
+    margin-left: 0;
+}
+
+#container .auto_wrap .auto_table ul.money_wrap {
+    width: 100%;
+    max-width: 100%;
+}
+
+#container .auto_wrap .auto_table ul.money_wrap li {
+    position: relative;
+    width: 23.5%;
+    padding-left: 25px;
+}
+
+#container .auto_wrap .auto_table ul.money_wrap li input[type="text"] {
+    width: 100%;
+}
+
+#container .auto_wrap .auto_table input[type="text"] {
+    width: 95px;
+    text-align: right;
+}
+
+#container .auto_wrap .auto_table input[type="text"]:disabled {}
+
+#container .auto_wrap .auto_table select:disabled {}
+
+#container .auto_wrap .auto_table button {
+    width: 16%;
+}
+
+#container .auto_wrap .auto_table .num {
+    float: left;
+    width: 20px;
+    text-align: right;
+    margin-right: 5px;
+}
+
+#container .auto_wrap .auto_table .tit {
+    float: left;
+    margin-right: 5px;
+}
+
+#container .auto_wrap .auto_table .txt_area {
+    margin-bottom: 5px;
+    overflow: hidden;
+}
+
+#container .auto_wrap .auto_table .txt_area:first-child {
+    margin-top: 5px;
+}
+
+#container .auto_wrap .auto_table .btn_list {
+    margin: 5px 0;
+}
+
+#container .auto_wrap .auto_table .num_point {
+    vertical-align: initial;
+}
+
+#container .auto_wrap .nohit {
+    font-weight: 800;
+}
+
+#container .auto_wrap .hit {
+    font-weight: 800;
+}
+
+#container .auto_wrap .btn_wrap {
+    position: sticky;
+    left: 0;
+}
+
+#container .dim-layer {
+    display: none;
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1050;
+}
+
+#container .dim-layer .pop-layer {
+    display: block;
+}
+
+#container .pop-layer {
+    display: none;
+    position: absolute;
+    width: 1450px;
+    /*height:90%;*/
+    top: 50%;
+    left: 50%;
+    background-color: #000;
+    z-index: 10;
+}
+
+#container .pop-layer .pop-container {
+    width: 1300px;
+    height: 100%;
+    padding: 20px 25px 60px;
+}
+
+#container .pop-layer .pop-conts {
+    width: 1270px;
+    height: 100%;
+}
+
+#container .pop-layer .btn-layerClose {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    background-color: hsla(0, 0%, 100%, .15);
+    border-radius: 24px;
+    cursor: pointer;
+    border: none;
+    float: right;
+    margin: 3px;
+}
+
+#container .pop-layer .btn-fullscreen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    background-color: hsla(0, 0%, 100%, .15);
+    border-radius: 24px;
+    cursor: pointer;
+    border: none;
+    float: right;
+    margin: 3px;
+}
+
+#container .dim-layer .dimBg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: .5;
+}
+
+
+/*==================
+	경기결과
+==================*/
+
+
+/* 경기결과 */
+
+#container .content .result_list .inner {
+    padding: 0;
+}
+
+#container .betting_list>ul>li.waiting:after {
+    position: absolute;
+    content: '베팅 승인 대기중입니다.';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    line-height: 120px;
+    text-align: center;
+    font-size: 25px;
+    background: rgba(185, 0, 0, 0.5);
+}
+
+#container .betting_list>ul>li.cancel:after {
+    position: absolute;
+    content: '베팅이 취소 되었습니다.';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    line-height: 120px;
+    text-align: center;
+    font-size: 25px;
+    background: rgba(149, 44, 175, 0.5);
+}
+
+#container .select_list>ul>li.select {
+    border-radius: 10px;
+}
+
+
+/* 페이지네이션  */
+
+#container .pagenation {
+    margin-top: 21px;
+}
+
+#container .pagenation .inner {
+    display: flex;
+    justify-content: center;
+    font-size: 0;
+    text-align: center;
+}
+
+#container .pagenation .inner a {
+    display: inline-block;
+    width: 25px;
+    line-height: 23px;
+    font-size: 13px;
+    border: 1px solid #8f8f8f;
+    border-radius: 25px;
+    margin: 0 4px;
+}
+
+#container .pagenation .inner a.on {
+    line-height: 21px;
+    border: 2px solid #3277bb;
+    font-weight: 800;
+}
+
+#container .pagenation .inner .prev_all {
+    width: 25px;
+    height: 25px;
+    border: 0;
+    border-radius: 0;
+}
+
+#container .pagenation .inner .prev {
+    width: 25px;
+    height: 25px;
+    border: 0;
+    border-radius: 0;
+}
+
+#container .pagenation .inner .next {
+    width: 25px;
+    height: 25px;
+    border: 0;
+    border-radius: 0;
+}
+
+#container .pagenation .inner .next_all {
+    width: 25px;
+    height: 25px;
+    border: 0;
+    border-radius: 0;
+}
+
+
+/*==================
+	고객
+==================*/
+
+#container .money_wrap .money_dl {
+    float: left;
+    display: flex;
+    height: 30px;
+    border-radius: 10px;
+    margin-right: 10px;
+    overflow: hidden;
+}
+
+#container .money_wrap .money_dl dt {
+    line-height: 28px;
+    padding: 0 15px 0 17px;
+}
+
+#container .money_wrap .money_dl dd {
+    min-width: 120px;
+    line-height: 28px;
+    text-align: right;
+    padding: 0 10px;
+}
+
+#container .money_wrap .caution_wrap {
+    background: transparent;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+#container .money_wrap .caution_wrap .title {
+    font-size: 16px;
+    line-height: 26px;
+    padding-left: 37px;
+}
+
+#container .money_wrap .caution_wrap ul {
+    margin: 18px 0 0 27px;
+}
+
+#container .money_wrap .caution_wrap ul li {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 20px;
+    padding-left: 9px;
+}
+
+#container .money_wrap .caution_wrap ul li span {
+    vertical-align: top;
+}
+
+#container .money_wrap .table_wrap {
+    margin-top: 30px;
+    overflow: hidden;
+}
+
+#container .money_wrap .table_wrap h3 {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+#container .money_wrap .table_wrap .table_l {
+    float: left;
+    width: 50%;
+    padding-right: 5.5px;
+}
+
+#container .money_wrap .table_wrap .table_r {
+    float: right;
+    width: 50%;
+    padding-left: 5.5px;
+}
+
+#container .money_wrap .check {
+    float: left;
+    margin-left: 3px;
+}
+
+#container .money_wrap .btn_wrap {
+    display: flex;
+    justify-content: center;
+}
+
+
+/*==================
+	쪽지
+==================*/
+
+#container .message_list>ul>li {
+    position: relative;
+    min-height: 89px;
+    background: transparent;
+    border-radius: 10px;
+    padding-left: 138px;
+    margin-top: 10px;
+}
+
+#container .message_list>ul>li:first-child {
+    margin-top: 0;
+}
+
+#container .message_list>ul>li .tit {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 138px;
+    padding: 19px 0 0 19px;
+}
+
+#container .message_list>ul>li .tit .lv {
+    display: inline-block;
+}
+
+#container .message_list>ul>li .tit .lv img {
+    vertical-align: text-top;
+}
+
+#container .message_list>ul>li .tit .name {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+#container .message_list>ul>li .tit .txt {
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+#container .message_list>ul>li .tit .txt.all {}
+
+#container .message_list>ul>li .con {
+    position: relative;
+    padding: 20px;
+    cursor: pointer;
+}
+
+#container .message_list>ul>li .con .date {
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+#container .message_list>ul>li .con .date .new_ico {
+    margin-left: 5px;
+}
+
+#container .message_list>ul>li .con .title {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16px;
+}
+
+#container .message_list>ul>li .con .txt {
+    display: none;
+}
+
+#container .message_list>ul>li .con .txt p {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16px;
+    margin-top: 12px;
+}
+
+#container .message_list>ul>li .con .txt p span {
+    vertical-align: text-bottom;
+}
+
+#container .message_list>ul>li .con .desc_list li {
+    font-size: 12px;
+    line-height: 16px;
+    padding-left: 4px;
+    margin-top: 15px;
+}
+
+#container .message_list>ul>li .con .close_btn {
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 10px;
+    height: 10px;
+}
+
+#container .message_list>ul>li.show .con {
+    cursor: default;
+}
+
+#container .message_list>ul>li.show .con .txt {
+    display: block;
+}
+
+#container .message_list>ul>li.show .con .close_btn {
+    display: block;
+}
+
+#container .message_list>ul>li.none {
+    min-height: auto;
+    padding: 0;
+}
+
+#container .message_list>ul>li.none p {
+    line-height: 50px;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+}
+
+
+/*==================
+	출석부
+==================*/
+
+#container .attend_wrap .attend_top {
+    display: flex;
+    justify-content: space-between;
+}
+
+#container .attend_wrap .attend_top .attend_date {
+    font-size: 0;
+    margin-top: 3px;
+}
+
+#container .attend_wrap .attend_top .attend_date .prev_btn {
+    width: 24px;
+    height: 24px;
+}
+
+#container .attend_wrap .attend_top .attend_date .date {
+    display: inline-block;
+    line-height: 24px;
+    font-size: 30px;
+    vertical-align: top;
+    padding: 0 20px;
+}
+
+#container .attend_wrap .attend_top .attend_date .next_btn {
+    width: 24px;
+    height: 24px;
+}
+
+#container .attend_wrap .attend_top .point_wrap {
+    height: 30px;
+    font-size: 0;
+}
+
+#container .attend_wrap .attend_top .point_wrap .num {
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    font-weight: 600;
+    font-size: 12px;
+    text-align: right;
+    border-radius: 10px;
+    vertical-align: top;
+    padding: 0 11px;
+    margin-right: 5px;
+}
+
+#container .attend_wrap .attend_top .point_wrap .change_btn {
+    width: 64px;
+    height: 30px;
+    font-size: 12px;
+    border-radius: 10px;
+}
+
+#container .attend_wrap .attend_con {
+    border-radius: 10px;
+    margin-top: 10px;
+    overflow: hidden;
+    clear: both;
+}
+
+#container .attend_wrap .attend_con table tr td {
+    position: inherit;
+    width: 14.2%;
+    vertical-align: bottom;
+    padding: 0;
+}
+
+#container .attend_wrap .attend_con table tr td .inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+}
+
+#container .attend_wrap .attend_con table tr td .inner:after {
+    content: '';
+    display: block;
+    margin-top: 100%;
+}
+
+#container .attend_wrap .attend_con table tr td .date_con {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+#container .attend_wrap .attend_con table tr td .num {
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+#container .attend_wrap .attend_con table tr td .finish_txt {
+    position: absolute;
+    bottom: 12%;
+    font-weight: 600;
+    left: 0;
+    width: 100%;
+    font-size: 12px;
+    text-align: center;
+}
+
+#container .attend_wrap .attend_con table tr td .finish_btn {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    width: 98px;
+    font-size: 12px;
+    text-align: center;
+    padding: 0;
+    margin-left: -49px;
+}
+
+#container .attend_wrap .attend_con .stamp_red {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -45px;
+    margin-left: -45px;
+    width: 90px;
+    ;
+    height: 90px;
+}
+
+#container .attend_wrap .attend_con .stamp_white {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -45px;
+    margin-left: -45px;
+    width: 90px;
+    ;
+    height: 90px;
+}
+
+#container .attend_wrap .attend_con .stamp_yellow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -45px;
+    margin-left: -45px;
+    width: 90px;
+    ;
+    height: 90px;
+}
+
+#container .attend_wrap .attend_con .stamp_check {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -50px;
+    width: 100px;
+    ;
+    height: 100px;
+}
+
+#container .attend_wrap .attend_con .stamp_day {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -35.5%;
+    margin-left: -25.5%;
+    width: 51%;
+    height: 51%;
+    background-size: cover !important;
+}
+
+#container .attend_wrap .attend_con .stamp_day_finish {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -35.5%;
+    margin-left: -25.5%;
+    width: 51%;
+    height: 51%;
+    background-size: cover !important;
+}
+
+#container .attend_wrap .attend_con .stamp_1week {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -35.5%;
+    margin-left: -25.5%;
+    width: 51%;
+    height: 51%;
+    ;
+    background-size: cover !important;
+}
+
+#container .attend_wrap .attend_con .stamp_1week_finish {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -35.5%;
+    margin-left: -25.5%;
+    width: 51%;
+    height: 51%;
+    background-size: cover !important;
+}
+
+#container .attend_wrap .attend_con .stamp_2week {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -35.5%;
+    margin-left: -25.5%;
+    width: 51%;
+    height: 51%;
+    ;
+    background-size: cover !important;
+}
+
+#container .attend_wrap .attend_con .stamp_2week_finish {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -35.5%;
+    margin-left: -25.5%;
+    width: 51%;
+    height: 51%;
+    background-size: cover !important;
+}
+
+#container .attend_wrap .attend_con .stamp_3week {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -35.5%;
+    margin-left: -25.5%;
+    width: 51%;
+    height: 51%;
+    ;
+    background-size: cover !important;
+}
+
+#container .attend_wrap .attend_con .stamp_3week_finish {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -35.5%;
+    margin-left: -25.5%;
+    width: 51%;
+    height: 51%;
+    background-size: cover !important;
+}
+
+#container .attend_wrap .attend_con .stamp_4week {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -35.5%;
+    margin-left: -25.5%;
+    width: 51%;
+    height: 51%;
+    ;
+    background-size: cover !important;
+}
+
+#container .attend_wrap .attend_con .stamp_4week_finish {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -35.5%;
+    margin-left: -25.5%;
+    width: 51%;
+    height: 51%;
+    background-size: cover !important;
+}
+
+
+/*==================
+	게시판
+==================*/
+
+#container .board_list .lv {
+    vertical-align: top;
+    margin-right: 6px;
+}
+
+#container .board_list .num {
+    display: inline-block;
+    margin-left: 8px;
+}
+
+#container .board_list .board_list_top {
+    height: 40px;
+    font-size: 0;
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+}
+
+#container .board_list .board_list_top span {
+    float: left;
+    height: 40px;
+    line-height: 40px;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 0px;
+    border-left: 1px solid;
+    padding: 0 10px;
+}
+
+#container .board_list .board_list_top span:nth-child(1) {
+    width: 8%;
+    border-left: 0;
+}
+
+#container .board_list .board_list_top span:nth-child(2) {
+    width: 76%;
+}
+
+#container .board_list .board_list_top span:nth-child(3) {
+    width: 16%;
+}
+
+#container .board_list .board_list_top span:nth-child(4) {
+    width: 0;
+}
+
+#container .board_list .board_list_top span:nth-child(5) {
+    width: 16%;
+}
+
+#container .board_list .board_list_con {
+    border-width: 0 1px 1px 1px;
+    font-size: 0;
+}
+
+#container .board_list .board_list_con ul {
+    border-top: 0;
+    border-radius: 0 0 10px 10px;
+    overflow: hidden;
+}
+
+#container .board_list .board_list_con ul li {
+    position: relative;
+    border-top: 1px solid;
+    font-size: 0;
+    overflow: hidden;
+}
+
+#container .board_list .board_list_con ul li:first-child {
+    border-top: 0;
+}
+
+#container .board_list .board_list_con ul li.notice p {
+    background: transparent;
+}
+
+#container .board_list .board_list_con ul li.notice p a {
+    font-weight: 600;
+}
+
+#container .board_list .board_list_con ul li.event p {
+    background: transparent;
+}
+
+#container .board_list .board_list_con ul li.event p a {
+    font-weight: 600;
+}
+
+#container .board_list .board_list_con ul li.none {
+    padding-top: 0;
+}
+
+#container .board_list .board_list_con ul li.none p {
+    width: 100% !important;
+}
+
+#container .board_list .board_list_con ul li p {
+    float: left;
+    height: 40px;
+    line-height: 40px;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+    background: transparent;
+    border-radius: 0px;
+    padding: 0 10px;
+}
+
+#container .board_list .board_list_con ul li p:nth-child(1) {
+    width: 8%;
+    border-left: 0;
+}
+
+#container .board_list .board_list_con ul li p:nth-child(2) {
+    width: 76%;
+    text-align: left;
+}
+
+#container .board_list .board_list_con ul li p:nth-child(3) {
+    width: 16%;
+    text-align: left;
+}
+
+#container .board_list .board_list_con ul li p:nth-child(4) {
+    width: 16%;
+}
+
+#container .board_list .board_list_con ul li p a {
+    font-weight: 600;
+}
+
+#container .board_list .board_list_con ul li p .lv {
+    display: inline-block;
+}
+
+#container .board_write .betting_history {
+    margin-top: 10px;
+}
+
+#container .board_write .betting_history .inner {
+    padding: 0;
+}
+
+#container .board_write .betting_history_m {
+    margin-top: 10px;
+}
+
+#container .board_write .editor_area {
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 10px;
+}
+
+#container .board_write .lv {
+    vertical-align: top;
+    margin-right: 6px;
+}
+
+#container .board_view .betting_history {
+    margin-top: 10px;
+}
+
+#container .board_view .betting_history .inner {
+    padding: 0;
+}
+
+#container .board_view .betting_history_m {
+    margin-top: 10px;
+}
+
+#container .board_view .lv {
+    float: left;
+    margin-right: 7px;
+}
+
+#container .board_view .txt_area {
+    background: transparent;
+    font-weight: 600;
+    border-radius: 10px;
+    padding: 16px 15px 140px;
+    margin-top: 10px;
+}
+
+#container .board_view .txt_area>div {
+    display: table;
+}
+
+#container .board_view .txt_area p,
+#container .board_view .txt_area span {
+    line-height: 21px;
+}
+
+#container .board_view .txt_area img {
+    max-width: 600px;
+}
+
+#container .board_view .btn_wrap {
+    text-align: center;
+    margin-top: 5px;
+}
+
+#container .comment_list {
+    padding-top: 35px;
+    border-radius: 3px 3px 0 0;
+}
+
+#container .comment_list ul li {
+    display: flex;
+    position: relative;
+    min-height: 74px;
+    background: transparent;
+    border-top: 1px dashed;
+    padding: 15px 8px;
+}
+
+#container .comment_list ul li:first-child {
+    background: transparent;
+    border-top: none;
+}
+
+#container .comment_list ul li .tit {
+    width: 160px;
+    font-size: 0;
+}
+
+#container .comment_list ul li .tit .name {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+#container .comment_list ul li .tit .date {
+    font-size: 12px;
+    font-weight: 600;
+    margin-left: 25px;
+}
+
+#container .comment_list ul li .con {
+    flex: 1;
+}
+
+#container .comment_list ul li .con p {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 20px;
+}
+
+#container .comment_list ul li .delete_btn {
+    width: 10px;
+    height: 10px;
+}
+
+#container .comment_write {
+    position: relative;
+    background: transparent;
+    border-radius: 10px;
+    padding: 10px 120px 10px 120px;
+    margin-top: 10px;
+}
+
+#container .comment_write .con_l {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 120px;
+    text-align: center;
+    padding-top: 23px;
+}
+
+#container .comment_write .con_l span {
+    font-size: 12px;
+}
+
+#container .comment_write .con_l .tit {
+    display: inline-block;
+    width: 100%;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+#container .comment_write .con_c {
+    width: 100%;
+    height: 90px;
+}
+
+#container .comment_write .con_c textarea {
+    width: 100%;
+    height: 100%;
+    font-size: 12px;
+    border-radius: 10px;
+    padding: 10px;
+    resize: none;
+}
+
+#container .comment_write .con_r {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 110px;
+    height: 90px;
+    text-align: right;
+}
+
+#container .comment_write .con_r .btn {
+    width: 100px;
+    height: 100%;
+    font-size: 12px;
+}
+
+#container .btn_wrap ul {
+    font-size: 0;
+    margin-bottom: 10px;
+}
+
+#container .btn_wrap ul li {
+    display: inline-block;
+}
+
+#container .btn_wrap ul li:first-child {
+    margin-right: 8px;
+    padding-right: 10px;
+}
+
+#container .btn_wrap .prev_btn {
+    font-size: 12px;
+    padding-left: 13px;
+}
+
+#container .btn_wrap .next_btn {
+    font-size: 12px;
+    padding-right: 13px;
+}
+
+
+/*==================
+	고객센터
+==================*/
+
+#container .customer_list>ul>li {
+    border-radius: 10px;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+#container .customer_list>ul>li:first-child {
+    margin-top: 0;
+}
+
+#container .customer_list>ul>li .question {
+    position: relative;
+    min-height: 89px;
+    background: transparent;
+    padding-left: 138px;
+}
+
+#container .customer_list>ul>li .question .txt {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+#container .customer_list>ul>li .answer {
+    position: relative;
+    min-height: 89px;
+    padding-left: 138px;
+}
+
+#container .customer_list>ul>li .answer .txt {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+#container .customer_list>ul>li .tit {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 138px;
+    padding: 19px 0 0 19px;
+}
+
+#container .customer_list>ul>li .tit .profile {
+    margin-bottom: 10px;
+}
+
+#container .customer_list>ul>li .tit .lv {
+    display: inline-block;
+}
+
+#container .customer_list>ul>li .tit .lv img {
+    vertical-align: text-top;
+}
+
+#container .customer_list>ul>li .tit .name {
+    font-size: 12px;
+    font-weight: 700;
+}
+
+#container .customer_list>ul>li .con {
+    position: relative;
+    padding: 20px;
+}
+
+#container .customer_list>ul>li .con .date {
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+#container .customer_list>ul>li .con .title {
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 16px;
+}
+
+#container .customer_list>ul>li .con .txt {
+    margin-top: 12px;
+}
+
+#container .customer_list>ul>li .con .txt p {
+    font-size: 12px;
+    line-height: 16px;
+    white-space: pre-wrap;
+}
+
+#container .customer_list>ul>li .con p {
+    font-size: 12px;
+    line-height: 16px;
+}
+
+#container .customer_list>ul>li .con .close_btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 10px;
+    height: 10px;
+}
+
+#container .customer_list>ul>li .betting_history {
+    padding: 10px;
+    margin-top: 0;
+}
+
+#container .customer_list>ul>li.none p {
+    line-height: 50px;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+}
+
+#container .customer_write .select_area {
+    float: left;
+    width: 17%;
+}
+
+#container .customer_write .select_area select {
+    width: 100%;
+}
+
+#container .customer_write .input_area {
+    float: right;
+    width: 82%;
+}
+
+#container .customer_write .lv {
+    margin-right: 6px;
+}
+
+#container .customer_write .editor_area {
+    border: none;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 10px;
+}
+
+#container .customer_write .betting_history {
+    margin-top: 10px;
+}
+
+#container .customer_write .betting_history .inner {
+    padding: 0;
+}
+
+#container .customer_write .betting_history_m {
+    margin-top: 10px;
+}
+
+
+/*==================
+	파트너
+==================*/
+
+#container .partner_wrap .desc {
+    margin-bottom: 10px;
+}
+
+#container .partner_wrap .partner_info {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+#container .partner_wrap .partner_info ul {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: auto;
+}
+
+#container .partner_wrap .partner_info ul li {
+    margin-left: 10px;
+}
+
+#container .partner_wrap .partner_info ul li:first-child {
+    margin-left: 0;
+}
+
+#container .partner_wrap .partner_info dl {
+    display: flex;
+    justify-content: space-between;
+    min-width: 160px;
+    height: 30px;
+    line-height: 28px;
+    border-radius: 10px;
+    padding: 0 10px;
+}
+
+#container .partner_wrap .partner_info dl dt {
+    font-weight: 600;
+}
+
+#container .partner_wrap .partner_info dl dd {
+    font-weight: 700;
+}
+
+#container .partner_wrap .table_type01 select {
+    margin-right: 2px;
+}
+
+#container .partner_wrap .table_type02 {
+    margin-bottom: 10px;
+}
+
+#container .partner_wrap .table_type02 table thead tr {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#container .partner_wrap .table_type02 button,
+#container .partner_wrap .table_type03 button {
+    float: none;
+    margin-left: 0;
+}
+
+#container .partner_wrap .table_type03 button {
+    width: 80%;
+}
+
+#container .partner_wrap .summary_area ul li {
+    margin-top: 25px;
+}
+
+#container .partner_wrap .summary_area ul li:first-child {
+    margin-top: 0;
+}
+
+#container .partner_wrap .summary_area ul li .date {
+    position: relative;
+    font-size: 15px;
+}
+
+#container .partner_wrap .summary_area ul li .date:after {
+    position: absolute;
+    top: 5px;
+    left: 0;
+    content: "";
+    width: 100%;
+    height: 2px;
+    background: #dcd7d1;
+    margin-left: 90px;
+}
+
+#container .partner_wrap .summary_area ul li .txt_area {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    margin: 5px 0 10px;
+}
+
+#container .partner_wrap .summary_area ul li .txt_area dl {
+    display: flex;
+    margin-left: 20px;
+}
+
+#container .partner_wrap .summary_area ul li .txt_area dl:first-child {
+    margin-left: 0;
+}
+
+#container .partner_wrap .summary_area ul li .txt_area dl dt {
+    line-height: 20px;
+    font-size: 13px;
+    margin-right: 5px;
+}
+
+#container .partner_wrap .summary_area ul li .txt_area dl dd {
+    line-height: 20px;
+    font-size: 13px;
+}
+
+
+/*==================
+	media query
+==================*/
+
+
+/* PC */
+
+@media screen and (min-width:1280px) and (max-width:1380px) {
+    #container .betting_area .betting_con.betting_eleven .tit {
+        font-size: 11px;
+    }
+}
+
+/* TABLET  + Mobile */
+
+@media screen and (max-width:1140px) {
+    .top_notice {
+        height: 25px;
+    }
+    .top_notice .inner {
+        padding: 0 30px 0 10px;
+    }
+    .top_notice .tit {
+        display: none;
+    }
+    .top_notice .con {
+        font-size: 13px;
+        line-height: 25px;
+        padding: 0 50px 0 10px;
+    }
+    .top_notice .top_notice_close {
+        position: absolute;
+        right: 9px;
+        top: 6.5px;
+        width: 12.5px;
+        height: 12.5px;
+        background-size: cover;
+    }
+    .message_wrap {
+        width: 310px;
+        left: 50%;
+        bottom: -100%;
+        height: 80px;
+        margin-left: -155px;
+    }
+    .message_wrap .message_con {
+        height: 100%;
+        background-size: 60px 64px;
+        padding: 13px 0 16px 125px;
+    }
+    .message_wrap .message_con p {
+        font-size: 12px;
+        line-height: 23px;
+    }
+    .message_wrap .message_con .message_btn {
+        display: inline-block;
+        width: 140px;
+        height: 25px;
+        line-height: 25px;
+        font-size: 14px;
+        margin-top: 0;
+    }
+    .message_wrap02 {
+        width: 250px;
+        margin-left: -125px;
+        margin-top: -104px;
+        z-index: 99999;
+    }
+    .message_wrap02 .inner {
+        position: relative;
+    }
+    .message_wrap02 .message_top {
+        position: relative;
+        height: 40px;
+        padding: 0 15px;
+    }
+    .message_wrap02 .message_top h2 {
+        font-size: 12px;
+        font-weight: bold;
+        line-height: 40px;
+    }
+    .message_wrap02 .message_top .message_close_btn {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        width: 12px;
+        height: 12px;
+        background-size: cover;
+    }
+    .message_wrap02 .message_bot {
+        text-align: center;
+        background-size: 60px 43px;
+        padding: 78px 0 25px;
+    }
+    .message_wrap02 .message_bot p {
+        font-size: 12px;
+    }
+    .message_wrap02 .message_bot .message_btn {
+        display: inline-block;
+        height: 30px;
+        line-height: 30px;
+        font-size: 17px;
+        border-radius: 0px;
+        margin-top: 16px;
+        padding: 0 30px;
+    }
+    .alert_wrap {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 270px;
+        padding: 20px 20px;
+        margin-left: -135px;
+        margin-top: -160px;
+    }
+    .alert_wrap .alert_top img {
+        width: 100%;
+    }
+    .alert_wrap .alert_bot {
+        margin-top: 10px;
+    }
+    .alert_wrap .alert_bot p {
+        font-size: 13px;
+        padding: 20px 0 0 0;
+    }
+    .alert_wrap .alert_bot .btn_wrap {
+        margin-top: 20px;
+    }
+    /* 퀵메뉴 */
+    .quick_partner {
+        width: 40px;
+        height: 40px;
+    }
+    .quick_partner.message_true {
+        bottom: 100px;
+    }
+    /* 컨텐츠 */
+    #container .search_tab ul li {
+        margin-left: 5px;
+    }
+    #container .search_tab ul li a {
+        font-size: 12px;
+        border-radius: 10px;
+    }
+    /* 검색 */
+    #container .search_wrap {
+        display: block;
+    }
+    #container .search_wrap .radio_list {
+        margin-left: 2px !important;
+    }
+    #container .search_wrap .search_inner>* {
+        margin: 0 0 5px 0;
+    }
+    #container .search_wrap .search_inner>select {
+        margin-left: 10px;
+    }
+    #container .search_wrap .search_area button {
+        width: 70px;
+        padding: 0 15px;
+    }
+    /* 인포 */
+    .content_info {
+        display: block;
+    }
+    .content_info .content_info_box {
+        display: block;
+        overflow: hidden;
+    }
+    /* 	.content_info .content_info_box dl {float:left; width:50%; line-height:30px; margin:0; } */
+    /* game list */
+    #container .game_list {
+        margin-bottom: 7.5px;
+    }
+    #container .game_list ul li {
+        border-radius: 10px;
+        padding: 7.5px;
+        margin-left: 4px;
+    }
+    #container .game_list ul li .game_name {
+        font-size: 12px;
+    }
+    #container .game_list ul li .img_area {
+        float: left;
+        position: inherit;
+        top: inherit;
+        left: inherit;
+        width: 17px;
+        height: 15px;
+    }
+    #container .game_list ul li .img_area img {
+        width: 100%;
+    }
+    #container .game_list ul li .game_time {
+        line-height: 15px;
+        font-size: 12px;
+        margin: 0 0 0 5px;
+    }
+    #container .game_list ul li .start_btn {
+        max-width: 100%;
+        height: 20px;
+        line-height: 15px;
+        font-size: 12px;
+        border-radius: 5px;
+        padding-top: 3px;
+    }
+    #container .all_game_list {
+        display: block;
+        padding: 5px;
+    }
+    #container .all_game_list .all_game_list_left {
+        display: none;
+    }
+    #container .all_game_list_m {
+        display: block;
+    }
+    #container .all_game_list .all_game_list_right {
+        max-width: 100% !important;
+        padding: 0;
+        overflow-y: auto;
+    }
+    #container .all_game_list .all_game_list_right ul li {
+        width: 33.3%;
+    }
+    #container .all_game_list .all_game_list_right ul li a {
+        width: 100%;
+        height: auto;
+        line-height: normal;
+    }
+    #container .all_game_list .all_game_list_right ul li a img {
+        width: 100%;
+    }
+    /* 크로스  */
+    #container .cross_list>ul>li {
+        margin-top: 5px;
+    }
+    #container .cross_list>ul>li .score_tit {
+        line-height: 30px;
+        padding: 0 10px;
+    }
+    #container .cross_list>ul>li .score_tit .tit {
+        margin-left: 5px;
+    }
+    #container .cross_list>ul>li .score_tit .time {
+        display: inline-block;
+        text-align: right;
+    }
+    #container .cross_list>ul>li .score_con ul li>div {
+        height: auto;
+        padding: 0 10px 5px 10px;
+    }
+    #container .cross_list>ul>li .score_con ul li p {
+        float: none;
+    }
+    #container .cross_list>ul>li .score_con ul li .ab_left {
+        position: inherit;
+        top: inherit;
+        left: inherit;
+        line-height: 25px;
+        overflow: hidden;
+    }
+    #container .cross_list>ul>li .score_con ul li .ab_con {
+        width: 100%;
+        line-height: inherit;
+        padding: 0;
+    }
+    #container .cross_list>ul>li .score_con ul li .ab_right {
+        position: inherit;
+        top: inherit;
+        right: inherit;
+        text-align: center;
+        margin-top: 6px;
+    }
+    #container .cross_list>ul>li .score_con ul li .abs_area {
+        float: right;
+        position: inherit;
+        top: inherit;
+        right: inherit;
+        text-align: center;
+    }
+    #container .cross_list>ul>li .score_con ul li .date {
+        float: left;
+        width: auto;
+        margin-left: 0;
+    }
+    #container .cross_list>ul>li .score_con ul li .tit {
+        width: auto;
+        text-align: right;
+        margin-left: 10px;
+    }
+    #container .cross_list>ul>li .score_con ul li .detail_btn {
+        height: 17px;
+        border-radius: 2px;
+        margin: 3.5px 0 0 10px;
+        z-index: 1;
+    }
+    #container .cross_list>ul>li .score_con ul li .stats {
+        width: auto;
+        line-height: 25px;
+    }
+    #container .cross_list>ul>li .score_con ul li .competing {
+        display: flex;
+        text-align: center;
+        padding: 0;
+        margin-top: 5px;
+        clear: both;
+    }
+    #container .cross_list>ul>li .score_con ul li .competing .vs {
+        padding: 0 4px;
+    }
+    #container .cross_list>ul>li .score_con ul li .competing .dividend_team {
+        flex: 1;
+        height: 25px;
+        padding: 0 5px;
+    }
+    #container .cross_list>ul>li .score_con ul li .competing .dividend_team .name {
+        float: left;
+        width: 40px;
+        height: 25px;
+        line-height: 23px;
+        font-size: 12px;
+        text-align: left;
+        margin-top: 0;
+        overflow: hidden;
+    }
+    #container .cross_list>ul>li .score_con ul li .competing .dividend_team .num {
+        float: right;
+        width: auto;
+        line-height: 23px;
+        font-size: 14px;
+    }
+    #container .cross_list>ul>li .score_con ul li .competing .dividend_team.hd,
+    #container .cross_list>ul>li .score_con ul li .competing .dividend_team.uo {
+        line-height: 25px;
+    }
+    #container .cross_list>ul>li .score_con ul li .competing .dividend_team.hd .num,
+    #container .cross_list>ul>li .score_con ul li .competing .dividend_team.uo .num {
+        float: none;
+    }
+    #container .cross_list>ul>li .score_con ul li .ab_con .competing .dividend_team:first-child .num .arr {
+        position: relative;
+        top: 0px;
+        left: -5px;
+    }
+    #container .cross_list>ul>li .score_con ul li .ab_con .competing .dividend_team:last-child .num .arr {
+        position: relative;
+        top: 0px;
+        left: -5px;
+    }
+    #container .cross_list>ul>li .score_con ul li .ab_con .team {
+        line-height: 25px;
+    }
+    #container .cross_list>ul>li .score_con ul li .ab_con .team_l {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 42%;
+        float: left;
+        padding-left: 0;
+    }
+    #container .cross_list>ul>li .score_con ul li .ab_con .team_vs {
+        display: block;
+        float: left;
+        width: 15%;
+        font-size: 14px;
+    }
+    #container .cross_list>ul>li .score_con ul li .ab_con .score {
+        display: block;
+        float: left;
+        width: 15%;
+        font-size: 17px;
+        font-weight: 600;
+    }
+    #container .cross_list>ul>li .score_con ul li .ab_con .score span {
+        font-size: 17px;
+        font-weight: 600;
+    }
+    #container .cross_list>ul>li .score_con ul li .ab_con .team_r {
+        position: relative;
+        top: 0;
+        right: 0;
+        width: 42%;
+        float: right;
+        padding-right: 0;
+    }
+    #container .cross_list>ul>li .score_con ul li .vs_team {
+        width: 32.1%;
+        height: 25px;
+        text-align: center;
+        border-radius: 3px;
+        margin-left: 1.8%;
+    }
+    #container .cross_list>ul>li .score_con ul li .vs_team .vs {
+        line-height: 25px;
+        font-size: 14px;
+        font-weight: 600;
+    }
+    #container .cross_list>ul>li .score_con ul li .detail .team {
+        display: none;
+    }
+    #container .cross_list>ul>li .score_con ul li>.detail .stats {
+        margin-right: 40px;
+    }
+    /* 미니게임 */
+    #container .inspection_none {
+        min-height: 230px;
+        background-size: 65px 64px;
+        padding-top: 145px;
+    }
+    #container .betting_area {
+        padding: 5px;
+        margin-top: 7.5px;
+    }
+    #container .betting_area h3 {
+        display: none;
+    }
+    #container .betting_area .betting_board_top {
+        display: block;
+        padding: 0 2px;
+        overflow: hidden;
+    }
+    #container .betting_area .betting_board_top .betting_board_day {
+        float: left;
+        line-height: 18px;
+        font-size: 0;
+    }
+    #container .betting_area .betting_board_top .betting_board_day .betting_board_date {
+        display: inline-block;
+        font-size: 14px;
+        font-weight: 500;
+    }
+    #container .betting_area .betting_board_top .betting_board_day .betting_board_round {
+        display: inline-block;
+        font-size: 12px;
+        vertical-align: top;
+        margin-left: 3.5px;
+    }
+    #container .betting_area .betting_board_top .betting_board_time {
+        float: right;
+        line-height: 18px;
+        font-size: 16px;
+        font-weight: 500;
+    }
+    #container .betting_area .betting_board_top .betting_board_time .betting_board_refresh_btn {
+        width: 18px;
+        height: 18px;
+        vertical-align: top;
+        margin-left: 10px;
+    }
+    #container .betting_area .betting_con {
+        margin-top: 5px;
+    }
+    #container .betting_area .betting_con .tit {
+        display: flex;
+        width: 100%;
+        height: 30px;
+        line-height: 30px;
+        font-size: 12px;
+    }
+    #container .betting_area .betting_con .tit .num {
+        width: 44px;
+        line-height: 20px;
+        text-align: left;
+        padding: 5px 0 0 10px;
+    }
+    #container .betting_area .betting_con .tit .name {
+        width: calc(100% - 44px);
+        height: 100%;
+        text-align: left;
+        line-height: 20px;
+        padding: 5px 0 0 10px;
+    }
+    #container .betting_area .betting_con .tit .name span {
+        vertical-align: top;
+    }
+    #container .betting_area .betting_con .btn_area {
+        flex: none;
+        padding: 4px 25px;
+    }
+    #container .betting_area .betting_con .btn_area ul {
+        margin-top: 5px;
+    }
+    #container .betting_area .betting_con .btn_area ul li {
+        margin: 5px;
+    }
+    #container .betting_area .betting_con .btn_area ul.type03 li {
+        flex: 1;
+        margin-left: 5px;
+    }
+    #container .betting_area .betting_con .btn_area ul li:first-child {
+        margin-left: 5px;
+    }
+    #container .betting_area .betting_con>div {
+        flex-direction: column;
+        border-radius: 10px;
+        margin: 2.5px;
+    }
+    #container .betting_area .betting_con .powerball.game07 .btn_area {
+        padding: 0 20px;
+    }
+    #container .betting_area .betting_con .rate {
+        font-size: 12px;
+        margin-top: 5px;
+    }
+    #container .betting_area .betting_con02 {
+        margin-top: 5px;
+    }
+    #container .betting_area .betting_con02 ul li {
+        width: 100%;
+        margin: 2.5px;
+    }
+    /* new powerball */
+    #container .betting_area_flex {
+        padding: 10px;
+    }
+    #container .betting_area_flex .col_left {
+        width: 100%
+    }
+    #container .betting_area_flex .mobile_header {
+        display: flex !important;
+        margin-bottom: 10px;
+    }
+    #container .betting_area_flex .mobile_header .tit {
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 24px;
+    }
+    #container .betting_area_flex .mobile_header .tit span {
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 24px;
+        display: inline-block;
+        margin-bottom: 1px;
+    }
+    #container .betting_area_flex .mobile_header .tit_right {
+        margin-left: auto;
+        display: flex;
+    }
+    #container .betting_area_flex .mobile_header .tit_right .time {
+        font-size: 14px;
+        line-height: 24px;
+    }
+    #container .betting_area_flex .mobile_header .tit_right img {
+        width: 14px;
+        height: 14px;
+        margin: 5px 5px;
+        vertical-align: top;
+    }
+    #container .betting_area_flex .mobile_header .tit_right .btn_hide_video {
+        font-size: 13px;
+        height: 30px;
+        width: 90px;
+        line-height: 30px;
+        margin-top: -4px;
+        border-radius: 5px;
+    }
+    #container .betting_area_flex .game_item {
+        width: 100%
+    }
+    #container .betting_area_flex .game_item .game_content ul {
+        width: 100%
+    }
+    #container .betting_area_flex .game_item .game_content ul li {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    #container .betting_area_flex .game_item .game_content ul li .bet{
+        padding: 0 2px;
+    }
+    #container .betting_area_flex .game_item .game_content ul li .bet .game_side{
+        font-size: 16px;
+        min-width: 30px;
+    }
+    #container .betting_area_flex .game_item .game_content ul li .large {
+        width: 45%;
+    }
+    #container .betting_area_flex .game_item .game_content ul li .medium {
+        width: calc(33% - 5px);
+    }
+    #container .betting_area_flex .game_item .game_content ul li .small {
+        width: calc(50% - 5px);
+    }
+    #container .betting_area_flex .game_item .game_content ul li .x_small {
+        width: calc(20% - 7px);
+    }
+    #container .content .rst_link ul {
+        justify-content: space-between;
+    }
+    #container .content .rst_link ul li {
+        width: calc(50% - 3px);
+    }
+    #container .content .betting_board.betting_board_pc_none {
+        display: block!important;
+        position: relative!important;
+        margin-top: 20px;
+    }
+    #container .content .betting_board .betting_board_box .betting_board_box_btn ul {
+        margin-top: 0px
+    }
+    /* new powerball */
+    #container .content .betting_board_open {
+        position: fixed;
+        bottom: 0;
+        display: block;
+        width: calc(100% - 15px);
+        height: 25px;
+        border-radius: 0 0 5px 5px;
+        transform: rotateX(180deg);
+        margin: 0 auto;
+        z-index: 9999;
+    }
+    #container .content .betting_board {
+        position: fixed !important;
+        top: inherit;
+        left: 0;
+        width: 100%;
+        height: auto;
+        border-radius: 0;
+    }
+    #container .content .betting_board .betting_board_m_close {
+        display: block;
+        width: calc(100% - 15px);
+        height: 25px;
+        border-radius: 0 0 5px 5px;
+        transform: rotateX(180deg);
+        -webkit-transition: none;
+        margin: 0 auto;
+    }
+    #container .content .betting_board .betting_board_m_close.close {
+        border-radius: 5px 5px 0 0;
+        transform: rotateX(0);
+    }
+    #container .content .betting_board .betting_board_inner {
+        border-radius: 10px 10px 0 0;
+        padding: 0;
+    }
+    #container .content .betting_board .betting_board_inner.betting_board_none:after {
+        line-height: 400px;
+        margin-top: 25px;
+    }
+    #container .content .betting_board .betting_board_top {
+        /* display: none; */
+    }
+    #container .content .betting_board .betting_board_txt {
+        display: flex;
+        border-radius: 5px;
+        overflow: hidden;
+        padding:0 0;
+        margin:0 5px;
+    }
+    #container .content .betting_board .betting_board_txt ul {
+        display: flex;
+        flex: 1;
+        flex-direction: row;
+        border-radius: 5px;
+        margin-bottom: 5px;
+    }
+    #container .content .betting_board .betting_board_txt ul li {
+        height: 40px;
+        line-height: 20px;
+        flex-direction: column;
+        padding: 0 10px;
+    }
+    #container .content .betting_board .betting_board_txt ul li:first-child {
+        width: 50%;
+        text-align: center;
+        border-radius: 0;
+    }
+    #container .content .betting_board .betting_board_txt ul li:last-child {
+        width: 50%;
+        text-align: center;
+        border-radius: 0;
+        margin-top: 0;
+    }
+    #container .content .betting_board .betting_board_txt ul li span {
+        width: 100%;
+    }
+    #container .content .betting_board .betting_board_txt ul li p {
+        width: 100%;
+        line-height: 20px;
+    }
+    #container .content .betting_board .betting_board_list {
+        padding: 5px;
+    }
+    #container .content .betting_board .betting_board_list ul li {
+        display: flex;
+        justify-content: center;
+        height: 30px;
+        line-height: 30px;
+        border-radius: 10px;
+        padding: 0 10px;
+        margin-top: 2px;
+    }
+    #container .content .betting_board .betting_board_list ul li:first-child {
+        margin-top: 0;
+    }
+    #container .content .betting_board .betting_board_list ul li p,
+    #container .content .betting_board .betting_board_list ul li span {
+        font-weight: 600;
+    }
+    #container .content .betting_board .betting_board_list ul li .game {
+        margin-left: auto;
+    }
+    #container .content .betting_board .betting_board_list ul li .game span {
+        vertical-align: top;
+    }
+    #container .content .betting_board .betting_board_list ul li .betting_board_list_delete {
+        margin: 10px 0 0 10px;
+    }
+    #container .content .betting_board .betting_board_info {
+        padding: 0 5px;
+        margin-top: 2px;
+    }
+    #container .content .betting_board .betting_board_info ul {
+        border-radius: 5px;
+        margin-bottom: 5px;
+    }
+    #container .content .betting_board .betting_board_info ul li dl {
+        height: 40px;
+        padding-top: 7px;
+    }
+    #container .content .betting_board .betting_board_info ul li dl dt {
+        font-size: 12px;
+    }
+    #container .content .betting_board .betting_board_info ul li dl dd {
+        font-size: 12px;
+    }
+    #container .content .betting_board .betting_board_box {
+        padding: 0 5px 5px;
+    }
+    #container .content .betting_board .betting_board_box input {
+        height: 40px;
+        line-height: 40px;
+        padding: 0 19px;
+    }
+    #container .content .betting_board .betting_board_box .betting_board_box_input {
+        position: relative;
+        margin-top: 2px;
+    }
+    #container .content .betting_board .betting_board_box .betting_board_box_input .tit {
+        top: 14px;
+        left: 10px;
+        font-size: 12px;
+    }
+    #container .content .betting_board .betting_board_box .betting_board_box_input .betting_board_refresh_btn {
+        width: 17px;
+        height: 15px;
+    }
+    #container .content .betting_board .betting_board_box .betting_board_box_btn_wrap {
+        display: flex;
+    }
+    #container .content .betting_board .betting_board_box .betting_board_box_btn_wrap .betting_board_box_btn {
+        flex: 1;
+    }
+    #container .content .betting_board .betting_board_box .betting_board_box_btn ul li {
+        padding: 2px 0 0 2px;
+    }
+    #container .content .betting_board .betting_board_box .betting_board_box_btn ul li button {
+        height: 35px;
+        border-radius: 10px;
+    }
+    #container .content .betting_board .betting_btn {
+        height: 50px;
+        font-size: 25px;
+        border-radius: 10px;
+        margin-top: 5px;
+    }
+    #container .content .betting_board.simple .betting_board_txt ul li {
+        height: 40px;
+        line-height: 20px;
+    }
+    #container .content .betting_board.simple .betting_board_txt ul li p {
+        font-size: 12px;
+    }
+    #container .content .betting_board.simple .betting_board_box input {
+        height: 40px;
+        line-height: 40px;
+    }
+    #container .content .betting_board.simple .betting_board_box .betting_board_box_btn ul li button {
+        height: 35px;
+    }
+    #container .content .betting_board.simple .betting_btn {
+        height: 50px;
+    }
+    #container .content .betting_board.multiple .betting_board_box {
+        display: none;
+    }
+    #container .content .betting_board.multiple .betting_board_box.open {
+        display: block;
+    }
+    #container .content .betting_board.multiple .betting_board_box .betting_board_box_input .tit {
+        top: 8px;
+        left: 10px;
+        font-size: 12px;
+    }
+    #container .content .betting_board.multiple .betting_board_box input {
+        height: 30px;
+        line-height: 30px;
+        padding: 0 10px;
+    }
+    #container .content .betting_board.multiple .betting_board_box .betting_board_box_btn ul li button {
+        height: 30px;
+    }
+    #container .content .betting_board.multiple .betting_btn {
+        width: 100px;
+        height: 62px;
+        margin-left: 2px;
+    }
+    #container .content .rst_link {
+        background: none !important;
+        border-radius: 10px;
+        margin-top: 7.5px;
+    }
+    #container .content .rst_link ul {
+        display: flex;
+    }
+    #container .content .rst_link ul li {
+        width: 50%;
+    }
+    #container .content .rst_link ul li:first-child {
+        padding-right: 1px;
+    }
+    #container .content .rst_link ul li:last-child {
+        padding-left: 1px;
+    }
+    #container .content .rst_link ul li a {
+        display: inline-block;
+        width: 100%;
+        height: 40px;
+        line-height: 40px;
+        font-size: 12px;
+        text-align: center;
+        border-radius: 10px;
+    }
+    #container .all_result {
+        display: none;
+    }
+    #container .all_result_m {
+        display: block;
+    }
+    #container .betting_history {
+        display: none;
+    }
+    #container .betting_history_m {
+        display: block;
+    }
+    #container .auto_wrap {
+        height: auto;
+    }
+    #container .auto_wrap .auto_left {
+        width: 100%;
+        padding-right: 0;
+    }
+    #container .auto_wrap .auto_left .auto_table {
+        height: 400px !important;
+    }
+    #container .auto_wrap .auto_left .auto_table th:nth-child(1) {
+        width: 11%;
+    }
+    #container .auto_wrap .auto_left .auto_table th:nth-child(2),
+    #container .auto_wrap .auto_left .auto_table td:nth-child(2) {
+        display: none;
+    }
+    #container .auto_wrap .auto_left .auto_table th:nth-child(3) {
+        width: 6%;
+    }
+    #container .auto_wrap .auto_left .auto_table th:nth-child(4) {
+        width: 6%;
+    }
+    #container .auto_wrap .auto_left .auto_table th:nth-child(5) {
+        width: 6%;
+    }
+    #container .auto_wrap .auto_left .auto_table th:nth-child(6) {
+        width: 58%;
+    }
+    #container .auto_wrap .auto_left .auto_table th:nth-child(7) {
+        width: 13%;
+    }
+    #container .auto_wrap .auto_right {
+        width: 100%;
+        padding-left: 0;
+    }
+    #container .auto_wrap .auto_right .type_select ul li {
+        width: 32%;
+        margin-top: 5px;
+    }
+    #container .auto_wrap .auto_right .type_select ul li:nth-child(1) {
+        margin-top: 0;
+    }
+    #container .auto_wrap .auto_right .type_select ul li:nth-child(2) {
+        margin-top: 0;
+    }
+    #container .auto_wrap .auto_right .type_select ul li:nth-child(3) {
+        margin-top: 0;
+    }
+    #container .auto_wrap .auto_right .type_select ul li:nth-child(4) {
+        margin-left: 0;
+    }
+    #container .auto_wrap .auto_right .type_select ul li button {
+        width: 100%;
+    }
+    #container .auto_wrap .auto_table button {
+        width: 32%;
+    }
+    #container .auto_wrap .auto_table ul li {
+        margin: 5px 0 0 5px;
+    }
+    #container .auto_wrap .auto_table ul li:nth-child(5),
+    #container .auto_wrap .auto_table ul li:nth-child(9) {
+        margin-left: 5px;
+    }
+    #container .auto_wrap .auto_table ul li:first-child,
+    #container .auto_wrap .auto_table ul li:nth-child(4),
+    #container .auto_wrap .auto_table ul li:nth-child(7),
+    #container .auto_wrap .auto_table ul li:nth-child(10),
+    #container .auto_wrap .auto_table ul li:nth-child(13) {
+        margin-left: 0;
+    }
+    #container .auto_wrap .auto_table ul.money_wrap li {
+        width: 31.5%;
+    }
+    #container .auto_wrap .auto_table input[type="text"] {
+        width: 48px;
+        height: 19px;
+        vertical-align: middle;
+    }
+    #container .auto_wrap .auto_table select {
+        height: 19px;
+        vertical-align: middle;
+    }
+    #container .pop-layer {
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        margin-top: 0 !important;
+        margin-left: 0 !important;
+    }
+    #container .pop-layer .pop-container {
+        width: 100%;
+        height: 100%;
+    }
+    #container .pop-layer .pop-conts {
+        width: 100%;
+        height: 100%;
+    }
+    #container .pop-layer .pop-conts #gameIframe {
+        width: 100% !important;
+        height: 100% !important;
+    }
+    #container .money_wrap .money_dl {
+        width: 100%;
+    }
+    #container .money_wrap .money_dl dd {
+        flex: 1;
+        min-width: auto;
+    }
+    #container .money_wrap .btn_wrap {
+        margin-top: 5px;
+    }
+    #container .money_wrap .submit_btn {
+        width: 77px;
+        height: 22px;
+        font-size: 12px;
+    }
+    #container .money_wrap .caution_wrap {
+        border-radius: 10px;
+        padding: 10px;
+        margin-top: 15px;
+    }
+    #container .money_wrap .caution_wrap .title {
+        font-size: 12px;
+        line-height: 13px;
+        padding-left: 18px;
+    }
+    #container .money_wrap .caution_wrap ul {
+        margin: 5px 0 0 18px;
+    }
+    #container .money_wrap .caution_wrap ul li {
+        font-size: 12px;
+        line-height: 18px;
+        padding-left: 7px;
+    }
+    #container .money_wrap .table_wrap {
+        margin-top: 15px;
+    }
+    #container .money_wrap .table_wrap h3 {
+        font-size: 12px;
+    }
+    #container .money_wrap .table_wrap .table_l {
+        float: left;
+        width: 100%;
+        padding-right: 0;
+    }
+    #container .money_wrap .table_wrap .table_r {
+        float: right;
+        width: 100%;
+        padding-left: 0;
+        margin-top: 15px;
+    }
+    #container .money_wrap .check {
+        margin: 0 0 0 5px;
+    }
+    #container .money_wrap .lv {
+        display: inline-block;
+        height: 8.5px;
+        vertical-align: top;
+    }
+    #container .message_list>ul>li {
+        min-height: 65px;
+        border-radius: 10px;
+        padding-left: 79px;
+        margin-top: 5px;
+    }
+    #container .message_list>ul>li .tit {
+        width: 80px;
+        padding: 10px 0 0 7px;
+    }
+    #container .message_list>ul>li .tit .lv {
+        vertical-align: top;
+    }
+    #container .message_list>ul>li .tit .lv img {
+        max-width: 100%;
+        vertical-align: middle;
+    }
+    #container .message_list>ul>li .tit .name {
+        font-size: 12px;
+    }
+    #container .message_list>ul>li .tit .txt {
+        font-size: 12px;
+        margin-top: 5px;
+    }
+    #container .message_list>ul>li .con {
+        padding: 10px;
+    }
+    #container .message_list>ul>li .con .date {
+        font-size: 12px;
+        margin-bottom: 8px;
+    }
+    #container .message_list>ul>li .con .txt p {
+        font-size: 12px;
+        line-height: 15px;
+    }
+    #container .message_list>ul>li .con .desc_list li {
+        font-size: 12px;
+        line-height: 15px;
+        background-size: 2.5px 1px;
+        padding-left: 4px;
+        margin-top: 14px;
+    }
+    #container .message_list>ul>li .con .close_btn {
+        top: 10px;
+        right: 10px;
+    }
+    #container .attend_wrap .attend_top .point_wrap .num {
+        width: 75px;
+        height: 26px;
+        line-height: 24px;
+        font-size: 12px;
+        padding: 0 5px;
+        margin-right: 5px;
+    }
+    #container .attend_wrap .attend_top .point_wrap .change_btn {
+        width: 40px;
+        height: 26px;
+        font-size: 12px;
+    }
+    #container .attend_wrap .attend_top .attend_date {
+        float: left;
+        margin-top: 0;
+    }
+    #container .attend_wrap .attend_top .attend_date .date {
+        font-size: 25px;
+        padding: 0 20px;
+    }
+    #container .attend_wrap .attend_top .attend_date .prev_btn {
+        width: 20px;
+        height: 20px;
+        background-size: cover;
+        margin-top: 2px;
+    }
+    #container .attend_wrap .attend_top .attend_date .next_btn {
+        width: 20px;
+        height: 20px;
+        background-size: cover;
+        margin-top: 2px;
+    }
+    #container .attend_wrap .attend_con {
+        border-radius: 10px;
+    }
+    #container .attend_wrap .attend_con table tr td .inner {
+        padding: 8px 0;
+    }
+    #container .attend_wrap .attend_con table tr td .num {
+        position: absolute;
+        top: 0px;
+        left: 4px;
+        font-size: 12px;
+    }
+    #container .attend_wrap .attend_con table tr td .finish_txt {
+        bottom: 9%;
+        font-size: 11px;
+    }
+    #container .attend_wrap .attend_con table tr td .finish_btn {
+        width: 44px;
+        height: 20px;
+        line-height: 20px;
+        font-size: 11px;
+        letter-spacing: -0.5px;
+        margin-left: -22px;
+    }
+    #container .attend_wrap .attend_con .stamp_red {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -15px;
+        margin-left: -15px;
+        width: 30px;
+        height: 30px;
+        background-size: cover;
+    }
+    #container .attend_wrap .attend_con .stamp_white {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -15px;
+        margin-left: -15px;
+        width: 30px;
+        height: 30px;
+        background-size: cover;
+    }
+    #container .attend_wrap .attend_con .stamp_yellow {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -15px;
+        margin-left: -15px;
+        width: 30px;
+        height: 30px;
+        background-size: cover;
+    }
+    #container .attend_wrap .attend_con .stamp_check {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -16.25px;
+        margin-left: -16.25px;
+        width: 32.5px;
+        height: 32.5px;
+        background-size: cover;
+    }
+    #container .attend_wrap .attend_con .stamp_day {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -25px;
+        margin-left: -15px;
+        width: 30px;
+        height: 30px;
+        background-size: cover;
+    }
+    #container .attend_wrap .attend_con .stamp_day_finish {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -25px;
+        margin-left: -15px;
+        width: 30px;
+        height: 30px;
+        background-size: cover;
+    }
+    #container .attend_wrap .attend_con .stamp_1week {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -25px;
+        margin-left: -15px;
+        width: 30px;
+        height: 30px;
+        background-size: cover;
+    }
+    #container .attend_wrap .attend_con .stamp_1week_finish {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -25px;
+        margin-left: -15px;
+        width: 30px;
+        height: 30px;
+        background-size: cover;
+    }
+    #container .attend_wrap .attend_con .stamp_2week {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -25px;
+        margin-left: -15px;
+        width: 30px;
+        height: 30px;
+        background-size: cover;
+    }
+    #container .attend_wrap .attend_con .stamp_2week_finish {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -25px;
+        margin-left: -15px;
+        width: 30px;
+        height: 30px;
+        background-size: cover;
+    }
+    #container .attend_wrap .attend_con .stamp_3week {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -25px;
+        margin-left: -15px;
+        width: 30px;
+        height: 30px;
+        background-size: cover;
+    }
+    #container .attend_wrap .attend_con .stamp_3week_finish {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -25px;
+        margin-left: -15px;
+        width: 30px;
+        height: 30px;
+        background-size: cover;
+    }
+    #container .attend_wrap .attend_con .stamp_4week {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -25px;
+        margin-left: -15px;
+        width: 30px;
+        height: 30px;
+        background-size: cover;
+    }
+    #container .attend_wrap .attend_con .stamp_4week_finish {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -25px;
+        margin-left: -15px;
+        width: 30px;
+        height: 30px;
+        background-size: cover;
+    }
+    #container .board_list col:nth-child(1),
+    #container .board_list col:nth-child(2) {
+        display: none;
+    }
+    #container .board_list th:nth-child(4) {
+        width: 26% !important;
+    }
+    #container .board_list th:nth-child(5) {
+        width: 11% !important;
+    }
+    #container .board_list table th a,
+    #container .board_list table td a {
+        padding-left: 11px;
+    }
+    #container .board_list table thead tr th:nth-child(1),
+    #container .board_list table thead tr th:nth-child(2) {
+        display: none;
+    }
+    #container .board_list table tbody tr td:nth-child(1),
+    #container .board_list table tbody tr td:nth-child(2) {
+        display: none;
+    }
+    #container .board_list table tbody tr td .file_m_ico {
+        position: absolute;
+        top: 6px;
+        left: 0;
+    }
+    #container .board_list table .lv {
+        display: inline-block;
+        width: 21.5px;
+        height: 10px;
+        vertical-align: top;
+    }
+    #container .board_list .board_list_top {
+        height: 27px;
+        border-radius: 5px 5px 0 0;
+    }
+    #container .board_list .board_list_top span {
+        float: left;
+        height: 25px;
+        line-height: 25px;
+        padding: 0 5px;
+    }
+    #container .board_list .board_list_top span:nth-child(1) {
+        width: 16%;
+        border-left: 0;
+    }
+    #container .board_list .board_list_top span:nth-child(2) {
+        width: 0;
+    }
+    #container .board_list .board_list_top span:nth-child(3) {
+        width: 0;
+    }
+    #container .board_list .board_list_top span:nth-child(4) {
+        width: 84%;
+    }
+    #container .board_list .board_list_top span:nth-child(5) {
+        width: 33%;
+    }
+    #container .board_list .board_list_con {
+        font-size: 0;
+    }
+    #container .board_list .board_list_con ul {
+        border-radius: 0 0 5px 5px;
+    }
+    #container .board_list .board_list_con ul li {
+        padding-top: 25px;
+    }
+    #container .board_list .board_list_con ul li.notice,
+    #container .board_list .board_list_con ul li.event {
+        padding-top: 0;
+    }
+    #container .board_list .board_list_con ul li.notice p:nth-child(3),
+    #container .board_list .board_list_con ul li.notice p:nth-child(4),
+    #container .board_list .board_list_con ul li.event p:nth-child(3),
+    #container .board_list .board_list_con ul li.event p:nth-child(4) {
+        display: none;
+    }
+    #container .board_list .board_list_con ul li.notice p,
+    #container .board_list .board_list_con ul li.event p {
+        border-radius: 0;
+    }
+    #container .board_list .board_list_con ul li.notice p.txt,
+    #container .board_list .board_list_con ul li.event p.txt {
+        position: absolute;
+        top: 0;
+        left: 16%;
+        width: 84%;
+    }
+    #container .board_list .board_list_con ul li.notice p.txt .file_m_ico,
+    #container .board_list .board_list_con ul li.event p.txt .file_m_ico {
+        display: none;
+    }
+    #container .board_list .board_list_con ul li p {
+        float: left;
+        height: 25px;
+        line-height: 25px;
+        border-left: 0 !important;
+        padding: 0 5px;
+    }
+    #container .board_list .board_list_con ul li p:nth-child(1) {
+        width: 16%;
+        border-left: 0;
+    }
+    #container .board_list .board_list_con ul li p:nth-child(2) {
+        width: 0;
+    }
+    #container .board_list .board_list_con ul li p:nth-child(3) {
+        width: 51%;
+    }
+    #container .board_list .board_list_con ul li p:nth-child(4) {
+        width: 33%;
+    }
+    #container .board_list .board_list_con ul li p .lv {
+        display: inline-block;
+        width: 21.5px;
+        height: 10px;
+        vertical-align: top;
+    }
+    #container .board_list .board_list_con ul li p.txt {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+    #container .board_list .board_list_con ul li p.txt a {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        padding-left: 10px;
+        overflow: hidden;
+    }
+    #container .board_list .board_list_con ul li p .file_m_ico {
+        position: absolute;
+        top: 5px;
+        right: 0;
+        vertical-align: text-top;
+    }
+    #container .board_write .editor_area {
+        border-radius: 10px;
+        padding: 10px;
+        margin-top: 5px;
+    }
+    #container .board_view .txt_area {
+        border-radius: 10px;
+        padding: 10px 10px 45px;
+    }
+    #container .board_view .txt_area p {
+        line-height: 20px;
+    }
+    #container .board_view .txt_area img {
+        width: 100%;
+    }
+    #container .board_view .btn_wrap {
+        margin-top: 10px;
+    }
+    #container .board_view .btn_wrap .btn_full {
+        margin-top: 5px;
+    }
+    #container .comment_list {
+        padding-top: 16px;
+    }
+    #container .comment_list ul li {
+        min-height: 55px;
+        background-size: 5px 1px;
+        padding: 10px 0;
+    }
+    #container .comment_list ul li .tit {
+        width: 100px;
+    }
+    #container .comment_list ul li .tit .name .lv {
+        display: inline-block;
+        width: 21.5px;
+        height: 10px;
+    }
+    #container .comment_list ul li .tit .name {
+        font-size: 12px;
+    }
+    #container .comment_list ul li .tit .date {
+        font-size: 12px;
+        margin-left: 30px;
+    }
+    #container .comment_list ul li .con p {
+        font-size: 12px;
+        line-height: 15px;
+    }
+    #container .comment_write {
+        position: relative;
+        border-radius: 10px;
+        padding: 10px 76px 10px 10px;
+    }
+    #container .comment_write .con_l {
+        display: none;
+    }
+    #container .comment_write .con_c {
+        height: 60px;
+    }
+    #container .comment_write .con_c textarea {
+        font-size: 12px;
+        padding: 10px;
+    }
+    #container .comment_write .con_r {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 66px;
+        height: 60px;
+        text-align: right;
+    }
+    #container .comment_write .con_r .btn {
+        width: 60px;
+        font-size: 12px;
+    }
+    #container .customer_list>ul>li {
+        margin-top: 5px;
+    }
+    #container .customer_list>ul>li .question {
+        min-height: 60px;
+        padding-left: 85px;
+    }
+    #container .customer_list>ul>li .answer {
+        min-height: 60px;
+        padding-left: 85px;
+    }
+    #container .customer_list>ul>li .tit {
+        width: 85px;
+        padding: 8px 0 0 7px;
+    }
+    #container .customer_list>ul>li .tit .profile {
+        margin-bottom: 5px;
+    }
+    #container .customer_list>ul>li .tit .lv {
+        /*width:21.5px; height:10px;*/
+        vertical-align: top;
+    }
+    #container .customer_list>ul>li .tit .lv img {
+        width: 100%;
+        vertical-align: middle;
+    }
+    #container .customer_list>ul>li .tit .name {
+        font-size: 12px;
+    }
+    #container .customer_list>ul>li .tit .txt {
+        font-size: 12px;
+    }
+    #container .customer_list>ul>li .con {
+        padding: 10px;
+    }
+    #container .customer_list>ul>li .con .date {
+        font-size: 12px;
+        margin-bottom: 7px;
+    }
+    #container .customer_list>ul>li .con .title {
+        font-size: 12px;
+        line-height: 15px;
+    }
+    #container .customer_list>ul>li .con .txt {
+        font-size: 12px;
+        line-height: 15px;
+    }
+    #container .customer_list>ul>li .con .close_btn {
+        top: 10px;
+        right: 10px;
+    }
+    #container .customer_list>ul>li .betting_history_m {
+        padding: 5px;
+    }
+    #container .customer_write select {
+        width: 50%;
+    }
+    #container .customer_write>ul>li .tit {
+        width: 79px;
+        padding: 10px 0 0 7px;
+    }
+    #container .customer_write>ul>li .tit .lv {
+        width: 21.5px;
+        height: 10px;
+        vertical-align: top;
+    }
+    #container .customer_write>ul>li .tit .lv img {
+        vertical-align: middle;
+    }
+    #container .customer_write .editor_area {
+        padding: 10px;
+        margin-top: 5px;
+    }
+    #container .partner_wrap .partner_info ul {
+        flex: 1;
+    }
+    #container .partner_wrap .partner_info ul li {
+        width: 49%;
+        margin: 0.5% !important;
+    }
+    #container .partner_wrap .partner_info dl {
+        min-width: 100px;
+    }
+    #container .partner_wrap .table_type02 {
+        overflow-x: scroll;
+    }
+    #container .partner_wrap .table_type02 table {
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    #container .partner_wrap .summary_area ul li .txt_area dl {
+        width: 50%;
+        text-align: right;
+        justify-content: flex-end;
+        margin-left: 0;
+    }
+    #container .partner_wrap .summary_area ul li .txt_area dl dt {
+        width: 50px;
+    }
+    #container .partner_wrap .summary_area ul li .txt_area dl dd {
+        width: 90px;
+    }
+    #container .btn_wrap ul {
+        font-size: 0;
+        margin-bottom: 10px;
+    }
+    #container .btn_wrap ul li {
+        display: inline-block;
+    }
+    #container .btn_wrap ul li:first-child {
+        margin-right: 8px;
+        padding-right: 10px;
+    }
+    #container .btn_wrap .prev_btn {
+        font-size: 12px;
+        padding-left: 13px;
+    }
+    #container .btn_wrap .next_btn {
+        font-size: 12px;
+        padding-right: 13px;
+    }
+    #container .pagenation {
+        margin-top: 10px;
+    }
+}

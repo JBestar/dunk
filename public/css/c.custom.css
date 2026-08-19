@@ -1,0 +1,330 @@
+@font-face {
+    font-family: icomoon;
+    src: url(/fonts/icomoon.f3d5c8c2.eot) format("embedded-opentype"), url(/fonts/icomoon.c8ecfd2f.woff) format("woff")
+    , url(/fonts/icomoon.43fcd7ac.ttf) format("truetype"), url(/images/icomoon.e91cb8f4.svg) format("svg");
+    font-display: swap
+}
+
+.MainMenu-open-wrapper .MainMenu-LogoSlogan {
+    background-image: url(/images/main/sample2.logo.png);
+}
+
+.category-wrapper a{
+    color:transparent;
+}
+
+/*탑메뉴 투명*/
+.MainMenu-open-wrapper.js-is-game-open, .MainMenu-open-wrapper.js-sticky {
+    opacity:0.85;
+}
+
+
+
+.SeoPage .MainBanner-container .h1, .SeoPage .MainBanner-container h1 {
+    color:white;
+    text-align:left;
+    margin-left:0px;
+}
+
+.games-page .categories, .SeoPage .categories {
+    height:130px;
+}
+.seoCategoryPage-category .text {
+    text-align: left;
+}
+.games-page .category .text, .SeoPage .category .text {
+    font-size:15px;
+}
+.slick-track {
+    padding-left:400px;
+}
+.MainMenu-side {
+    position: absolute;
+    left:10px;
+    width: 150px;
+}
+.MainMenu-Right {
+    width:370px;
+    right:100px;
+}
+.MainMenu-Left {
+    /* right:510px; */
+    margin:0 400px 0 150px;
+    width:calc(100% - 520px);
+    text-align: center;
+    z-index: 1;
+}
+.SeoPage .categories-desktop{display:block}
+
+/* 중간바 색상*/
+.games-page .categories-wrapper, .SeoPage .categories-wrapper {
+    background-image: linear-gradient(90deg,#182a46, #3b527a, #182a46);
+    /* background-image: linear-gradient(90deg,#262626, #363636, #262626); */
+    margin-top:16px;
+
+}
+
+/*배경색상*/
+/* .SeoPage {
+    background-repeat:repeat;
+    background-image: url(/images/main/sample2.main_bg.jpg?v=4);
+} */
+.PaymentIconsContainer {
+    /* background-color:#32476c; */
+    background-image: linear-gradient(90deg,#263346, #3b527a, #1d304d);
+}
+.region--licensing {
+    background-color:#fff;
+}
+.Footer {
+    background-color:black;
+    opacity: 0.6;
+}
+
+#MainMenu {
+    /* background:linear-gradient(180deg,#3b527a ,#182a46); */
+    background:linear-gradient(180deg,#1c2534 ,#1c2534);
+    /* background:linear-gradient(180deg,#262626 ,#161616); */
+    border-right: 2px solid #f0bf39;
+}
+.uk-modal-header, .SLB_caption {
+    background: linear-gradient(to right, #3b527a, #182a46);
+}
+
+
+.MainMenu-play a {
+    background: #3b527a;
+    /* background: #464646; */
+}
+.MainMenu-play a:hover {
+    background: #3b527a;
+    /* background: #363636; */
+    border-color: #262626;
+}
+.btn-primary {
+    /* border-color:black; */
+    border-color:#f0bf39;
+}
+.uk-navbar-nav.after_login span {
+    color:#ffd043;
+    font-size: 18px;
+}
+.uk-navbar-nav.after_login2 span {
+    color:#ffd043;
+    font-size: 14px;
+}
+.uk-navbar-nav.after_money span {
+    color:#ffd043;
+    font-size: 18px;
+}
+.uk-navbar-nav.after_money2 span {
+    color:#ffd043;
+    font-size: 18px;
+}
+.uk-navbar-nav.after_login span:hover,
+.uk-navbar-nav.after_login2 span:hover{
+    color: #f5f5f5;
+    transition: .5s;
+}
+/*상단메뉴버튼 색상 hover*/
+.AccountArea-Actions a:hover, .btn-bar-prev:hover, .btn-secondary:hover, .btn-single-submit-secondary:hover, .form--payment .NewCard-btn:hover, .Game-player .Game-player-buttons .user-actions:hover, .GameItem-launch-fun:hover, .swedish-regulations-limits button[type=submit]:hover {
+    background:linear-gradient(90deg,#463307, #463307);
+}
+
+#playBtn {
+    background:linear-gradient(90deg,#3b527a, #182a46);
+}
+
+
+.SeoPage .MainBanner-container .h1, .SeoPage .MainBanner-container h1 {
+    font-size:40px;
+}
+
+.SeoPage .MainBanner-container .text {
+    font-size:16px;
+    width:361px;
+    color:white;
+    margin-left:0px;
+}
+.cont.casino .icon {
+    padding-left:37px;
+}
+
+.games-page .category i, .SeoPage .category i {
+    padding-left:18px;
+}
+.category-wrapper {
+ margin-right:41px;
+}
+
+#wingRight {
+    position: absolute;
+    right:-16px;
+    bottom:35px;
+    font-size:13px;
+    opacity: 0.85;
+    z-index:99999
+}
+#wingRight .ui.money {
+    color:#43d603;
+}
+
+#wingRight .title {
+    color:lightgray;
+    font-weight:bold;
+    display: block;
+    padding:5px 0 0 8px;
+}
+#wingRight .item {
+    background:black;
+    border-radius: 5px ;
+}
+
+#wingRight .jackpot {
+    width: 540px;
+    margin-left:-29px;
+    height:168px;
+}
+#wingRight .uk-grid>* {
+    padding-left:10px;
+}
+
+#jackpotWrap {
+    background-image: url("/images/main/jackpot.png");
+    background-size:cover;
+    height: 90px;
+    padding-top: 81px;
+    text-align: center;
+}
+
+/* #jackpot {
+    font-size: 2.5rem;
+    letter-spacing: 15px;
+    font-family: fantasy;
+    color: #ffc000;
+
+    vertical-align: middle;
+} */
+.BannerItem-container {
+    z-index:99999;
+}
+
+
+.SeoPage .MainBanner-container .BannerItem-content {
+    margin-left:0px;
+}
+.carousel-dep-wit{
+    width:250px;
+}
+
+.MainBanner-container .cont {
+    /* margin-left:-100px; */
+    text-align:left;
+}
+
+#wingRight .carousel-dep-wit .carousel-inner .item .list{
+    width:100%;
+    margin-top: 0px;
+    animation:1;
+    animation-name:deposit_list;
+    animation-duration:0.3s;
+    animation-timing-function: linear;
+    animation-fill-mode:forwards;
+    opacity:0;
+    cursor:pointer;
+}
+
+#wingRight .carousel-dep-wit .carousel-inner .item .list:nth-child(1){
+    animation-delay: 0.1s;
+}
+#wingRight .carousel-dep-wit .carousel-inner .item .list:nth-child(2){
+    animation-delay: 0.2s;
+}
+#wingRight .carousel-dep-wit .carousel-inner .item .list:nth-child(3){
+    animation-delay: 0.3s;
+}
+#wingRight .carousel-dep-wit .carousel-inner .item .list:nth-child(4){
+    animation-delay: 0.4s;
+}
+#wingRight .carousel-dep-wit .carousel-inner .item .list:nth-child(5){
+    animation-delay: 0.5s;
+}
+#wingRight .carousel-dep-wit .carousel-inner .item .list:nth-child(6){
+    animation-delay: 0.6s;
+}
+@keyframes deposit_list {
+    0% { transform: translateY(-15px); opacity:0;}
+    100%{ transform: translateY(0px); opacity:1;}
+}
+
+@media (max-width: 640px) {
+
+    .slick-track {
+        padding-left:100px;
+    }
+    .games-page .category i, .SeoPage .category i {
+        font-size:30px;
+        line-height: 1.5;
+        padding-left:12px;
+    }
+    .games-page .categories, .SeoPage .categories {
+        height:80px;
+        line-height:80px;
+        margin-top:15px;
+    }
+
+    /*본문내용 밀림*/
+    #wrapper {
+        overflow:hidden;
+    }
+
+    .ui.mini.button {
+        font-size:0.5rem;
+        padding:7px 8px;
+    }
+    .SeoPage .MainBanner-container .h1, .SeoPage .MainBanner-container h1 {
+        font-size:20px;
+    }
+    .MainMenu-open-wrapper .MainMenu-LogoSlogan {
+        top:8px;
+        width:100px;
+        left:90px;
+    }
+
+    .star-logo>img:nth-child(2), .star-logo>img:nth-child(3), .star-logo>img:nth-child(4){
+        display: none;
+    }
+    .cont.casino .icon {
+        padding-left:0px;
+    }
+
+    #wingRight .uk-grid {
+        display:none;
+    }
+    #wingRight {
+        position:relative;
+        right:0px;
+        margin:0 auto;
+        width:290px;
+        bottom:-140px;
+    }
+    #wingRight .jackpot {
+        margin-left:0px;
+        width:100%;
+    }
+    #jackpot {
+        font-size: 1.5rem;
+        letter-spacing: 10px;
+        font-family: fantasy;
+        color: #ffc000;
+    }
+    #jackpotWrap {
+        padding-top:42px;
+        height:94px;
+    }
+
+
+}
+
+
+

@@ -1,0 +1,640 @@
+
+a:focus, a:hover {
+    text-decoration: none;
+}
+
+.SeoPage .MainBanner-container .h1, .SeoPage .MainBanner-container h1 {
+    color:lightgray;
+}
+
+.MainMenu-open-wrapper .MainMenu-LogoSlogan {
+    background-size: contain;
+    width:150px;
+    height:150px;
+}
+
+.uk-modal-page {
+    overflow: inherit;
+}
+
+.uk-card {
+    border-radius: 15px;
+}
+
+.uk-card img {
+    border-radius: 15px;
+}
+
+.games-page .categories, .SeoPage .categories {
+    line-height: 130px;
+    height:130px;
+    font-size:1rem;
+}
+
+.uk-navbar-nav > li > a {
+    text-transform: none;
+}
+
+.seamless {
+    font-size: 1.3em
+}
+
+nav.nav-scroll {
+    position: relative;
+    z-index: 2;
+    height: 2rem;
+    box-sizing: border-box;
+    overflow-y: hidden;
+    padding: 1rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.075);
+    line-height: 1em;
+}
+
+nav.nav-scroll > ul {
+    overflow-x: auto;
+    text-align: center;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 1rem;
+}
+
+nav.nav-scroll > ul > li > a {
+    font-weight: 500;
+}
+
+.news-slide > li > .uk-card {
+    box-shadow: none;
+    border: 1px solid rgba(0, 0, 0, 0.075);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+}
+
+#header.uk-sticky-below {
+    box-shadow: 0 2px 14px 0 rgba(0, 0, 0, 0.07);
+}
+
+#lead {
+    color: teal;
+}
+
+.uk-card.uk-card-default, .uk-inline-clip {
+    border-radius: 20px;
+}
+
+.uk-card-default {
+    box-shadow: none;
+}
+
+.uk-card-default .uk-card-header {
+    border-bottom: none;
+}
+
+
+#playBtn {
+    color: white;
+    border-radius: 5px;
+    background: linear-gradient(to right, mediumpurple, dodgerblue);
+    font-size:1.1rem;
+    height:50px;
+}
+
+#openGameBtn[data-onoff="off"], #playBtn[data-onoff="off"] {
+    background: gray;
+}
+
+#nav {
+    background-color: steelblue;
+    padding: 10px;
+}
+
+
+#banner.uk-section-small {
+    padding: 0px;
+}
+
+#gameModal > .modal-content {
+    background-color: white;
+    background-image: none;
+}
+
+#gameModal > .modal-content > .modal-body {
+    margin-top: -13px;
+}
+
+.uk-card-media-top {
+    text-align: center;
+}
+
+.uk-card.uk-card-default.uk-card-small {
+    background: transparent;
+}
+
+
+.uk-container {
+    max-width: 90%;
+}
+
+.game_title {
+    font-weight: bold;
+    font-size:1.3rem;
+    text-shadow: -1px -1px 2px #000,
+    1px -1px 2px #000,
+    -1px 1px 2px #000,
+    1px 1px 2px #000; 
+    /* text-shadow: 2px 2px 1px black; */
+    /* -webkit-text-stroke: 0.01rem black; */
+
+}
+
+.game_title.gray {
+    color:gray;
+}
+
+.game_title.blue {
+    /* color:white; */
+    color:#edff6e;
+}
+
+h2, lead {
+    color: #2588ce;
+}
+
+.uk-section h2, .uk-section lead{
+    /* color:#edff6e; */
+    /* text-shadow: -1px -1px 1px #000,
+    1px -1px 1px #000,
+    -1px 1px 1px #000,
+    1px 1px 1px #000; */
+
+    background: linear-gradient(#ffab00 0%, #f2ff00  100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-stroke: 0.1rem white;
+    font-size: 2.8rem;
+    line-height: 0.8;
+}
+
+.game-category-image {
+    background: transparent;
+}
+
+.uk-section {
+    padding-top: 30px;
+    padding-bottom: 40px;
+
+}
+
+#beforeLogin span {
+    padding: 6px 24px;
+    font-weight: 800;
+    font-size: 14px;
+    border: 4px solid #337ab7;
+    border-radius: 30px;
+}
+
+#beforeLogin #login {
+    background: #337ab7;
+    color: white;
+}
+
+#beforeLogin #signup {
+    background: white;
+    color: #337ab7;
+}
+
+#beforeLogin #login:hover {
+    opacity: 0.8;
+}
+
+.modal-header {
+    background: #337ab7;
+}
+
+.modal-content button {
+    background: #337ab7;
+    color: white;
+}
+
+.modal-content .modal-title {
+    color: white;
+}
+
+.text-cont .sub {
+    font-size: 24px;
+    padding-top: 0px;
+}
+
+#navbar {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.uk-position-cover {
+    border-radius: 20px;
+}
+
+
+.uk-navbar-nav > li > a {
+    min-height: 30px;
+}
+
+/* modal header semantic -> uikir first*/
+h1:last-child, h2:last-child, h3:last-child, h4:last-child, h5:last-child {
+    margin-top: 0px;
+}
+
+.uk-modal-header {
+    background: steelblue;
+}
+
+.uk-modal-title {
+    color: white;
+}
+
+.uk-close {
+    color: white;
+}
+
+.uk-navbar-nav.after_login span {
+    font-weight: bold;
+    color: steelblue;
+}
+
+.after_money {
+    position: absolute;
+    left: 10px;
+    top: 8px;
+}
+.after_money2 {
+    position: absolute;
+    left: 10px;
+    top: 35px;
+    margin-top:0px;
+}
+
+.after_login {
+    position: absolute;
+    right: 10px;
+    top: 8px;
+}
+.after_login2 {
+    position: absolute;
+    right: 10px;
+    top: 35px;
+    margin-top:0px;
+}
+
+.btn-tiny>span
+{
+    padding:12px 15px;
+}
+.uk-modal {
+    padding-top: 100px;
+}
+
+
+#loginModal input, #agentCheckModal input, #registModal input, #registModal select {
+    width: 90%;
+}
+
+.SeoPage-content {
+    color: lightgray;
+}
+
+.PaymentIconsContainer {
+    cursor: default;
+}
+
+.MainMenu-ActionsContainer button {
+    margin-top: 15px;
+}
+
+.MainMenu-ActionsContainer button.btn-games{
+    margin-top:0px;
+}
+
+.MainMenu-Left {
+    position: absolute;
+    /* width:300px; */
+    /* margin:0 50%; */
+    /* right:170px; */
+}
+
+.MainMenu-Right {
+    position: absolute;
+    /* width:450px;
+    margin:0 55%; */
+}
+
+.MainMenu-Left i, .MainMenu-Right i {
+    padding-left:15px;
+    margin-bottom:6px;
+}
+.btn-secondary {
+    background-color:transparent;
+}
+
+
+#loginModal, #agentCheckModal, #registModal {
+    z-index:1030;
+}
+
+/* 레이어 헤더색상 변경 steelblue => */
+.uk-modal-header, .SLB_caption {
+    background: linear-gradient(to right, mediumpurple, dodgerblue);
+}
+
+/* 사이드바 로고 숨김*/
+.MainMenu-home {
+    display:none;
+}
+
+.scroll_area {
+    color: lightgray;
+    font-size: 1rem;
+    height: 40px;
+    line-height: 40px;
+    background-color: #182a46;
+}
+
+.star-container {
+    position: absolute;
+    top: 0;
+    z-index: 100;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+@keyframes star1 {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(2);
+    }
+}
+.star-container>img:first-child {
+    position: absolute;
+    left: 105px;
+    top: 90px;
+    transform: translate(-60%, -25%);
+    width: 40px;
+    animation: star1 1s linear infinite alternate;
+}
+.star-container>img:nth-child(2) {
+    position: absolute;
+    left: 410px;
+    top: 73px;
+    transform: translate(-60%, -25%);
+    width: 30px;
+    animation: star1 1.25s linear infinite alternate;
+}
+.star-container>img:nth-child(3) {
+    position: absolute;
+    right: 408px;
+    top: 57px;
+    transform: translate(-60%, -25%);
+    width: 40px;
+    animation: star1 1.5s linear infinite alternate;
+}
+.star-container>img:nth-child(4) {
+    position: absolute;
+    right: 131px;
+    top: 104px;
+    transform: translate(-60%, -25%);
+    width: 80px;
+    animation: star1 1s linear infinite alternate;
+}
+
+.star-logo {
+    position: absolute;
+    top: 0;
+    z-index: 100;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.star-logo>img:first-child {
+    position: absolute;
+    left: 38px;
+    top: 2px;
+    transform: translate(-60%, -25%);
+    width: 30px;
+    animation: star1 1.5s linear infinite alternate;
+}
+.star-logo>img:nth-child(2) {
+    position: absolute;
+    left: 30px;
+    top: 50px;
+    transform: translate(-60%, -25%);
+    width: 15px;
+    animation: star1 1.25s linear infinite alternate;
+}
+.star-logo>img:nth-child(3) {
+    position: absolute;
+    left: 90px;
+    top: 65px;
+    transform: translate(-60%, -25%);
+    width: 25px;
+    animation: star1 1.5s linear infinite alternate;
+}
+.star-logo>img:nth-child(4) {
+    position: absolute;
+    left: 120px;
+    top: 10px;
+    transform: translate(-60%, -25%);
+    width: 20px;
+    animation: star1 1s linear infinite alternate;
+}
+
+.star-title {
+    position: relative;
+    top: 0;
+    z-index: 100;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.star-title>img:first-child {
+    position: relative;
+    left: -30px;
+    top: -72px;
+    transform: translate(-60%, -25%);
+    width: 30px;
+    animation: star1 0.85s linear infinite alternate;
+}
+.star-title>img:nth-child(2) {
+    position: relative;
+    left: 10px;
+    top: -20px;
+    transform: translate(-60%, -25%);
+    width: 25px;
+    animation: star1 1.15s linear infinite alternate;
+}
+.star-title>img:nth-child(3) {
+    position: relative;
+    left: 85px;
+    top: -65px;
+    transform: translate(-60%, -25%);
+    width: 25px;
+    animation: star1 0.65s linear infinite alternate;
+}
+.star-title>img:nth-child(4) {
+    position: relative;
+    left: -80px;
+    top: -60px;
+    transform: translate(-60%, -25%);
+    width: 35px;
+    animation: star1 1s linear infinite alternate;
+}
+.star-title>img:nth-child(5) {
+    position: relative;
+    left: -20px;
+    top: -10px;
+    transform: translate(-60%, -25%);
+    width: 35px;
+    animation: star1 0.75s linear infinite alternate;
+}
+.ui.grid > .row {
+    padding-top: 0px;
+}
+
+.ui.grid > .column:not(.row),
+.ui.grid > .row > .column {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.column.first {
+    margin-right: -5px;
+}
+
+@media (max-width: 1700px) {
+    #_btn_app{
+        display: none;
+    }
+}
+
+@media (max-width: 1640px) {
+    #_btn_info {
+        display: none;
+    }
+}
+
+@media (max-width: 1480px) {
+    #_btn_notice {
+        display: none;
+    }
+}
+
+@media (max-width: 1380px) {
+     #_btn_qna  {
+        display: none;
+    }
+}
+
+@media (max-width: 1250px) {
+    #_btn_charge, #_btn_discharge, #_btn_memo, #_btn_partener {
+       display: none;
+   }
+}
+
+
+@media (max-width: 1280px) {
+    .after_login, .after_login2,
+    .after_money, .after_money2 {
+        display: none;
+    }
+}
+
+/*<!--MOBILE-->*/
+@media (max-width: 900px) {
+    .after_login, .after_login2 {
+        display: none;
+    }
+    .BannerSlider-bg {
+        height:450px;
+        min-height:450px;
+    }
+    .star-container>img:first-child,
+    .star-container>img:nth-child(4){
+        display:none;
+    }
+
+    .uk-card {
+        border-radius: 5px;
+    }
+
+    .uk-card img {
+        border-radius: 5px;
+    }
+    .uk-card.uk-card-default, .uk-inline-clip {
+        border-radius: 5px;
+    }
+    .uk-container {
+        width:100%;
+    }
+
+    .game_title {
+        font-size:0.7rem;
+    }
+    .uk-card-small .uk-card-header {
+        padding:0px;
+    }
+
+    /*모바일 플레이버튼 크기/텍스트 크기 조정 */
+    #playBtn {
+        font-size:10px;
+        width:80px;
+        height:30px;
+        padding:0px;
+        line-height:30px;
+    }
+    
+    /* .MainMenu-open-wrapper .MainMenu-LogoSlogan-mobile {
+        left: 60px;
+    } */
+}
+
+.ui-dialog {
+    z-index: 99999;
+}
+
+.ui-widget-content button {
+    background: #141313;
+}
+.ui-widget-content button:hover {
+    background: black;
+}
+
+.ui-dialog-buttonset button {
+    padding: 2px 5px;
+}
+
+.ui-dialog-buttonset button:hover {
+    color: white;
+}
+
+.ui-dialog-titlebar-close {
+    background: black;
+}
+
+.ui-widget-content,
+.ui-widget-content:hover {
+    color: white;
+}
+
+#request_charge,
+#request_exchange,
+#request_charge_coin {
+    z-index: 1011;
+}
+
+.ui-dialog .ui-dialog-content {
+    padding: 0.5em 0em;
+}

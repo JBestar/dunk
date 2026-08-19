@@ -1,0 +1,91 @@
+html, body {
+    background: #1B2430;/*141313*/
+}
+
+.ui.form .field > label {
+    color: white;
+}
+
+/*모달 헤더/푸터 */
+.uk-modal-footer, .uk-modal-header {
+    background: #1B2430;
+}
+
+/*모달 본문*/
+.uk-modal-dialog {
+    background: #041C32;
+}
+
+/*uikit 모달 텍스트색상*/
+.uk-modal-body {
+    /* color: black; */
+    color: white;
+}
+
+#dashboard, #SLB_content {
+    background: #1B2430;
+}
+
+.ui.table, .ui.tab.segment, .ui.table thead th, .ui.table th, .ui.table td {
+    background: #1B2430;
+}
+
+/* 마이페이지 > 테이블 내용 */
+.ui.table thead th, .ui.table th, .ui.table td {
+    color: white;
+    border: 1px solid #064663;
+}
+
+.ui.table thead tr > th:first-child, /*.ui.table tr:first-child td,
+.ui.celled.table tr th:first-child,*/ .ui.celled.table tr td:first-child {
+    border: 1px solid #064663;
+}
+
+/* 마이페이지 > 텍스트*/
+.ui.selection.list .list > .item, .ui.selection.list > .item {
+    color: white;
+}
+
+/* 마이페이지 > 탭메뉴*/
+.ui.tabular.menu .item {
+    background: #334155;
+    border: 1px solid white;
+    color: white;
+    border-radius: 0.28571429rem 0.28571429rem 0em 0em;
+    margin-right: 3px;
+}
+
+.ui.top.attached.menu > .item:first-child {
+    border-radius: 0.28571429rem 0.28571429rem 0em 0em;
+}
+
+.ui.tabular.menu .item.active, .ui.tabular.menu .item:hover {
+    background: steelblue;
+    color: white;
+    font-weight: bold;
+}
+
+/* 컨펌창 Cancel */
+.uk-button-default {
+    color: white;
+}
+
+/*게임창 헤더*/
+.SLB_caption {
+    background: linear-gradient(to right, #0f141b, #0f141b);
+    height: 50px;
+    line-height: 50px;
+    font-size: 26px;
+    color:#cccccc;
+    text-align: center;
+    border:2px solid #ffb08e;
+    border-bottom: 0px solid #ffb08e;
+}
+
+.SLB_close {
+    top: 10px;
+    right: 10px;
+    width: 25px;
+    height: 25px;
+    background-size: 25px;
+}

@@ -1,0 +1,684 @@
+@charset "utf-8";
+
+/* FED */
+
+
+/*==================
+    유져
+==================*/
+
+#wrap.users_wrap {
+    background: url(/assets/img/login/login_bg.jpg) no-repeat center center;
+    background-size: cover;
+    padding-bottom: 0;
+    overflow: hidden;
+}
+
+.users_wrap .video-holder {
+    position: relative;
+    min-height: 100%;
+    min-width: 100%;
+    top: 0;
+    bottom: 100%;
+    right: 0;
+    z-index: -100;
+    background-size: cover;
+    background-position: center center;
+}
+
+.users_wrap video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background-size: cover;
+}
+
+.users_wrap .login_wrap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 450px;
+    display: flex;
+    background: rgb(20, 21, 25, 0.9);
+    border-radius: 20px;
+    margin-top: -275px;
+    margin-left: -225px;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.users_wrap .login_wrap input {
+    width: 100%;
+    height: 43px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    border: 0;
+    border-bottom: 1px solid #38383a;
+    background: transparent;
+    padding: 0 20px;
+}
+
+.users_wrap .login_wrap .btn_wrap {
+    justify-content: space-between;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+.users_wrap .login_wrap .overlap_btn {
+    float: right;
+    width: 90px;
+    height: 42px;
+    line-height: 42px;
+    font-size: 14px;
+    background: #38383a;
+    color: #fff;
+    font-weight: 600;
+    border: 1px solid #31353f;
+}
+
+.users_wrap .login_wrap .prev_btn {
+    float: left;
+    width: 175px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+    color: #fff;
+    background: #38383a;
+    font-weight: 600;
+}
+
+.users_wrap .login_wrap .next_btn {
+    float: right;
+    width: 175px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+    color: #fff;
+    background: #da2b3c;
+    font-weight: 600;
+}
+
+.users_wrap .login_wrap .submit_btn {
+    display: inline-block;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+    background: #da2b3c;
+    border-radius: 30px;
+    margin-top: 20px;
+}
+
+.users_wrap .login_wrap .submit_btn:hover {
+    opacity: 0.9;
+}
+
+.users_wrap .login_wrap .login .join_txt {
+    font-size: 14px;
+    color: #808080;
+    line-height: 18px;
+    margin-top: 48px;
+}
+
+.users_wrap .login_wrap .login .join_txt .join_btn {
+    font-size: 14px;
+    color: #ffce2a;
+}
+
+.users_wrap .login_wrap .join_close_btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 19px;
+    height: 19px;
+    background: url(/images/login/join_close_btn.png) no-repeat left top;
+}
+
+.users_wrap .login_wrap .login_area {
+    width: 100%;
+    text-align: center;
+    padding: 0 20px;
+    margin: auto;
+}
+
+.users_wrap .login_wrap .login_area input {
+    font-size: 14px;
+    color: #fff;
+    background: none;
+    padding: 0 17px 0 67px;
+}
+
+.users_wrap .login_wrap .login_area .txt {
+    font-size: 16px;
+    height: 41px;
+    line-height: 41px;
+    background: rgba(255, 255, 255, 0.1);
+    margin-top: 29px;
+    border-radius: 20px;
+}
+
+.users_wrap .login_wrap .login_area .login_con {
+    position: relative;
+    padding-top: 45px;
+}
+
+.users_wrap .login_wrap .login_area .login_con .id_area {
+    position: relative;
+}
+
+.users_wrap .login_wrap .login_area .login_con .id_area .id_ico {
+    position: absolute;
+    top: 11px;
+    left: 17px;
+    width: 20px;
+    height: 20px;
+    background: url(/assets/img/login/login_id_ico.png) no-repeat left top;
+}
+
+.users_wrap .login_wrap .login_area .login_con .id_area input {
+    -webkit-ime-mode: disabled;
+    -moz-ime-mode: disabled;
+    -ms-ime-mode: disabled;
+    ime-mode: disabled;
+}
+
+.users_wrap .login_wrap .login_area .login_con .password_area {
+    position: relative;
+    margin-top: 12px;
+}
+
+.users_wrap .login_wrap .login_area .login_con .password_area .password_ico {
+    position: absolute;
+    top: 11px;
+    left: 17px;
+    width: 20px;
+    height: 20px;
+    background: url(/assets/img/login/login_password_ico.png) no-repeat left top;
+}
+
+.users_wrap .login_wrap .login_area .login_con .login_btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 105px;
+    height: 95px;
+    line-height: 95px;
+    font-size: 20px;
+    color: #fff;
+    border-radius: 10px;
+    background: #354b9c;
+}
+
+.users_wrap .login_wrap .login_area .join_txt {
+    font-size: 14px;
+    color: #838385;
+    line-height: 0;
+    margin-top: 30px;
+}
+
+.users_wrap .login_wrap .login_area .join_txt .join_btn {
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.users_wrap .login_wrap .join_area {
+    width: 100%;
+    padding: 0 40px;
+    margin: auto;
+}
+
+.users_wrap .login_wrap .join_area .tit {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.users_wrap .login_wrap .join_area .tit .desc {
+    display: inline-block;
+    font-size: 12px;
+    /* color: #838385; */
+    color: #c3c3c5;
+    margin-left: 15px;
+}
+
+.users_wrap .login_wrap .join_area button {
+    border-radius: 5px;
+}
+
+.users_wrap .login_wrap .step01 {
+    display: none;
+    text-align: center;
+}
+
+.users_wrap .login_wrap .step01 .txt {
+    font-size: 14px;
+    padding: 10px 0 10px 0;
+}
+
+.users_wrap .login_wrap .step02 {
+    display: none;
+}
+
+.users_wrap .login_wrap .step02 ul li {
+    position: relative;
+    padding-bottom: 10px;
+    overflow: hidden;
+}
+
+.users_wrap .login_wrap .step02 ul li:last-child {
+    padding-bottom: 0;
+}
+
+.users_wrap .login_wrap .step02 .id_input,
+.users_wrap .login_wrap .step02 .name_input {
+    float: left;
+    width: 280px;
+}
+
+.users_wrap .login_wrap .step03 {
+    display: none;
+}
+
+.users_wrap .login_wrap .step03 ul li {
+    position: relative;
+    padding-bottom: 10px;
+    overflow: hidden;
+}
+
+.users_wrap .login_wrap .step03 ul li:last-child {
+    padding-bottom: 0;
+}
+
+.users_wrap .login_wrap .step04 {
+    display: none;
+    text-align: center;
+}
+
+.users_wrap .login_wrap .step04 .txt {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.users_wrap .login_wrap .step04 .desc {
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 28px;
+}
+
+.users_wrap .login_wrap .step04 .desc span {
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffcc00;
+    vertical-align: top;
+}
+
+.users_wrap .login_wrap .step04 .next_btn {
+    width: 100%;
+    height: 60px;
+    color: #fff;
+    background: #da2b3c;
+    margin-top: 45px;
+}
+
+.live_chat_close {
+    position: fixed;
+    bottom: 0;
+    right: 72px;
+    width: 250px;
+    z-index: 1;
+}
+
+.live_chat_close .live_chat_top {
+    line-height: 48px;
+    background: #ffcc00;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 10px 10px 0 0;
+    padding: 0 20px;
+}
+
+.live_chat_close .live_chat_top .tit {
+    display: inline-block;
+    color: #161616;
+    background: url(/assets/img/login/live_chat_ico.png) no-repeat left center;
+    padding-left: 30px;
+}
+
+.live_chat_close .live_chat_top .live_chat_open_btn {
+    float: right;
+    width: 22px;
+    height: 18px;
+    background: url(/assets/img/login/live_chat_open.png) no-repeat left top;
+    margin-top: 16px;
+}
+
+.live_chat_open {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 72px;
+    width: 360px;
+    z-index: 1;
+}
+
+.live_chat_open .live_chat_top {
+    line-height: 48px;
+    background: #ffcc00;
+    color: #0a0b0d;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 10px 10px 0 0;
+    padding: 0 20px;
+}
+
+.live_chat_open .live_chat_top .tit {
+    display: inline-block;
+    color: #161616;
+    background: url(/assets/img/login/live_chat_ico.png) no-repeat left center;
+    padding-left: 30px;
+}
+
+.live_chat_open .live_chat_top .live_chat_close_btn {
+    float: right;
+    width: 22px;
+    height: 18px;
+    background: url(/assets/img/login/live_chat_close.png) no-repeat left top;
+    margin-top: 16px;
+}
+
+.live_chat_open .live_chat_bot {
+    text-align: right;
+    background: #fff url(/assets/img/login/live_chat_arr.png) no-repeat 72px top;
+    padding-right: 29px;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.live_chat_open .live_chat_bot .live_kakao {
+    text-align: right;
+    padding: 18px 0 17px;
+}
+
+.live_chat_open .live_chat_bot .live_kakao .kakao {
+    display: inline-block;
+    height: 25px;
+    line-height: 25px;
+    font-size: 18px;
+    color: #0a0b0d;
+    background: url(/assets/img/login/kakao_ico.png) no-repeat left center;
+    padding-left: 37px;
+}
+
+.live_chat_open .live_chat_bot ul li {
+    display: flex;
+    text-align: right;
+    margin-top: 14px;
+}
+
+.live_chat_open .live_chat_bot ul li:first-child {
+    margin-top: 0;
+}
+
+.live_chat_open .live_chat_bot .tit {
+    width: 89px;
+    line-height: 45px;
+    font-size: 14px;
+    color: #0a0b0d;
+    padding-right: 10px;
+}
+
+.live_chat_open .live_chat_bot input {
+    width: 240px;
+    height: 45px;
+    background: #fff;
+    font-size: 14px;
+    border: 1px solid #989a9f;
+    padding: 0 10px;
+    border-radius: 10px;
+}
+
+.live_chat_open .live_chat_bot textarea {
+    width: 240px;
+    height: 106px;
+    font-size: 14px;
+    color: #0a0b0d;
+    border: 1px solid #989a9f;
+    background: #fff;
+    padding: 10px;
+    resize: none;
+    border-radius: 10px;
+}
+
+.live_chat_open .live_chat_bot .live_chat_submit {
+    width: 240px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    background: #e24154;
+    border-radius: 10px;
+    margin: 14px 0 20px;
+}
+
+
+/*==================
+	media query
+==================*/
+
+
+/* PC 
+
+@media screen and (min-width:1280px) and (max-width:1380px) {}
+
+@media screen and (min-width:1280px) {}
+*/
+
+
+/* TABLET  + Mobile */
+
+@media screen and (max-width:679px) {
+    #wrap.users_wrap {
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .users_wrap .login_wrap {
+        /* position: relative;
+        top: inherit;
+        left: inherit;
+        bottom: inherit;
+        width: 100%;
+        margin: 0 auto; */
+        max-width: 350px;
+    }
+    .users_wrap .login_wrap input {
+        height: 35px;
+        line-height: 35px;
+        padding: 0 10px;
+    }
+    .users_wrap .login_wrap .login_logo {
+        width: 240px;
+        margin: 10px auto;
+    }
+    .users_wrap .login_wrap .login_logo img {
+        width: 100%;
+    }
+    .users_wrap .login_wrap .overlap_btn {
+        width: 25%;
+        height: 35px;
+        line-height: 35px;
+    }
+    .users_wrap .login_wrap .prev_btn {
+        width: 49%;
+        height: 40px;
+        line-height: 40px;
+    }
+    .users_wrap .login_wrap .next_btn {
+        width: 49%;
+        height: 40px;
+        line-height: 40px;
+    }
+    .users_wrap .login_wrap .submit_btn {
+        width: 100%;
+        height: 40px;
+        line-height: 40px;
+    }
+    .users_wrap .login_wrap .login_area {
+        width: 100%;
+        height: 100%;
+        padding: 0 30px 0;
+    }
+    .users_wrap .login_wrap .login_area .txt {
+        font-size: 14px;
+    }
+    .users_wrap .login_wrap .login_area .login_con {
+        padding: 0;
+    }
+    .users_wrap .login_wrap .login_area .login_con .id_area {
+        margin: 20px 0 0;
+    }
+    .users_wrap .login_wrap .login_area .login_con .id_area .id_ico {
+        top: 6px;
+        left: 12px;
+    }
+    .users_wrap .login_wrap .login_area .login_con .password_area {
+        margin: 5px 0 0;
+    }
+    .users_wrap .login_wrap .login_area .login_con .password_area .password_ico {
+        top: 6px;
+        left: 12px;
+    }
+    .users_wrap .login_wrap .login_area .desc {
+        margin-top: 30px;
+    }
+    .users_wrap .login_wrap .login_area .join_btn {
+        margin-top: 5px;
+    }
+    .users_wrap .login_wrap .join_area {
+        padding: 0 30px;
+    }
+    .users_wrap .login_wrap .join_area .tit .desc {
+        margin-left: 10px;
+    }
+    .users_wrap .login_wrap .step01 .txt {
+        padding: 0 0 20px;
+    }
+    .users_wrap .login_wrap .step02 .id_input,
+    .users_wrap .login_wrap .step02 .name_input {
+        width: 73%;
+    }
+    .users_wrap .login_wrap .step02 .desc {
+        bottom: 0;
+    }
+    .users_wrap .login_wrap .step03 .desc {
+        bottom: 0;
+    }
+    .users_wrap .login_wrap .step04 .txt {
+        padding-top: 0;
+    }
+    .users_wrap .login_wrap .step04 .desc {
+        font-size: 15px;
+    }
+    .users_wrap .login_wrap .step04 .next_btn {
+        float: none;
+        margin-top: 50px;
+    }
+    .live_chat_close {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+    }
+    .live_chat_close .live_chat_top {
+        line-height: 40px;
+        font-size: 13px;
+        margin: 0 10px;
+    }
+    .live_chat_close .live_chat_top .live_chat_open_btn {
+        width: 16px;
+        height: 14px;
+        background: url(/assets/img/login/live_chat_m_open.png) no-repeat left top;
+        background-size: cover;
+        margin-top: 14px;
+    }
+    .live_chat_open {
+        display: none;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+    }
+    .live_chat_open .live_chat_top {
+        line-height: 40px;
+        font-size: 13px;
+        margin: 0 10px;
+    }
+    .live_chat_open .live_chat_top .live_chat_close_btn {
+        width: 16px;
+        height: 14px;
+        background: url(/assets/img/login/live_chat_m_close.png) no-repeat left top;
+        background-size: cover;
+        margin-top: 14px;
+    }
+    .live_chat_open .live_chat_bot {
+        text-align: right;
+        background: #fff url(/assets/img/login/live_chat_m_arr.png) no-repeat 33px top;
+        background-size: 14.5px 12.5px;
+        padding-right: 20px;
+        margin: 0 10px;
+    }
+    .live_chat_open .live_chat_bot .live_kakao {
+        text-align: right;
+        padding: 12.5px 0 15.5px;
+    }
+    .live_chat_open .live_chat_bot .live_kakao .kakao {
+        display: inline-block;
+        height: 17px;
+        line-height: 17px;
+        font-size: 13px;
+        background: url(/assets/img/login/kakao_m_ico.png) no-repeat left center;
+        background-size: 18px 17px;
+        padding-left: 23px;
+    }
+    .live_chat_open .live_chat_bot ul li {
+        margin-top: 12px;
+    }
+    .live_chat_open .live_chat_bot .tit {
+        width: 29%;
+        line-height: 35px;
+        font-size: 13px;
+        color: #0a0b0d;
+        padding-right: 10px;
+    }
+    .live_chat_open .live_chat_bot input {
+        width: 71%;
+        height: 35px;
+        font-size: 13px;
+    }
+    .live_chat_open .live_chat_bot textarea {
+        width: 71%;
+        height: 103px;
+        font-size: 13px;
+    }
+    .live_chat_open .live_chat_bot .live_chat_submit {
+        width: 71%;
+        height: 35px;
+        line-height: 35px;
+        font-size: 13px;
+        margin: 12px 0 20px;
+    }
+}

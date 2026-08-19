@@ -1,0 +1,2912 @@
+@charset "utf-8";
+
+/* FED */
+
+
+/*============================
+	게임 탭
+============================*/
+
+.game_list img {
+    background: none !important;
+}
+
+.game_list .npl {
+    content: url(/assets/img/game_list/game_list_npl.png);
+}
+
+.game_list .nll {
+    content: url(/assets/img/game_list/game_list_nll.png);
+}
+
+.game_list .powerbomb {
+    content: url(/assets/img/game_list/game_list_powerbomb.png);
+}
+
+.game_list .nkl {
+    content: url(/assets/img/game_list/game_list_nkl.png);
+}
+
+.game_list .nkk {
+    content: url(/assets/img/game_list/game_list_nkk.png);
+}
+
+.game_list .nsl {
+    content: url(/assets/img/game_list/game_list_nsl.png);
+}
+
+.game_list .nil {
+    content: url(/assets/img/game_list/game_list_nil.png);
+}
+
+.game_list .ndl {
+    content: url(/assets/img/game_list/game_list_ndl.png);
+}
+
+.game_list .mol {
+    content: url(/assets/img/game_list/game_list_mol.png);
+}
+
+.game_list .mbl {
+    content: url(/assets/img/game_list/game_list_mbl.png);
+}
+
+.game_list .tol {
+    content: url(/assets/img/game_list/game_list_tol.png);
+}
+
+.game_list .tbl {
+    content: url(/assets/img/game_list/game_list_tbl.png);
+}
+
+.game_list .sdl {
+    content: url(/assets/img/game_list/game_list_sdl.png);
+}
+
+.game_list .sbl {
+    content: url(/assets/img/game_list/game_list_sbl.png);
+}
+
+.game_list .bdl {
+    content: url(/assets/img/game_list/game_list_bdl.png);
+}
+
+.game_list .bsl {
+    content: url(/assets/img/game_list/game_list_bsl.png);
+}
+
+.game_list .bhl {
+    content: url(/assets/img/game_list/game_list_bhl.png);
+}
+
+.game_list .mpl {
+    content: url(/assets/img/game_list/game_list_npl.png);
+}
+
+.game_list .msl {
+    content: url(/assets/img/game_list/game_list_nsl.png);
+}
+
+.game_list .mdc {
+    content: url(/assets/img/game_list/game_list_sdl.png);
+}
+
+.game_list .mrc {
+    content: url(/assets/img/game_list/game_list_mrc.png);
+}
+
+.game_list .hsl {
+    content: url(/assets/img/game_list/game_list_nsl.png);
+}
+
+.game_list .hud {
+    content: url(/assets/img/game_list/game_list_hud.png);
+}
+
+.game_list .hpl {
+    content: url(/assets/img/game_list/game_list_npl.png);
+}
+
+
+/*============================
+	미니게임
+============================*/
+
+.game_area_bg {
+    height: 100%;
+    pointer-events: none;
+    cursor: default;
+    background-size: cover !important;
+}
+
+#container .content_wrap.evo_game_wrap .con_left {
+    width: 100%;
+    padding-right: 15px;
+}
+
+.nsl_bg {
+    background: url(/images/mini/nsl_bg.png) no-repeat center top;
+}
+
+.nil_bg {
+    background: url(/assets/img/game_bg/nil_bg.png) no-repeat center top;
+}
+
+.ndl_bg {
+    background: url(/assets/img/game_bg/ndl_bg.png) no-repeat center top;
+}
+
+.mol_bg {
+    background: url(/assets/img/game_bg/mol_bg.png) repeat center top;
+    pointer-events: inherit;
+}
+
+.mbl_bg {
+    background: url(/assets/img/game_bg/mbl_bg.png) repeat center top;
+    pointer-events: inherit;
+}
+
+
+/* .tol_bg {background:url(/assets/img/game_bg/tol_bg.png) repeat center top; pointer-events:inherit; }
+.tbl_bg {background:url(/assets/img/game_bg/tbl_bg.png) repeat center top; pointer-events:inherit; } */
+
+.tbl_bg {
+    background: url(/assets/img/game_bg/tbl_bg.png) repeat center top;
+    pointer-events: inherit;
+}
+
+.tol_bg {
+    background: url(/assets/img/game_bg/tol_bg.png) repeat center top;
+    pointer-events: inherit;
+}
+
+.ttl_bg {
+    background: url(/assets/img/game_bg/tol_bg.png) repeat center top;
+    pointer-events: inherit;
+}
+
+.bdl_bg {
+    background: url(/assets/img/game_bg/bdl_bg.png) no-repeat center top;
+    pointer-events: inherit;
+}
+
+.bsl_bg {
+    background: url(/assets/img/game_bg/bsl_bg.png) no-repeat center top;
+    pointer-events: inherit;
+}
+
+.npl_bg {
+    background: url(/images/mini/npl_bg.png) no-repeat center top;
+}
+
+.nbl_bg {
+    background: url(/images/mini/npl_bg.png) repeat-y center top;
+}
+
+.nll_bg {
+    background: url(/assets/img/game_bg/nll_bg.png) no-repeat center top;
+}
+
+.nkl_bg {
+    background: url(/assets/img/game_bg/nkl_bg.png) no-repeat center top;
+}
+
+.sbl_bg {
+    background: url(/assets/img/game_bg/sbl_bg.png) no-repeat center top;
+}
+
+.ssl_bg {
+    background: url(/assets/img/game_bg/ssl_bg.png) no-repeat center top;
+}
+
+.sdl_bg {
+    background: url(/assets/img/game_bg/sdl_bg.png) no-repeat center top;
+}
+
+.stl_bg {
+    background: url(/assets/img/game_bg/stl_bg.png) no-repeat center top;
+}
+
+.npb_bg {
+    background: url(/assets/img/game_bg/npb_bg.png) no-repeat center top;
+}
+
+.evo_bg {
+    background: url(/assets/img/game_bg/npb_bg.png) no-repeat center top;
+    pointer-events: inherit;
+    cursor: inherit;
+}
+
+.mine_bg {
+    pointer-events: inherit;
+    cursor: inherit;
+}
+
+.dpl_bg {
+    background: url(/assets/img/game_bg/dpl_bg.png) no-repeat center top;
+}
+
+.bhl_bg {
+    background: url(/assets/img/game_bg/bhl_bg.png) no-repeat center top;
+}
+
+.hsl_bg {
+    background: url(/assets/img/game_bg/hsl_bg.png) no-repeat center top;
+}
+
+.hud_bg {
+    background: url(/assets/img/game_bg/hud_bg.png) no-repeat center top;
+}
+
+.hpl_bg {
+    background: url(/assets/img/game_bg/hpl_bg.png) no-repeat center top;
+}
+
+.epl5_bg {
+    background: url(/assets/img/game_bg/epl5_bg.png) no-repeat center top;
+}
+
+.game_area {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 550px;
+    max-height: 550px;
+    overflow: hidden;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.game_wrap {
+    padding: 0 365px 0 5px;
+}
+
+.game_wrap.wide_game {
+    padding: 0 5px 0 5px;
+}
+
+.game_wrap .game_area_bg {
+    height: auto;
+    pointer-events: inherit;
+}
+
+.game_area #game {
+    width: 1600px;
+    height: 550px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    overflow: hidden;
+}
+
+.game_area #game_evo {
+    width: 100%;
+    height: 790px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    overflow: hidden;
+}
+
+.game_area_m {
+    display: none;
+}
+
+.game_pip {
+    display: none;
+    position: fixed !important;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    height: 210px;
+    border: 2px solid #000;
+    z-index: 9995;
+}
+
+.game_pip.close {
+    display: none !important;
+}
+
+.game_pip.game_pip_pwl {
+    width: 285px;
+    height: 215px;
+}
+
+.game_pip .game_area_bg {
+    border-radius: 0 !important;
+}
+
+.game_pip .game_area {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 100%;
+    padding: 0;
+    overflow: hidden;
+    margin: 0;
+}
+
+.game_pip #game {
+    position: inherit;
+    width: 875px;
+    height: 625px;
+    backface-visibility: hidden;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -webkit-filter: blur(0);
+    filter: blur(0);
+    -webkit-transform: scale(0.343);
+    -ms-transform: scale(0.343);
+    -moz-transform: scale(0.343);
+    -o-transform: scale(0.343);
+    transform: scale(0.343);
+    -webkit-transform-origin: 0 0;
+    -ms-transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
+    -o-transform-origin: 0 0;
+    transform-origin: 0 0;
+}
+
+.game_pip .game_pip_close {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/common/game_pip_close.png) no-repeat left top;
+}
+
+.mine_game .mine_top {
+    background: #1b1b1b;
+    text-align: center;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.mine_game .mine_left {
+    float: left;
+    width: 45%;
+    height: 585px;
+    background: #111 url(/assets/img/game_bg/mine_money_bg.png) no-repeat center bottom;
+    border: 1px solid #000;
+    padding-top: 50px;
+}
+
+.mine_game .mine_left .tit {
+    height: 80px;
+    background: url(/assets/img/game_bg/mine_tit.png) no-repeat center top;
+}
+
+.mine_game .mine_left .num {
+    font-size: 54px;
+    color: #ffff00;
+    margin-top: 35px;
+}
+
+.mine_game .mine_right {
+    float: left;
+    width: 55%;
+    height: 585px;
+    padding-left: 10px;
+}
+
+.mine_game .mine_right .box_area {
+    background: #111;
+    border: 1px solid #000;
+    padding: 28px 28px 37px;
+    margin-top: 10px;
+}
+
+.mine_game .mine_right .box_area:first-child {
+    margin-top: 0;
+}
+
+.mine_game .mine_right .box_area .desc {
+    text-align: left;
+    font-size: 13px;
+    color: #fff;
+}
+
+.mine_game .mine_right .box_area .desc .office {
+    font-size: 13px;
+    color: #ffff00;
+    vertical-align: top;
+}
+
+.mine_game .mine_right .box_area .desc .name {
+    font-size: 13px;
+    color: #d90000;
+    vertical-align: top;
+}
+
+.mine_game .mine_right .box_area .move_wrap {
+    margin-top: 25px;
+}
+
+.mine_game .mine_right .box_area .move_wrap ul {
+    font-size: 0;
+}
+
+.mine_game .mine_right .box_area .move_wrap ul li {
+    display: inline-block;
+    width: 25%;
+}
+
+.mine_game .mine_right .box_area .move_wrap ul li:first-child {
+    padding-right: 20px;
+}
+
+.mine_game .mine_right .box_area .move_wrap ul li img {
+    max-width: 100%;
+}
+
+.mine_game .mine_right .box_area .move_wrap ul li .mine_cart_right {
+    background: url(/assets/img/game_bg/mine_cart_right.png) no-repeat center top;
+    padding-top: 84px;
+}
+
+.mine_game .mine_right .box_area .move_wrap ul li .mine_cart_left {
+    background: url(/assets/img/game_bg/mine_cart_left.png) no-repeat center top;
+    padding-top: 84px;
+}
+
+.mine_game .mine_right .box_area .move_wrap ul li input {
+    width: 100%;
+    height: 24px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #b90000;
+    border: 1px solid #000;
+    padding: 0 10px;
+}
+
+.mine_game .mine_right .box_area .move_wrap ul li input::-webkit-input-placeholder {
+    color: #b90000;
+}
+
+.mine_game .mine_right .box_area .move_wrap ul li input::-moz-placeholder {
+    color: #b90000;
+}
+
+.mine_game .mine_right .box_area .move_wrap ul li input:-moz-placeholder {
+    color: #b90000;
+}
+
+.mine_game .mine_right .box_area .move_wrap ul li input:-ms-input-placeholder {
+    color: #b90000;
+}
+
+.mine_game .mine_right .box_area .move_wrap ul li button {
+    width: 100%;
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    border: 1px solid #000;
+    padding: 45px 4%;
+}
+
+.mine_game .mine_right .box_area .move_wrap ul li #btn_to_casino {
+    background-image: linear-gradient(#003c66, #002748);
+}
+
+.mine_game .mine_right .box_area .move_wrap ul li #btn_from_casino {
+    background-image: linear-gradient(#636363, #3e3e3e);
+}
+
+.mine_game .mine_right .enter_btn {
+    width: 100%;
+    height: 83px;
+    font-size: 26px;
+    font-weight: 700;
+    font-style: italic;
+    color: #fff;
+    background: url(/assets/img/game_bg/mine_enter_btn_bg.png) no-repeat left top;
+    background-size: cover;
+    margin-top: 10px;
+}
+
+.mine_game .caution_wrap {
+    background: #1b1b1b;
+    border-radius: 0px;
+    padding: 20px;
+    margin-top: 10px;
+}
+
+.mine_game .caution_wrap h3 {
+    font-size: 16px;
+    line-height: 26px;
+    color: #d90000;
+    background: url(/assets/img/caution_ico.png) no-repeat left center;
+    padding-left: 37px;
+}
+
+.mine_game .caution_wrap ul {
+    margin: 18px 0 0 27px;
+}
+
+.mine_game .caution_wrap ul li {
+    font-size: 12px;
+    line-height: 20px;
+    color: #d3d4d5;
+    background: url(/assets/img/caution_list_b.png) no-repeat left 9px;
+    padding-left: 9px;
+}
+
+.mine_game .caution_wrap ul li span {
+    color: #135da9;
+    vertical-align: top;
+}
+
+.ranking01 {
+    position: absolute;
+    top: 3px;
+    left: -6px;
+    width: 28px;
+    height: 20px;
+    background: url(/assets/img/game_btn/ranking01.png) no-repeat 0 0;
+}
+
+.ranking02 {
+    position: absolute;
+    top: 3px;
+    left: -6px;
+    width: 28px;
+    height: 20px;
+    background: url(/assets/img/game_btn/ranking02.png) no-repeat 0 0;
+}
+
+.ranking03 {
+    position: absolute;
+    top: 3px;
+    left: -6px;
+    width: 28px;
+    height: 20px;
+    background: url(/assets/img/game_btn/ranking03.png) no-repeat 0 0;
+}
+
+.mini_odd {
+    width: 75px;
+    height: 75px;
+    background: url(/assets/img/game_btn/mini_odd.png) no-repeat 0 0;
+}
+
+.mini_odd:hover,
+.mini_odd.active {
+    background: url(/assets/img/game_btn/mini_odd_active.png) no-repeat 0 0;
+}
+
+.mini_even {
+    width: 75px;
+    height: 75px;
+    background: url(/assets/img/game_btn/mini_even.png) no-repeat 0 0;
+}
+
+.mini_even:hover,
+.mini_even.active {
+    background: url(/assets/img/game_btn/mini_even_active.png) no-repeat 0 0;
+}
+
+.mini_left {
+    width: 75px;
+    height: 75px;
+    background: url(/assets/img/game_btn/mini_left.png) no-repeat 0 0;
+}
+
+.mini_left:hover,
+.mini_left.active {
+    background: url(/assets/img/game_btn/mini_left_active.png) no-repeat 0 0;
+}
+
+.mini_right {
+    width: 75px;
+    height: 75px;
+    background: url(/assets/img/game_btn/mini_right.png) no-repeat 0 0;
+}
+
+.mini_right:hover,
+.mini_right.active {
+    background: url(/assets/img/game_btn/mini_right_active.png) no-repeat 0 0;
+}
+
+.mini_three {
+    width: 75px;
+    height: 75px;
+    background: url(/assets/img/game_btn/mini_three.png) no-repeat 0 0;
+}
+
+.mini_three:hover,
+.mini_three.active {
+    background: url(/assets/img/game_btn/mini_three_active.png) no-repeat 0 0;
+}
+
+.mini_four {
+    width: 75px;
+    height: 75px;
+    background: url(/assets/img/game_btn/mini_four.png) no-repeat 0 0;
+}
+
+.mini_four:hover,
+.mini_four.active {
+    background: url(/assets/img/game_btn/mini_four_active.png) no-repeat 0 0;
+}
+
+.mini_small {
+    width: 75px;
+    height: 75px;
+    background: url(/assets/img/game_btn/mini_small.png) no-repeat 0 0;
+}
+
+.mini_small:hover,
+.mini_small.active {
+    background: url(/assets/img/game_btn/mini_small_active.png) no-repeat 0 0;
+}
+
+.mini_medium {
+    width: 75px;
+    height: 75px;
+    background: url(/assets/img/game_btn/mini_medium.png) no-repeat 0 0;
+}
+
+.mini_medium:hover,
+.mini_medium.active {
+    background: url(/assets/img/game_btn/mini_medium_active.png) no-repeat 0 0;
+}
+
+.mini_large {
+    width: 75px;
+    height: 75px;
+    background: url(/assets/img/game_btn/mini_large.png) no-repeat 0 0;
+}
+
+.mini_large:hover,
+.mini_large.active {
+    background: url(/assets/img/game_btn/mini_large_active.png) no-repeat 0 0;
+}
+
+.mini_under01 {
+    width: 75px;
+    height: 75px;
+    background: url(/assets/img/game_btn/mini_under01.png) no-repeat 0 0;
+}
+
+.mini_under01:hover,
+.mini_under01.active {
+    background: url(/assets/img/game_btn/mini_under01_active.png) no-repeat 0 0;
+}
+
+.mini_under02 {
+    width: 75px;
+    height: 75px;
+    background: url(/assets/img/game_btn/mini_under02.png) no-repeat 0 0;
+}
+
+.mini_under02:hover,
+.mini_under02.active {
+    background: url(/assets/img/game_btn/mini_under02_active.png) no-repeat 0 0;
+}
+
+.mini_over01 {
+    width: 75px;
+    height: 75px;
+    background: url(/assets/img/game_btn/mini_over01.png) no-repeat 0 0;
+}
+
+.mini_over01:hover,
+.mini_over01.active {
+    background: url(/assets/img/game_btn/mini_over01_active.png) no-repeat 0 0;
+}
+
+.mini_over02 {
+    width: 75px;
+    height: 75px;
+    background: url(/assets/img/game_btn/mini_over02.png) no-repeat 0 0;
+}
+
+.mini_over02:hover,
+.mini_over02.active {
+    background: url(/assets/img/game_btn/mini_over02_active.png) no-repeat 0 0;
+}
+
+.mini_under01_b {
+    width: 75px;
+    height: 75px;
+    background: url(/assets/img/game_btn/mini_under01_b.png) no-repeat 0 0;
+}
+
+.mini_under01_b:hover,
+.mini_under01_b.active {
+    background: url(/assets/img/game_btn/mini_under01_b_active.png) no-repeat 0 0;
+}
+
+.mini_under02_b {
+    width: 75px;
+    height: 75px;
+    background: url(/assets/img/game_btn/mini_under02_b.png) no-repeat 0 0;
+}
+
+.mini_under02_b:hover,
+.mini_under02_b.active {
+    background: url(/assets/img/game_btn/mini_under02_b_active.png) no-repeat 0 0;
+}
+
+.mini_over01_b {
+    width: 75px;
+    height: 75px;
+    background: url(/assets/img/game_btn/mini_over01_b.png) no-repeat 0 0;
+}
+
+.mini_over01_b:hover,
+.mini_over01_b.active {
+    background: url(/assets/img/game_btn/mini_over01_b_active.png) no-repeat 0 0;
+}
+
+.mini_over02_b {
+    width: 75px;
+    height: 75px;
+    background: url(/assets/img/game_btn/mini_over02_b.png) no-repeat 0 0;
+}
+
+.mini_over02_b:hover,
+.mini_over02_b.active {
+    background: url(/assets/img/game_btn/mini_over02_active.png) no-repeat 0 0;
+}
+
+.mini_odd_under01 {
+    width: 75px;
+    height: 75px;
+    background: url(/assets/img/game_btn/mini_odd_under01.png) no-repeat 0 0;
+}
+
+.mini_odd_under01:hover,
+.mini_odd_under01.active {
+    background: url(/assets/img/game_btn/mini_odd_under01_active.png) no-repeat 0 0;
+}
+
+.mini_odd_under02 {
+    width: 75px;
+    height: 75px;
+    background: url(/assets/img/game_btn/mini_odd_under02.png) no-repeat 0 0;
+}
+
+.mini_odd_under02:hover,
+.mini_odd_under02.active {
+    background: url(/assets/img/game_btn/mini_odd_under02_active.png) no-repeat 0 0;
+}
+
+.mini_odd_over01 {
+    width: 75px;
+    height: 75px;
+    background: url(/assets/img/game_btn/mini_odd_over01.png) no-repeat 0 0;
+}
+
+.mini_odd_over01:hover,
+.mini_odd_over01.active {
+    background: url(/assets/img/game_btn/mini_odd_over01_active.png) no-repeat 0 0;
+}
+
+.mini_odd_over02 {
+    width: 75px;
+    height: 75px;
+    background: url(/assets/img/game_btn/mini_odd_over02.png) no-repeat 0 0;
+}
+
+.mini_odd_over02:hover,
+.mini_odd_over02.active {
+    background: url(/assets/img/game_btn/mini_odd_over02_active.png) no-repeat 0 0;
+}
+
+.mini_even_under01 {
+    width: 75px;
+    height: 75px;
+    background: url(/assets/img/game_btn/mini_even_under01.png) no-repeat 0 0;
+}
+
+.mini_even_under01:hover,
+.mini_even_under01.active {
+    background: url(/assets/img/game_btn/mini_even_under01_active.png) no-repeat 0 0;
+}
+
+.mini_even_under02 {
+    width: 75px;
+    height: 75px;
+    background: url(/assets/img/game_btn/mini_even_under02.png) no-repeat 0 0;
+}
+
+.mini_even_under02:hover,
+.mini_even_under02.active {
+    background: url(/assets/img/game_btn/mini_even_under02_active.png) no-repeat 0 0;
+}
+
+.mini_even_over01 {
+    width: 75px;
+    height: 75px;
+    background: url(/assets/img/game_btn/mini_even_over01.png) no-repeat 0 0;
+}
+
+.mini_even_over01:hover,
+.mini_even_over01.active {
+    background: url(/assets/img/game_btn/mini_even_over01_active.png) no-repeat 0 0;
+}
+
+.mini_even_over02 {
+    width: 75px;
+    height: 75px;
+    background: url(/assets/img/game_btn/mini_even_over02.png) no-repeat 0 0;
+}
+
+.mini_even_over02:hover,
+.mini_even_over02.active {
+    background: url(/assets/img/game_btn/mini_even_over02_active.png) no-repeat 0 0;
+}
+
+.mini_odd_under01_b {
+    width: 75px;
+    height: 75px;
+    background: url(/assets/img/game_btn/mini_odd_under01_b.png) no-repeat 0 0;
+}
+
+.mini_odd_under01_b:hover,
+.mini_odd_under01_b.active {
+    background: url(/assets/img/game_btn/mini_odd_under01_b_active.png) no-repeat 0 0;
+}
+
+.mini_odd_under02_b {
+    width: 75px;
+    height: 75px;
+    background: url(/assets/img/game_btn/mini_odd_under02_b.png) no-repeat 0 0;
+}
+
+.mini_odd_under02_b:hover,
+.mini_odd_under02_b.active {
+    background: url(/assets/img/game_btn/mini_odd_under02_b_active.png) no-repeat 0 0;
+}
+
+.mini_odd_over01_b {
+    width: 75px;
+    height: 75px;
+    background: url(/assets/img/game_btn/mini_odd_over01_b.png) no-repeat 0 0;
+}
+
+.mini_odd_over01_b:hover,
+.mini_odd_over01_b.active {
+    background: url(/assets/img/game_btn/mini_odd_over01_b_active.png) no-repeat 0 0;
+}
+
+.mini_odd_over02_b {
+    width: 75px;
+    height: 75px;
+    background: url(/assets/img/game_btn/mini_odd_over02_b.png) no-repeat 0 0;
+}
+
+.mini_odd_over02_b:hover,
+.mini_odd_over02_b.active {
+    background: url(/assets/img/game_btn/mini_odd_over02_b_active.png) no-repeat 0 0;
+}
+
+.mini_even_under01_b {
+    width: 75px;
+    height: 75px;
+    background: url(/assets/img/game_btn/mini_even_under01_b.png) no-repeat 0 0;
+}
+
+.mini_even_under01_b:hover,
+.mini_even_under01_b.active {
+    background: url(/assets/img/game_btn/mini_even_under01_b_active.png) no-repeat 0 0;
+}
+
+.mini_even_under02_b {
+    width: 75px;
+    height: 75px;
+    background: url(/assets/img/game_btn/mini_even_under02_b.png) no-repeat 0 0;
+}
+
+.mini_even_under02_b:hover,
+.mini_even_under02_b.active {
+    background: url(/assets/img/game_btn/mini_even_under02_b_active.png) no-repeat 0 0;
+}
+
+.mini_even_over01_b {
+    width: 75px;
+    height: 75px;
+    background: url(/assets/img/game_btn/mini_even_over01_b.png) no-repeat 0 0;
+}
+
+.mini_even_over01_b:hover,
+.mini_even_over01_b.active {
+    background: url(/assets/img/game_btn/mini_even_over01_b_active.png) no-repeat 0 0;
+}
+
+.mini_even_over02_b {
+    width: 75px;
+    height: 75px;
+    background: url(/assets/img/game_btn/mini_even_over02_b.png) no-repeat 0 0;
+}
+
+.mini_even_over02_b:hover,
+.mini_even_over02_b.active {
+    background: url(/assets/img/game_btn/mini_even_over02_b_active.png) no-repeat 0 0;
+}
+
+.mini_odd_small {
+    width: 75px;
+    height: 75px;
+    background: url(/assets/img/game_btn/mini_odd_small.png) no-repeat 0 0;
+}
+
+.mini_odd_small:hover,
+.mini_odd_small.active {
+    background: url(/assets/img/game_btn/mini_odd_small_active.png) no-repeat 0 0;
+}
+
+.mini_odd_medium {
+    width: 75px;
+    height: 75px;
+    background: url(/assets/img/game_btn/mini_odd_medium.png) no-repeat 0 0;
+}
+
+.mini_odd_medium:hover,
+.mini_odd_medium.active {
+    background: url(/assets/img/game_btn/mini_odd_medium_active.png) no-repeat 0 0;
+}
+
+.mini_odd_large {
+    width: 75px;
+    height: 75px;
+    background: url(/assets/img/game_btn/mini_odd_large.png) no-repeat 0 0;
+}
+
+.mini_odd_large:hover,
+.mini_odd_large.active {
+    background: url(/assets/img/game_btn/mini_odd_large_active.png) no-repeat 0 0;
+}
+
+.mini_even_small {
+    width: 75px;
+    height: 75px;
+    background: url(/assets/img/game_btn/mini_even_small.png) no-repeat 0 0;
+}
+
+.mini_even_small:hover,
+.mini_even_small.active {
+    background: url(/assets/img/game_btn/mini_even_small_active.png) no-repeat 0 0;
+}
+
+.mini_even_medium {
+    width: 75px;
+    height: 75px;
+    background: url(/assets/img/game_btn/mini_even_medium.png) no-repeat 0 0;
+}
+
+.mini_even_medium:hover,
+.mini_even_medium.active {
+    background: url(/assets/img/game_btn/mini_even_medium_active.png) no-repeat 0 0;
+}
+
+.mini_even_large {
+    width: 75px;
+    height: 75px;
+    background: url(/assets/img/game_btn/mini_even_large.png) no-repeat 0 0;
+}
+
+.mini_even_large:hover,
+.mini_even_large.active {
+    background: url(/assets/img/game_btn/mini_even_large_active.png) no-repeat 0 0;
+}
+
+.mini_a {
+    width: 75px;
+    height: 75px;
+    background: url(/assets/img/game_btn/mini_a.png) no-repeat 0 0;
+}
+
+.mini_a:hover,
+.mini_a.active {
+    background: url(/assets/img/game_btn/mini_a_active.png) no-repeat 0 0;
+}
+
+.mini_b {
+    width: 75px;
+    height: 75px;
+    background: url(/assets/img/game_btn/mini_b.png) no-repeat 0 0;
+}
+
+.mini_b:hover,
+.mini_b.active {
+    background: url(/assets/img/game_btn/mini_b_active.png) no-repeat 0 0;
+}
+
+.mini_c {
+    width: 75px;
+    height: 75px;
+    background: url(/assets/img/game_btn/mini_c.png) no-repeat 0 0;
+}
+
+.mini_c:hover,
+.mini_c.active {
+    background: url(/assets/img/game_btn/mini_c_active.png) no-repeat 0 0;
+}
+
+.mini_d {
+    width: 75px;
+    height: 75px;
+    background: url(/assets/img/game_btn/mini_d.png) no-repeat 0 0;
+}
+
+.mini_d:hover,
+.mini_d.active {
+    background: url(/assets/img/game_btn/mini_d_active.png) no-repeat 0 0;
+}
+
+.mini_left_m {
+    width: 60px;
+    height: 60px;
+    background: url(/assets/img/game_btn/mini_left_m.png) no-repeat 0 0;
+}
+
+.mini_left_m:hover,
+.mini_left_m.active {
+    background: url(/assets/img/game_btn/mini_left_m_active.png) no-repeat 0 0;
+}
+
+.mini_right_m {
+    width: 60px;
+    height: 60px;
+    background: url(/assets/img/game_btn/mini_right_m.png) no-repeat 0 0;
+}
+
+.mini_right_m:hover,
+.mini_right_m.active {
+    background: url(/assets/img/game_btn/mini_right_m_active.png) no-repeat 0 0;
+}
+
+.mini_ndl_one {
+    width: 105px;
+    height: 75px;
+    background: url(/assets/img/game_btn/mini_ndl_one.png) no-repeat 0 0;
+}
+
+.mini_ndl_one:hover,
+.mini_ndl_one.active {
+    background: url(/assets/img/game_btn/mini_ndl_one_active.png) no-repeat 0 0;
+}
+
+.mini_ndl_two {
+    width: 105px;
+    height: 75px;
+    background: url(/assets/img/game_btn/mini_ndl_two.png) no-repeat 0 0;
+}
+
+.mini_ndl_two:hover,
+.mini_ndl_two.active {
+    background: url(/assets/img/game_btn/mini_ndl_two_active.png) no-repeat 0 0;
+}
+
+.mini_ndl_three {
+    width: 105px;
+    height: 75px;
+    background: url(/assets/img/game_btn/mini_ndl_three.png) no-repeat 0 0;
+}
+
+.mini_ndl_three:hover,
+.mini_ndl_three.active {
+    background: url(/assets/img/game_btn/mini_ndl_three_active.png) no-repeat 0 0;
+}
+
+.mini_ndl_four {
+    width: 105px;
+    height: 75px;
+    background: url(/assets/img/game_btn/mini_ndl_four.png) no-repeat 0 0;
+}
+
+.mini_ndl_four:hover,
+.mini_ndl_four.active {
+    background: url(/assets/img/game_btn/mini_ndl_four_active.png) no-repeat 0 0;
+}
+
+.mini_ndl_odd {
+    width: 75px;
+    height: 75px;
+    background: url(/assets/img/game_btn/mini_ndl_odd.png) no-repeat 0 0;
+}
+
+.mini_ndl_odd:hover,
+.mini_ndl_odd.active {
+    background: url(/assets/img/game_btn/mini_ndl_odd_active.png) no-repeat 0 0;
+}
+
+.mini_ndl_even {
+    width: 75px;
+    height: 75px;
+    background: url(/assets/img/game_btn/mini_ndl_even.png) no-repeat 0 0;
+}
+
+.mini_ndl_even:hover,
+.mini_ndl_even.active {
+    background: url(/assets/img/game_btn/mini_ndl_even_active.png) no-repeat 0 0;
+}
+
+.mini_ndl_under {
+    width: 75px;
+    height: 75px;
+    background: url(/assets/img/game_btn/mini_ndl_under.png) no-repeat 0 0;
+}
+
+.mini_ndl_under:hover,
+.mini_ndl_under.active {
+    background: url(/assets/img/game_btn/mini_ndl_under_active.png) no-repeat 0 0;
+}
+
+.mini_ndl_over {
+    width: 75px;
+    height: 75px;
+    background: url(/assets/img/game_btn/mini_ndl_over.png) no-repeat 0 0;
+}
+
+.mini_ndl_over:hover,
+.mini_ndl_over.active {
+    background: url(/assets/img/game_btn/mini_ndl_over_active.png) no-repeat 0 0;
+}
+
+.mini_player {
+    width: 75px;
+    height: 75px;
+    background: url(/assets/img/game_btn/mini_player.png) no-repeat 0 0;
+}
+
+.mini_player:hover,
+.mini_player.active {
+    background: url(/assets/img/game_btn/mini_player_active.png) no-repeat 0 0;
+}
+
+.mini_banker {
+    width: 75px;
+    height: 75px;
+    background: url(/assets/img/game_btn/mini_banker.png) no-repeat 0 0;
+}
+
+.mini_banker:hover,
+.mini_banker.active {
+    background: url(/assets/img/game_btn/mini_banker_active.png) no-repeat 0 0;
+}
+
+.mini_tie {
+    width: 75px;
+    height: 75px;
+    background: url(/assets/img/game_btn/mini_tie.png) no-repeat 0 0;
+}
+
+.mini_tie:hover,
+.mini_tie.active {
+    background: url(/assets/img/game_btn/mini_tie_active.png) no-repeat 0 0;
+}
+
+.mini_race_1 {
+    width: 75px;
+    height: 75px;
+    background: url(/assets/img/game_btn/mini_race_one.png) no-repeat 0 0;
+    margin: 0 auto;
+}
+
+.mini_race_1:hover,
+.mini_race_1.active {
+    background: url(/assets/img/game_btn/mini_race_one_active.png) no-repeat 0 0;
+}
+
+.mini_race_2 {
+    width: 75px;
+    height: 75px;
+    background: url(/assets/img/game_btn/mini_race_two.png) no-repeat 0 0;
+    margin: 0 auto;
+}
+
+.mini_race_2:hover,
+.mini_race_2.active {
+    background: url(/assets/img/game_btn/mini_race_two_active.png) no-repeat 0 0;
+}
+
+.mini_race_3 {
+    width: 75px;
+    height: 75px;
+    background: url(/assets/img/game_btn/mini_race_three.png) no-repeat 0 0;
+    margin: 0 auto;
+}
+
+.mini_race_3:hover,
+.mini_race_3.active {
+    background: url(/assets/img/game_btn/mini_race_three_active.png) no-repeat 0 0;
+}
+
+.mini_race_4 {
+    width: 75px;
+    height: 75px;
+    background: url(/assets/img/game_btn/mini_race_four.png) no-repeat 0 0;
+    margin: 0 auto;
+}
+
+.mini_race_4:hover,
+.mini_race_4.active {
+    background: url(/assets/img/game_btn/mini_race_four_active.png) no-repeat 0 0;
+}
+
+.mini_race_5 {
+    width: 75px;
+    height: 75px;
+    background: url(/assets/img/game_btn/mini_race_five.png) no-repeat 0 0;
+    margin: 0 auto;
+}
+
+.mini_race_5:hover,
+.mini_race_5.active {
+    background: url(/assets/img/game_btn/mini_race_five_active.png) no-repeat 0 0;
+}
+
+.mini_race_6 {
+    width: 75px;
+    height: 75px;
+    background: url(/assets/img/game_btn/mini_race_six.png) no-repeat 0 0;
+    margin: 0 auto;
+}
+
+.mini_race_6:hover,
+.mini_race_6.active {
+    background: url(/assets/img/game_btn/mini_race_six_active.png) no-repeat 0 0;
+}
+
+.mini_bhl_1 {
+    width: 71px;
+    height: 54px;
+    background: url(/assets/img/game_btn/mini_bhl_1.png) no-repeat 0 0;
+}
+
+.mini_bhl_2 {
+    width: 71px;
+    height: 54px;
+    background: url(/assets/img/game_btn/mini_bhl_2.png) no-repeat 0 0;
+}
+
+.mini_bhl_3 {
+    width: 71px;
+    height: 54px;
+    background: url(/assets/img/game_btn/mini_bhl_3.png) no-repeat 0 0;
+}
+
+.mini_bhl_4 {
+    width: 71px;
+    height: 54px;
+    background: url(/assets/img/game_btn/mini_bhl_4.png) no-repeat 0 0;
+}
+
+.mini_bhl_5 {
+    width: 71px;
+    height: 54px;
+    background: url(/assets/img/game_btn/mini_bhl_5.png) no-repeat 0 0;
+}
+
+.mini_bhl_6 {
+    width: 71px;
+    height: 54px;
+    background: url(/assets/img/game_btn/mini_bhl_6.png) no-repeat 0 0;
+}
+
+.mini_bhl_7 {
+    width: 71px;
+    height: 54px;
+    background: url(/assets/img/game_btn/mini_bhl_7.png) no-repeat 0 0;
+}
+
+.mini_bhl_8 {
+    width: 71px;
+    height: 54px;
+    background: url(/assets/img/game_btn/mini_bhl_8.png) no-repeat 0 0;
+}
+
+.mini_bhl_9 {
+    width: 71px;
+    height: 54px;
+    background: url(/assets/img/game_btn/mini_bhl_9.png) no-repeat 0 0;
+}
+
+.mini_bhl_10 {
+    width: 71px;
+    height: 54px;
+    background: url(/assets/img/game_btn/mini_bhl_10.png) no-repeat 0 0;
+}
+
+.mini_bhl_11 {
+    width: 71px;
+    height: 54px;
+    background: url(/assets/img/game_btn/mini_bhl_11.png) no-repeat 0 0;
+}
+
+.mini_bhl_12 {
+    width: 71px;
+    height: 54px;
+    background: url(/assets/img/game_btn/mini_bhl_12.png) no-repeat 0 0;
+}
+
+.mini_bhl_13 {
+    width: 71px;
+    height: 54px;
+    background: url(/assets/img/game_btn/mini_bhl_13.png) no-repeat 0 0;
+}
+
+.mini_bhl_14 {
+    width: 71px;
+    height: 54px;
+    background: url(/assets/img/game_btn/mini_bhl_14.png) no-repeat 0 0;
+}
+
+.mini_bhl_15 {
+    width: 71px;
+    height: 54px;
+    background: url(/assets/img/game_btn/mini_bhl_15.png) no-repeat 0 0;
+}
+
+.mini_bhl_16 {
+    width: 71px;
+    height: 54px;
+    background: url(/assets/img/game_btn/mini_bhl_16.png) no-repeat 0 0;
+}
+
+.mini_bhl_17 {
+    width: 71px;
+    height: 54px;
+    background: url(/assets/img/game_btn/mini_bhl_17.png) no-repeat 0 0;
+}
+
+.mini_bhl_18 {
+    width: 71px;
+    height: 54px;
+    background: url(/assets/img/game_btn/mini_bhl_18.png) no-repeat 0 0;
+}
+
+.mini_bhl_19 {
+    width: 71px;
+    height: 54px;
+    background: url(/assets/img/game_btn/mini_bhl_19.png) no-repeat 0 0;
+}
+
+.mini_bhl_20 {
+    width: 71px;
+    height: 54px;
+    background: url(/assets/img/game_btn/mini_bhl_20.png) no-repeat 0 0;
+}
+
+.mini_bhl_21 {
+    width: 71px;
+    height: 54px;
+    background: url(/assets/img/game_btn/mini_bhl_21.png) no-repeat 0 0;
+}
+
+.mini_bhl_22 {
+    width: 71px;
+    height: 54px;
+    background: url(/assets/img/game_btn/mini_bhl_22.png) no-repeat 0 0;
+}
+
+.mini_ud_up {
+    width: 75px;
+    height: 75px;
+    background: url(/assets/img/game_btn/mini_ud_up.png) no-repeat 0 0;
+}
+
+.mini_ud_up:hover,
+.mini_ud_up.active {
+    background: url(/assets/img/game_btn/mini_ud_up_active.png) no-repeat 0 0;
+}
+
+.mini_ud_down {
+    width: 75px;
+    height: 75px;
+    background: url(/assets/img/game_btn/mini_ud_down.png) no-repeat 0 0;
+}
+
+.mini_ud_down:hover,
+.mini_ud_down.active {
+    background: url(/assets/img/game_btn/mini_ud_down_active.png) no-repeat 0 0;
+}
+
+.mini_ud_top {
+    width: 75px;
+    height: 75px;
+    background: url(/assets/img/game_btn/mini_ud_top.png) no-repeat 0 0;
+}
+
+.mini_ud_top:hover,
+.mini_ud_top.active {
+    background: url(/assets/img/game_btn/mini_ud_top_active.png) no-repeat 0 0;
+}
+
+.mini_ud_bottom {
+    width: 75px;
+    height: 75px;
+    background: url(/assets/img/game_btn/mini_ud_bottom.png) no-repeat 0 0;
+}
+
+.mini_ud_bottom:hover,
+.mini_ud_bottom.active {
+    background: url(/assets/img/game_btn/mini_ud_bottom_active.png) no-repeat 0 0;
+}
+
+.mini_ud_up_top_m {
+    width: 60px;
+    height: 60px;
+    background: url(/assets/img/game_btn/mini_ud_up_top_m.png) no-repeat 0 0;
+}
+
+.mini_ud_up_top_m:hover,
+.mini_ud_up_top_m.active {
+    background: url(/assets/img/game_btn/mini_ud_up_top_m_active.png) no-repeat 0 0;
+}
+
+.mini_ud_up_bottom_m {
+    width: 60px;
+    height: 60px;
+    background: url(/assets/img/game_btn/mini_ud_up_bottom_m.png) no-repeat 0 0;
+}
+
+.mini_ud_up_bottom_m:hover,
+.mini_ud_up_bottom_m.active {
+    background: url(/assets/img/game_btn/mini_ud_up_bottom_m_active.png) no-repeat 0 0;
+}
+
+.mini_ud_down_top_m {
+    width: 60px;
+    height: 60px;
+    background: url(/assets/img/game_btn/mini_ud_down_top_m.png) no-repeat 0 0;
+}
+
+.mini_ud_down_top_m:hover,
+.mini_ud_down_top_m.active {
+    background: url(/assets/img/game_btn/mini_ud_down_top_m_active.png) no-repeat 0 0;
+}
+
+.mini_ud_down_bottom_m {
+    width: 60px;
+    height: 60px;
+    background: url(/assets/img/game_btn/mini_ud_down_bottom_m.png) no-repeat 0 0;
+}
+
+.mini_ud_down_bottom_m:hover,
+.mini_ud_down_bottom_m.active {
+    background: url(/assets/img/game_btn/mini_ud_down_bottom_m_active.png) no-repeat 0 0;
+}
+
+.as_l {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    font-size: 10px;
+    border-radius: 100%;
+}
+
+.as_c {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    font-size: 10px;
+    border-radius: 100%;
+    margin-left: -9px;
+}
+
+.as_r {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    font-size: 10px;
+    border-radius: 100%;
+}
+
+.as_red {
+    line-height: 14px;
+    color: #d01617 !important;
+    font-weight: 700;
+    background: #fff !important;
+    border: 2px solid #d01617;
+}
+
+.as_black {
+    line-height: 14px;
+    color: #333 !important;
+    font-weight: 700;
+    background: #fff !important;
+    border: 2px solid #333;
+}
+
+.as_blue {
+    line-height: 14px;
+    color: #023eff !important;
+    font-weight: 700;
+    background: #fff !important;
+    border: 2px solid #023eff;
+}
+
+
+/*============================
+	베팅내역
+============================*/
+
+.rst_ico {
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    color: #fff;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 30px;
+}
+
+.rst_ico.red {
+    background: #ed2c1a;
+}
+
+.rst_ico.blue {
+    background: #1a69ed;
+}
+
+.rst_ico.green {
+    background: #089586;
+}
+
+.rst_ico.yellow {
+    background: #fcad00;
+    color: #000;
+}
+
+.rst_ico.hyellow {
+    background: #fcad00;
+    text-shadow: 1px 1px 1px #ff5400;
+}
+
+.rst_ico.gray {
+    background: #d1d2d5;
+    color: #000;
+}
+
+.rst_ico.rgray {
+    background: #d1d2d5;
+    color: #ed2c1a;
+}
+
+.rst_ico.dgray {
+    background: #4e4e4e;
+}
+
+.named01_flag01 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/result_named01_flag01.png) no-repeat left center;
+}
+
+.named01_flag02 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/result_named01_flag02.png) no-repeat left center;
+}
+
+.named01_flag03 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/result_named01_flag03.png) no-repeat left center;
+}
+
+.named01_flag04 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/result_named01_flag04.png) no-repeat left center;
+}
+
+.named01_flag05 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/result_named01_flag05.png) no-repeat left center;
+}
+
+.named01_flag06 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/result_named01_flag06.png) no-repeat left center;
+}
+
+.named01_flag07 {
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/result_named01_flag03.png) no-repeat left center;
+}
+
+.named01_flag07:after {
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    content: "3";
+    width: 15px;
+    height: 15px;
+    line-height: 15px;
+    font-size: 10px;
+    color: #fff;
+    background: #000;
+    border-radius: 100%;
+}
+
+.named01_flag08 {
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/result_named01_flag04.png) no-repeat left center;
+}
+
+.named01_flag08:after {
+    position: absolute;
+    top: -3px;
+    right: -3px;
+    content: "3";
+    width: 15px;
+    height: 15px;
+    line-height: 15px;
+    font-size: 10px;
+    color: #fff;
+    background: #000;
+    border-radius: 100%;
+}
+
+.named01_flag09 {
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/result_named01_flag03.png) no-repeat left center;
+}
+
+.named01_flag09:after {
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    content: "4";
+    width: 15px;
+    height: 15px;
+    line-height: 15px;
+    font-size: 10px;
+    color: #fff;
+    background: #000;
+    border-radius: 100%;
+}
+
+.named01_flag10 {
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/result_named01_flag04.png) no-repeat left center;
+}
+
+.named01_flag10:after {
+    position: absolute;
+    top: -3px;
+    right: -3px;
+    content: "4";
+    width: 15px;
+    height: 15px;
+    line-height: 15px;
+    font-size: 10px;
+    color: #fff;
+    background: #000;
+    border-radius: 100%;
+}
+
+.named03_flag01 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/result_named03_flag01.png) no-repeat left center;
+}
+
+.named03_flag02 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/result_named03_flag02.png) no-repeat left center;
+}
+
+.named03_flag03 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/result_named03_flag03.png) no-repeat left center;
+}
+
+.mgm01_flag01 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/result_mgm01_flag01.png) no-repeat left center;
+}
+
+.mgm01_flag02 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/result_mgm01_flag02.png) no-repeat left center;
+}
+
+.mgm02_flag01 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/result_mgm02_flag01.png) no-repeat left center;
+}
+
+.mgm02_flag02 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/result_mgm02_flag02.png) no-repeat left center;
+}
+
+.bet01_flag01 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/result_dog_flag01.png) no-repeat left center;
+}
+
+.bet01_flag02 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/result_dog_flag02.png) no-repeat left center;
+}
+
+.bet01_flag03 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/result_dog_flag03.png) no-repeat left center;
+}
+
+.bet01_flag04 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/result_dog_flag04.png) no-repeat left center;
+}
+
+.bet01_flag05 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/result_dog_flag05.png) no-repeat left center;
+}
+
+.bet01_flag06 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/result_dog_flag06.png) no-repeat left center;
+}
+
+.power_flag01 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/result_power_flag01.png) no-repeat left center;
+}
+
+.power_flag02 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/result_power_flag02.png) no-repeat left center;
+}
+
+.power_flag03 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/result_power_flag03.png) no-repeat left center;
+}
+
+.power_flag04 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/result_power_flag04.png) no-repeat left center;
+}
+
+.power_flag05 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/result_power_flag05.png) no-repeat left center;
+}
+
+.power_flag06 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/result_power_flag06.png) no-repeat left center;
+}
+
+.power_flag07 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/result_power_flag07.png) no-repeat left center;
+}
+
+.power_flag08 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/result_power_flag08.png) no-repeat left center;
+}
+
+.power_flag09 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/result_power_flag09.png) no-repeat left center;
+}
+
+.power_flag10 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/result_power_flag10.png) no-repeat left center;
+}
+
+.power_flag11 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/result_power_flag11.png) no-repeat left center;
+}
+
+.power_flag12 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/result_power_flag12.png) no-repeat left center;
+}
+
+.power_flag13 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/result_power_flag13.png) no-repeat left center;
+}
+
+.player_flag {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/result_player_flag.png) no-repeat left center;
+}
+
+.banker_flag {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/result_banker_flag.png) no-repeat left center;
+}
+
+.tie_flag {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/result_tie_flag.png) no-repeat left center;
+}
+
+.blue02_flag {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/result_blue02_flag.png) no-repeat left center;
+}
+
+.red02_flag {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/result_red02_flag.png) no-repeat left center;
+}
+
+.low02_flag {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/result_low02_flag.png) no-repeat left center;
+}
+
+.high02_flag {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/result_high02_flag.png) no-repeat left center;
+}
+
+.betting_named01_flag01 {
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/betting_named01_flag01.png) no-repeat left center;
+}
+
+.betting_named01_flag01 .as {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 12px;
+    height: 12px;
+    line-height: 10px;
+    font-size: 10px;
+    color: #fff;
+    background: #000;
+    border-radius: 100%;
+}
+
+.betting_named01_flag02 {
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/betting_named01_flag02.png) no-repeat left center;
+}
+
+.betting_named01_flag02 .as {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 12px;
+    height: 12px;
+    line-height: 10px;
+    font-size: 10px;
+    color: #fff;
+    background: #000;
+    border-radius: 100%;
+}
+
+.betting_named01_flag03 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/betting_named01_flag03.png) no-repeat left center;
+}
+
+.betting_named01_flag04 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/betting_named01_flag04.png) no-repeat left center;
+}
+
+.betting_named01_flag05 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/betting_named01_flag05.png) no-repeat left center;
+}
+
+.betting_named01_flag06 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/betting_named01_flag06.png) no-repeat left center;
+}
+
+.betting_named01_flag01.select {
+    background: url(/assets/img/game_btn/betting_named01_flag01_select.png) no-repeat left center;
+}
+
+.betting_named01_flag02.select {
+    background: url(/assets/img/game_btn/betting_named01_flag02_select.png) no-repeat left center;
+}
+
+.betting_named01_flag03.select {
+    background: url(/assets/img/game_btn/betting_named01_flag03_select.png) no-repeat left center;
+}
+
+.betting_named01_flag04.select {
+    background: url(/assets/img/game_btn/betting_named01_flag04_select.png) no-repeat left center;
+}
+
+.betting_named01_flag05.select {
+    background: url(/assets/img/game_btn/betting_named01_flag05_select.png) no-repeat left center;
+}
+
+.betting_named01_flag06.select {
+    background: url(/assets/img/game_btn/betting_named01_flag06_select.png) no-repeat left center;
+}
+
+.betting_named03_flag01 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/betting_named03_flag01.png) no-repeat left center;
+}
+
+.betting_named03_flag02 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/betting_named03_flag02.png) no-repeat left center;
+}
+
+.betting_named03_flag03 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/betting_named03_flag03.png) no-repeat left center;
+}
+
+.betting_named03_flag01.select {
+    background: url(/assets/img/game_btn/betting_named03_flag01_select.png) no-repeat left center;
+}
+
+.betting_named03_flag02.select {
+    background: url(/assets/img/game_btn/betting_named03_flag02_select.png) no-repeat left center;
+}
+
+.betting_named03_flag03.select {
+    background: url(/assets/img/game_btn/betting_named03_flag03_select.png) no-repeat left center;
+}
+
+.betting_mgm01_flag01 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/betting_mgm01_flag01.png) no-repeat left center;
+}
+
+.betting_mgm01_flag02 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/betting_mgm01_flag02.png) no-repeat left center;
+}
+
+.betting_mgm02_flag01 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/betting_mgm02_flag01.png) no-repeat left center;
+}
+
+.betting_mgm02_flag02 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/betting_mgm02_flag02.png) no-repeat left center;
+}
+
+.betting_mgm01_flag01.select {
+    background: url(/assets/img/game_btn/betting_mgm01_flag01_select.png) no-repeat left center;
+}
+
+.betting_mgm01_flag02.select {
+    background: url(/assets/img/game_btn/betting_mgm01_flag02_select.png) no-repeat left center;
+}
+
+.betting_mgm02_flag01.select {
+    background: url(/assets/img/game_btn/betting_mgm02_flag01_select.png) no-repeat left center;
+}
+
+.betting_mgm02_flag02.select {
+    background: url(/assets/img/game_btn/betting_mgm02_flag02_select.png) no-repeat left center;
+}
+
+.betting_bet01_flag01 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/betting_dog_flag01.png) no-repeat left center;
+}
+
+.betting_bet01_flag02 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/betting_dog_flag02.png) no-repeat left center;
+}
+
+.betting_bet01_flag03 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/betting_dog_flag03.png) no-repeat left center;
+}
+
+.betting_bet01_flag04 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/betting_dog_flag04.png) no-repeat left center;
+}
+
+.betting_bet01_flag05 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/betting_dog_flag05.png) no-repeat left center;
+}
+
+.betting_bet01_flag06 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/betting_dog_flag06.png) no-repeat left center;
+}
+
+.betting_bet01_flag01.select {
+    background: url(/assets/img/game_btn/betting_dog_flag01_select.png) no-repeat left center;
+}
+
+.betting_bet01_flag02.select {
+    background: url(/assets/img/game_btn/betting_dog_flag02_select.png) no-repeat left center;
+}
+
+.betting_bet01_flag03.select {
+    background: url(/assets/img/game_btn/betting_dog_flag03_select.png) no-repeat left center;
+}
+
+.betting_bet01_flag04.select {
+    background: url(/assets/img/game_btn/betting_dog_flag04_select.png) no-repeat left center;
+}
+
+.betting_bet01_flag05.select {
+    background: url(/assets/img/game_btn/betting_dog_flag05_select.png) no-repeat left center;
+}
+
+.betting_bet01_flag06.select {
+    background: url(/assets/img/game_btn/betting_dog_flag06_select.png) no-repeat left center;
+}
+
+.betting_power_flag01 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/betting_power_flag01.png) no-repeat left center;
+}
+
+.betting_power_flag02 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/betting_power_flag02.png) no-repeat left center;
+}
+
+.betting_power_flag03 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/betting_power_flag03.png) no-repeat left center;
+}
+
+.betting_power_flag04 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/betting_power_flag04.png) no-repeat left center;
+}
+
+.betting_power_flag05 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/betting_power_flag05.png) no-repeat left center;
+}
+
+.betting_power_flag06 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/betting_power_flag06.png) no-repeat left center;
+}
+
+.betting_power_flag07 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/betting_power_flag07.png) no-repeat left center;
+}
+
+.betting_power_flag08 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/betting_power_flag08.png) no-repeat left center;
+}
+
+.betting_power_flag09 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/betting_power_flag09.png) no-repeat left center;
+}
+
+.betting_power_flag10 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/betting_power_flag10.png) no-repeat left center;
+}
+
+.betting_power_flag11 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/betting_power_flag11.png) no-repeat left center;
+}
+
+.betting_power_flag12 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/betting_power_flag12.png) no-repeat left center;
+}
+
+.betting_power_flag13 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/betting_power_flag13.png) no-repeat left center;
+}
+
+.betting_power_flag01.select {
+    background: url(/assets/img/game_btn/betting_power_flag01_select.png) no-repeat left center;
+}
+
+.betting_power_flag02.select {
+    background: url(/assets/img/game_btn/betting_power_flag02_select.png) no-repeat left center;
+}
+
+.betting_power_flag03.select {
+    background: url(/assets/img/game_btn/betting_power_flag03_select.png) no-repeat left center;
+}
+
+.betting_power_flag04.select {
+    background: url(/assets/img/game_btn/betting_power_flag04_select.png) no-repeat left center;
+}
+
+.betting_power_flag05.select {
+    background: url(/assets/img/game_btn/betting_power_flag05_select.png) no-repeat left center;
+}
+
+.betting_power_flag06.select {
+    background: url(/assets/img/game_btn/betting_power_flag06_select.png) no-repeat left center;
+}
+
+.betting_power_flag07.select {
+    background: url(/assets/img/game_btn/betting_power_flag07_select.png) no-repeat left center;
+}
+
+.betting_power_flag08.select {
+    background: url(/assets/img/game_btn/betting_power_flag08_select.png) no-repeat left center;
+}
+
+.betting_power_flag09.select {
+    background: url(/assets/img/game_btn/betting_power_flag09_select.png) no-repeat left center;
+}
+
+.betting_power_flag10.select {
+    background: url(/assets/img/game_btn/betting_power_flag10_select.png) no-repeat left center;
+}
+
+.betting_power_flag11.select {
+    background: url(/assets/img/game_btn/betting_power_flag11_select.png) no-repeat left center;
+}
+
+.betting_power_flag12.select {
+    background: url(/assets/img/game_btn/betting_power_flag12_select.png) no-repeat left center;
+}
+
+.betting_power_flag13.select {
+    background: url(/assets/img/game_btn/betting_power_flag13_select.png) no-repeat left center;
+}
+
+.betting_cancel_flag {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/cancel_ico.png) no-repeat left center;
+}
+
+.rst_bhl_01 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/rst_bhl_01.png) no-repeat left center;
+}
+
+.rst_bhl_02 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/rst_bhl_02.png) no-repeat left center;
+}
+
+.rst_bhl_03 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/rst_bhl_03.png) no-repeat left center;
+}
+
+.rst_bhl_04 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/rst_bhl_04.png) no-repeat left center;
+}
+
+.rst_bhl_05 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/rst_bhl_05.png) no-repeat left center;
+}
+
+.rst_bhl_06 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/rst_bhl_06.png) no-repeat left center;
+}
+
+.rst_bhl_07 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/rst_bhl_07.png) no-repeat left center;
+}
+
+.rst_bhl_08 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/rst_bhl_08.png) no-repeat left center;
+}
+
+.rst_bhl_09 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/rst_bhl_09.png) no-repeat left center;
+}
+
+.rst_bhl_10 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/rst_bhl_10.png) no-repeat left center;
+}
+
+.rst_bhl_11 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/rst_bhl_11.png) no-repeat left center;
+}
+
+.rst_bhl_12 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/rst_bhl_12.png) no-repeat left center;
+}
+
+.rst_bhl_13 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/rst_bhl_13.png) no-repeat left center;
+}
+
+.rst_bhl_14 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/rst_bhl_14.png) no-repeat left center;
+}
+
+.rst_bhl_15 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/rst_bhl_15.png) no-repeat left center;
+}
+
+.rst_bhl_16 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/rst_bhl_16.png) no-repeat left center;
+}
+
+.rst_bhl_17 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/rst_bhl_17.png) no-repeat left center;
+}
+
+.rst_bhl_18 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/rst_bhl_18.png) no-repeat left center;
+}
+
+.rst_bhl_19 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/rst_bhl_19.png) no-repeat left center;
+}
+
+.rst_bhl_20 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/rst_bhl_20.png) no-repeat left center;
+}
+
+.rst_bhl_21 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/rst_bhl_21.png) no-repeat left center;
+}
+
+.rst_bhl_22 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/rst_bhl_22.png) no-repeat left center;
+}
+
+.arrow_ud_up {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/arrow_ud_up.png) no-repeat left center;
+}
+
+.arrow_ud_down {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/arrow_ud_down.png) no-repeat left center;
+}
+
+.arrow_ud_top {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/arrow_ud_top.png) no-repeat left center;
+}
+
+.arrow_ud_bottom {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(/assets/img/game_btn/arrow_ud_bottom.png) no-repeat left center;
+}
+
+
+/* TABLET  + Mobile */
+
+@media screen and (max-width:1140px) {
+    /* 미니게임 */
+    .game_area_bg {
+        padding: 0;
+    }
+    .game_wrap {
+        padding: 0;
+    }
+    .game_area {
+        display: block;
+        width: 100% !important;
+        min-height: 100%;
+        max-height: none;
+        padding: 0;
+        overflow: hidden;
+        margin: 0;
+    }
+    #container .content_wrap.evo_game_wrap .con_left {
+        padding: 5px;
+    }
+    .game_area #game {
+        backface-visibility: hidden;
+        -webkit-font-smoothing: subpixel-antialiased;
+        -webkit-filter: blur(0);
+        filter: blur(0);
+        -webkit-transform: scale(0.40);
+        -ms-transform: scale(0.40);
+        -moz-transform: scale(0.40);
+        -o-transform: scale(0.40);
+        transform: scale(0.40);
+        -webkit-transform-origin: 0 0;
+        -ms-transform-origin: 0 0;
+        -moz-transform-origin: 0 0;
+        -o-transform-origin: 0 0;
+        transform-origin: 0 0;
+    }
+    .game_pip {
+        top: 140px;
+        left: 50%;
+        margin-left: -150px;
+    }
+    .game_pip.game_pip_bottom_right {
+        top: unset;
+        left: unset;
+        bottom: 20px!important;
+        right: 20px!important;
+    }
+    .game_pip #game {
+        position: inherit;
+        width: 875px;
+        height: 625px;
+        backface-visibility: hidden;
+        -webkit-font-smoothing: subpixel-antialiased;
+        -webkit-filter: blur(0);
+        filter: blur(0);
+        -webkit-transform: scale(0.343);
+        -ms-transform: scale(0.343);
+        -moz-transform: scale(0.343);
+        -o-transform: scale(0.343);
+        transform: scale(0.343);
+        -webkit-transform-origin: 0 0;
+        -ms-transform-origin: 0 0;
+        -moz-transform-origin: 0 0;
+        -o-transform-origin: 0 0;
+        transform-origin: 0 0;
+    }
+    .mine_game .mine_top {
+        text-align: left;
+        padding: 5px;
+    }
+    .mine_game .mine_left {
+        float: none;
+        width: 100%;
+        height: 115px;
+        background: #111 url(/assets/img/game_bg/mine_m_money_bg.png) repeat-x center bottom;
+        background-size: 500px 52px;
+        padding: 24px;
+    }
+    .mine_game .mine_left .tit {
+        float: left;
+        width: 139px;
+        height: 25.5px;
+        background: url(/assets/img/game_bg/mine_m_tit.png) no-repeat center top;
+        background-size: cover;
+    }
+    .mine_game .mine_left .num {
+        height: 25.5px;
+        line-height: 25.5px;
+        font-size: 27px;
+        text-align: right;
+        margin-top: 0;
+    }
+    .mine_game .mine_right {
+        float: none;
+        width: 100%;
+        height: auto;
+        padding-left: 0;
+        margin-top: 5px;
+    }
+    .mine_game .mine_right .box_area {
+        float: right;
+        width: 49%;
+        padding: 5px;
+        margin-top: 0;
+    }
+    .mine_game .mine_right .box_area:first-child {
+        float: left;
+    }
+    .mine_game .mine_right .box_area .desc {
+        display: none;
+        text-align: left;
+        font-size: 13px;
+        color: #fff;
+    }
+    .mine_game .mine_right .box_area .move_wrap {
+        margin-top: 0;
+    }
+    .mine_game .mine_right .box_area .move_wrap ul {
+        font-size: 0;
+    }
+    .mine_game .mine_right .box_area .move_wrap ul li {
+        display: inline-block;
+        width: 100%;
+    }
+    .mine_game .mine_right .box_area .move_wrap ul li.m_none {
+        display: none;
+    }
+    .mine_game .mine_right .box_area .move_wrap ul li:first-child {
+        padding-right: 20px;
+    }
+    .mine_game .mine_right .box_area .move_wrap ul li img {
+        width: 100%;
+    }
+    .mine_game .mine_right .box_area .move_wrap ul li .mine_cart_right {
+        background: none;
+        padding-top: 0;
+    }
+    .mine_game .mine_right .box_area .move_wrap ul li .mine_cart_left {
+        background: none;
+        padding-top: 0;
+    }
+    .mine_game .mine_right .box_area .move_wrap ul li input {
+        height: 25px;
+        font-size: 12px;
+        padding: 0 7.5px;
+    }
+    .mine_game .mine_right .box_area .move_wrap ul li button {
+        height: 40px;
+        line-height: 38px;
+        font-size: 12px;
+        padding: 0;
+    }
+    .mine_game .mine_right .box_area .move_wrap ul li #btn_to_casino {
+        background-image: linear-gradient(#003c66, #002748);
+    }
+    .mine_game .mine_right .box_area .move_wrap ul li #btn_from_casino {
+        background-image: linear-gradient(#636363, #3e3e3e);
+    }
+    .mine_game .mine_right .enter_btn {
+        height: 41.5px;
+        line-height: 41.5px;
+        font-size: 15px;
+        font-weight: 900;
+        background: url(/assets/img/game_bg/mine_m_enter_btn_bg.png) no-repeat left top;
+        background-size: cover;
+        margin-top: 5px;
+    }
+    .mine_game .caution_wrap {
+        padding: 10px;
+        margin-top: 5px;
+    }
+    .mine_game .caution_wrap h3 {
+        font-size: 12px;
+        line-height: 13px;
+        background: url(/assets/img/caution_m_ico.png) no-repeat left center;
+        background-size: 13px;
+        padding-left: 18px;
+    }
+    .mine_game .caution_wrap ul {
+        margin: 5px 0 0 18px;
+    }
+    .mine_game .caution_wrap ul li {
+        font-size: 10px;
+        line-height: 13px;
+        background: url(/assets/img/caution_list_b.png) no-repeat left 8px;
+        background-size: 2px;
+        padding-left: 7px;
+    }
+    .mini_odd,
+    .mini_odd:hover,
+    .mini_odd.active,
+    .mini_even,
+    .mini_even:hover,
+    .mini_even.active,
+    .mini_left,
+    .mini_left:hover,
+    .mini_left.active,
+    .mini_right,
+    .mini_right:hover,
+    .mini_right.active,
+    .mini_three,
+    .mini_three:hover,
+    .mini_three.active,
+    .mini_four,
+    .mini_four:hover,
+    .mini_four.active,
+    .mini_small,
+    .mini_small:hover,
+    .mini_small.active,
+    .mini_medium,
+    .mini_medium:hover,
+    .mini_medium.active,
+    .mini_large,
+    .mini_large:hover,
+    .mini_large.active,
+    .mini_under01,
+    .mini_under01:hover,
+    .mini_under01.active,
+    .mini_under02,
+    .mini_under02:hover,
+    .mini_under02.active,
+    .mini_over01,
+    .mini_over01:hover,
+    .mini_over01.active,
+    .mini_over02,
+    .mini_over02:hover,
+    .mini_over02.active,
+    .mini_odd_under01,
+    .mini_odd_under01:hover,
+    .mini_odd_under01.active,
+    .mini_odd_under02,
+    .mini_odd_under02:hover,
+    .mini_odd_under02.active,
+    .mini_odd_over01,
+    .mini_odd_over01:hover,
+    .mini_odd_over01.active,
+    .mini_odd_over02,
+    .mini_odd_over02:hover,
+    .mini_odd_over02.active,
+    .mini_even_under01,
+    .mini_even_under01:hover,
+    .mini_even_under01.active,
+    .mini_even_under02,
+    .mini_even_under02:hover,
+    .mini_even_under02.active,
+    .mini_even_over01,
+    .mini_even_over01:hover,
+    .mini_even_over01.active,
+    .mini_even_over02,
+    .mini_even_over02:hover,
+    .mini_even_over02.active,
+    .mini_odd_small,
+    .mini_odd_small:hover,
+    .mini_odd_small.active,
+    .mini_odd_medium,
+    .mini_odd_medium:hover,
+    .mini_odd_medium.active,
+    .mini_odd_large,
+    .mini_odd_large:hover,
+    .mini_odd_large.active,
+    .mini_even_small,
+    .mini_even_small:hover,
+    .mini_even_small.active,
+    .mini_even_medium,
+    .mini_even_medium:hover,
+    .mini_even_medium.active,
+    .mini_even_large,
+    .mini_even_large:hover,
+    .mini_even_large.active,
+    .mini_a,
+    .mini_a:hover,
+    .mini_a.active,
+    .mini_b,
+    .mini_b:hover,
+    .mini_b.active,
+    .mini_c,
+    .mini_c:hover,
+    .mini_c.active,
+    .mini_d,
+    .mini_d:hover,
+    .mini_d.active,
+    .mini_left_m,
+    .mini_left_m:hover,
+    .mini_left_m.active,
+    .mini_right_m,
+    .mini_right_m:hover,
+    .mini_right_m.active,
+    .mini_ndl_one,
+    .mini_ndl_one:hover,
+    .mini_ndl_one.active,
+    .mini_ndl_two,
+    .mini_ndl_two:hover,
+    .mini_ndl_two.active,
+    .mini_ndl_three,
+    .mini_ndl_three:hover,
+    .mini_ndl_three.active,
+    .mini_ndl_four,
+    .mini_ndl_four:hover,
+    .mini_ndl_four.active,
+    .mini_ndl_odd,
+    .mini_ndl_odd:hover,
+    .mini_ndl_odd.active,
+    .mini_ndl_even,
+    .mini_ndl_even:hover,
+    .mini_ndl_even.active,
+    .mini_ndl_under,
+    .mini_ndl_under:hover,
+    .mini_ndl_under.active,
+    .mini_ndl_over,
+    .mini_ndl_over:hover,
+    .mini_ndl_over.active,
+    .mini_player,
+    .mini_player:hover,
+    .mini_player.active,
+    .mini_banker,
+    .mini_banker:hover,
+    .mini_banker.active,
+    .mini_tie,
+    .mini_tie:hover,
+    .mini_tie.active,
+    .mini_race_1,
+    .mini_race_1:hover,
+    .mini_race_1.active,
+    .mini_race_2,
+    .mini_race_2:hover,
+    .mini_race_2.active,
+    .mini_race_3,
+    .mini_race_3:hover,
+    .mini_race_3.active,
+    .mini_race_4,
+    .mini_race_4:hover,
+    .mini_race_4.active,
+    .mini_race_5,
+    .mini_race_5:hover,
+    .mini_race_5.active,
+    .mini_race_6,
+    .mini_race_6:hover,
+    .mini_race_6.active,
+    .mini_bhl_1,
+    .mini_bhl_1:hover,
+    .mini_bhl_1.active,
+    .mini_bhl_2,
+    .mini_bhl_2:hover,
+    .mini_bhl_2.active,
+    .mini_bhl_3,
+    .mini_bhl_3:hover,
+    .mini_bhl_3.active,
+    .mini_bhl_4,
+    .mini_bhl_4:hover,
+    .mini_bhl_4.active,
+    .mini_bhl_5,
+    .mini_bhl_5:hover,
+    .mini_bhl_5.active,
+    .mini_bhl_6,
+    .mini_bhl_6:hover,
+    .mini_bhl_6.active,
+    .mini_bhl_7,
+    .mini_bhl_7:hover,
+    .mini_bhl_7.active,
+    .mini_bhl_8,
+    .mini_bhl_8:hover,
+    .mini_bhl_8.active,
+    .mini_bhl_9,
+    .mini_bhl_9:hover,
+    .mini_bhl_9.active,
+    .mini_bhl_10,
+    .mini_bhl_10:hover,
+    .mini_bhl_10.active,
+    .mini_bhl_11,
+    .mini_bhl_11:hover,
+    .mini_bhl_11.active,
+    .mini_bhl_12,
+    .mini_bhl_12:hover,
+    .mini_bhl_12.active,
+    .mini_bhl_13,
+    .mini_bhl_13:hover,
+    .mini_bhl_13.active,
+    .mini_bhl_14,
+    .mini_bhl_14:hover,
+    .mini_bhl_14.active,
+    .mini_bhl_15,
+    .mini_bhl_15:hover,
+    .mini_bhl_15.active,
+    .mini_bhl_16,
+    .mini_bhl_16:hover,
+    .mini_bhl_16.active {
+        width: 55px;
+        height: 55px;
+        background-size: cover;
+    }
+    .betting_cancel_wrap {
+        padding-top: 18px;
+    }
+}
