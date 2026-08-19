@@ -1,0 +1,766 @@
+/* Optional admin skins. Enabled from .env with admin.skin/admin.skin.mode. */
+
+body.admin-skin-synadmin {
+    --main-bg-color: #101114;
+    --bar-bg-color: #17191d;
+    --menu-bg-color: #202226;
+    --dropdown-font-color: #f4f7fb;
+    --menu-font-color: #c5ccd8;
+    --scroll-bg-color: #8b5cf6;
+    --bar-font-color: #e8edf5;
+    --span-font-color: #a855f7;
+    --main-button-color: #8b5cf6;
+    --table-th-color: #242933;
+    --admin-card-bg: #17191d;
+    --admin-soft-bg: #1d2026;
+    --admin-input-bg: #111318;
+    --admin-border-color: #2b3038;
+    --admin-muted-color: #9aa3b2;
+    --admin-hover-bg: #272b33;
+    --admin-active-bg: #8b5cf6;
+    --admin-active-text: #ffffff;
+    --admin-shadow-color: rgba(0, 0, 0, 0.28);
+    --admin-table-bg: #15171c;
+    --admin-table-row-alt-bg: #1a1d23;
+    --admin-table-head-text: #f8fafc;
+    --admin-success-bg: rgba(34, 197, 94, 0.18);
+    --admin-success-border: #22c55e;
+    --admin-success-text: #bbf7d0;
+    --admin-warning-bg: rgba(245, 158, 11, 0.18);
+    --admin-warning-border: #f59e0b;
+    --admin-warning-text: #fde68a;
+    --admin-muted-button-bg: #111318;
+    --admin-muted-button-border: #3a404a;
+    --admin-muted-button-text: #cbd5e1;
+    color: var(--bar-font-color);
+    background-color: var(--main-bg-color);
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
+    min-height: 100vh;
+}
+
+body.admin-skin-synadmin.admin-skin-light {
+    --main-bg-color: #f4f7fb;
+    --bar-bg-color: #ffffff;
+    --menu-bg-color: #ffffff;
+    --dropdown-font-color: #111827;
+    --menu-font-color: #4b5563;
+    --scroll-bg-color: #7c3aed;
+    --bar-font-color: #1f2937;
+    --span-font-color: #6d28d9;
+    --main-button-color: #7c3aed;
+    --table-th-color: #2f3745;
+    --admin-card-bg: #ffffff;
+    --admin-soft-bg: #f0f3f8;
+    --admin-input-bg: #ffffff;
+    --admin-border-color: #dde4ef;
+    --admin-muted-color: #6b7280;
+    --admin-hover-bg: #eef2ff;
+    --admin-active-bg: #7c3aed;
+    --admin-active-text: #ffffff;
+    --admin-shadow-color: rgba(31, 41, 55, 0.12);
+    --admin-table-bg: #ffffff;
+    --admin-table-row-alt-bg: #f8fafc;
+    --admin-table-head-text: #f8fafc;
+    --admin-success-bg: #dcfce7;
+    --admin-success-border: #16a34a;
+    --admin-success-text: #166534;
+    --admin-warning-bg: #fef3c7;
+    --admin-warning-border: #d97706;
+    --admin-warning-text: #92400e;
+    --admin-muted-button-bg: #f8fafc;
+    --admin-muted-button-border: #cbd5e1;
+    --admin-muted-button-text: #334155;
+}
+
+body.admin-skin-synadmin .main-sidebar {
+    width: 220px;
+    padding: 14px 10px;
+    background-color: var(--menu-bg-color);
+    border-right: 1px solid var(--admin-border-color);
+    box-shadow: 0 16px 36px var(--admin-shadow-color);
+}
+
+body.admin-skin-synadmin .main-container {
+    margin-left: 220px;
+    min-height: 100vh;
+    min-width: 0;
+    padding: 16px;
+    background-color: var(--main-bg-color);
+    box-sizing: border-box;
+}
+
+body.admin-skin-synadmin .main-navbar,
+body.admin-skin-synadmin .sub-navbar,
+body.admin-skin-synadmin .confsite-site-panel,
+body.admin-skin-synadmin .confsite-password-panel,
+body.admin-skin-synadmin .confsite-game-panel,
+body.admin-skin-synadmin .user-panel,
+body.admin-skin-synadmin .useredit-panel,
+body.admin-skin-synadmin .bank-panel,
+body.admin-skin-synadmin .pbresult-list-panel,
+body.admin-skin-synadmin .bet-panel,
+body.admin-skin-synadmin .notice-panel {
+    background-color: var(--admin-card-bg);
+    border: 1px solid var(--admin-border-color);
+    border-radius: 8px;
+    box-shadow: 0 12px 28px var(--admin-shadow-color);
+    color: var(--bar-font-color);
+}
+
+body.admin-skin-synadmin .main-navbar {
+    min-width: 0;
+    padding: 16px 14px 12px;
+    box-shadow: 0 10px 28px var(--admin-shadow-color);
+}
+
+body.admin-skin-synadmin .main-sidebar a,
+body.admin-skin-synadmin .main-dropdown-btn {
+    border-radius: 6px;
+    color: var(--menu-font-color);
+    font-size: 14px;
+    line-height: 1.35;
+}
+
+body.admin-skin-synadmin .main-dropdown-btn {
+    color: var(--dropdown-font-color);
+    font-weight: 600;
+}
+
+body.admin-skin-synadmin .main-sidebar a:hover,
+body.admin-skin-synadmin .main-dropdown-btn:hover,
+body.admin-skin-synadmin .main-dropdown-active-btn {
+    padding-left: 24px;
+    background-color: var(--admin-hover-bg);
+    color: var(--dropdown-font-color);
+}
+
+body.admin-skin-synadmin .main-sidebar .sidebar-a-active {
+    background-color: var(--admin-active-bg);
+    color: var(--admin-active-text);
+    box-shadow: 0 8px 18px rgba(124, 58, 237, 0.28);
+}
+
+body.admin-skin-synadmin .main-dropdown-container {
+    background-color: transparent;
+}
+
+body.admin-skin-synadmin .main-navbar-info-table td,
+body.admin-skin-synadmin .main-navbar-betinfo-table td,
+body.admin-skin-synadmin .main-navbar-user-div,
+body.admin-skin-synadmin .main-navbar-user-div a,
+body.admin-skin-synadmin .sub-navbar p,
+body.admin-skin-synadmin .confsite-site-panel h4,
+body.admin-skin-synadmin .confsite-game-panel h4,
+body.admin-skin-synadmin .pbresult-list-panel h4 {
+    color: var(--bar-font-color);
+}
+
+body.admin-skin-synadmin .main-navbar-info-table td span,
+body.admin-skin-synadmin .main-navbar-info-table td a,
+body.admin-skin-synadmin .main-navbar-betinfo-table td span,
+body.admin-skin-synadmin .pbresult-list-page-div p span {
+    color: var(--span-font-color);
+}
+
+body.admin-skin-synadmin .sub-navbar {
+    margin-top: 12px;
+}
+
+body.admin-skin-synadmin .sub-navbar-a,
+body.admin-skin-synadmin .sub-navbar-but {
+    background-color: var(--admin-soft-bg);
+    border: 1px solid var(--admin-border-color);
+    border-radius: 6px;
+    box-shadow: none;
+    color: var(--bar-font-color);
+}
+
+body.admin-skin-synadmin .sub-navbar-a:hover,
+body.admin-skin-synadmin .sub-navbar-but:hover,
+body.admin-skin-synadmin .sub-navbar-a.active,
+body.admin-skin-synadmin .active {
+    background-color: var(--admin-active-bg);
+    border-color: var(--admin-active-bg);
+    color: var(--admin-active-text);
+    box-shadow: 0 8px 18px rgba(124, 58, 237, 0.24);
+}
+
+body.admin-skin-synadmin input:not([type=checkbox]):not([type=radio]):not([type=color]),
+body.admin-skin-synadmin select,
+body.admin-skin-synadmin textarea,
+body.admin-skin-synadmin .pbresult-number-select,
+body.admin-skin-synadmin .pbresult-game-select,
+body.admin-skin-synadmin .pbresult-text-input,
+body.admin-skin-synadmin .confsite-site-text-div input,
+body.admin-skin-synadmin .confsite-site-text-div textarea,
+body.admin-skin-synadmin .confsite-game-text-div .conf-text-input,
+body.admin-skin-synadmin .confsite-game-text-div .conf-seconds-input,
+body.admin-skin-synadmin .useredit-text-div input,
+body.admin-skin-synadmin .useredit-text-div select,
+body.admin-skin-synadmin .useredit-percent-div input,
+body.admin-skin-synadmin .confsite-password-text-div input {
+    background-color: var(--admin-input-bg);
+    border: 1px solid var(--admin-border-color);
+    border-radius: 6px;
+    color: var(--bar-font-color);
+    box-shadow: none;
+}
+
+body.admin-skin-synadmin input:focus,
+body.admin-skin-synadmin select:focus,
+body.admin-skin-synadmin textarea:focus {
+    border-color: var(--span-font-color);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.2);
+}
+
+body.admin-skin-synadmin .confsite-site-text-div p,
+body.admin-skin-synadmin .confsite-site-text-div label,
+body.admin-skin-synadmin .confsite-site-check-div label,
+body.admin-skin-synadmin .confsite-password-text-div p,
+body.admin-skin-synadmin .confsite-game-text-div p,
+body.admin-skin-synadmin .confsite-game-text-div label,
+body.admin-skin-synadmin .confsite-game-check-div label,
+body.admin-skin-synadmin .confother-sound-div label,
+body.admin-skin-synadmin .useredit-text-div p,
+body.admin-skin-synadmin .useredit-text-div label,
+body.admin-skin-synadmin .useredit-check-div label,
+body.admin-skin-synadmin .useredit-percent-div p,
+body.admin-skin-synadmin .useredit-percent-div label,
+body.admin-skin-synadmin .pbresult-list-panel label {
+    color: var(--bar-font-color);
+}
+
+body.admin-skin-synadmin .user-table,
+body.admin-skin-synadmin .bet-table,
+body.admin-skin-synadmin .calculate-table,
+body.admin-skin-synadmin .bank-table,
+body.admin-skin-synadmin .pbresult-list-table,
+body.admin-skin-synadmin .notice-table,
+body.admin-skin-synadmin .table-black,
+body.admin-skin-synadmin .table {
+    background-color: var(--admin-table-bg);
+    border: 1px solid var(--admin-border-color);
+    border-radius: 8px;
+    box-shadow: none;
+    color: var(--bar-font-color);
+    overflow: hidden;
+}
+
+body.admin-skin-synadmin .user-table th,
+body.admin-skin-synadmin .bet-table th,
+body.admin-skin-synadmin .calculate-table th,
+body.admin-skin-synadmin .bank-table th,
+body.admin-skin-synadmin .pbresult-list-table th,
+body.admin-skin-synadmin .notice-table th,
+body.admin-skin-synadmin .table-black th,
+body.admin-skin-synadmin .table th {
+    background-color: var(--table-th-color);
+    border-color: var(--admin-border-color);
+    color: var(--admin-table-head-text);
+    font-weight: 600;
+}
+
+body.admin-skin-synadmin .user-table td,
+body.admin-skin-synadmin .bet-table td,
+body.admin-skin-synadmin .calculate-table td,
+body.admin-skin-synadmin .bank-table td,
+body.admin-skin-synadmin .pbresult-list-table td,
+body.admin-skin-synadmin .notice-table td,
+body.admin-skin-synadmin .table-black td,
+body.admin-skin-synadmin .table td {
+    border-color: var(--admin-border-color);
+    color: var(--bar-font-color);
+}
+
+body.admin-skin-synadmin .user-table tbody tr,
+body.admin-skin-synadmin .bet-table tbody tr,
+body.admin-skin-synadmin .calculate-table tbody tr,
+body.admin-skin-synadmin .bank-table tbody tr,
+body.admin-skin-synadmin .pbresult-list-table tbody tr,
+body.admin-skin-synadmin .notice-table tbody tr,
+body.admin-skin-synadmin .table-black tbody tr,
+body.admin-skin-synadmin .table tbody tr {
+    background-color: var(--admin-table-bg);
+}
+
+body.admin-skin-synadmin .user-table tbody tr:nth-child(even),
+body.admin-skin-synadmin .bet-table tbody tr:nth-child(even),
+body.admin-skin-synadmin .calculate-table tbody tr:nth-child(even),
+body.admin-skin-synadmin .bank-table tbody tr:nth-child(even),
+body.admin-skin-synadmin .pbresult-list-table tbody tr:nth-child(even),
+body.admin-skin-synadmin .notice-table tbody tr:nth-child(even) {
+    background-color: var(--admin-table-row-alt-bg);
+}
+
+body.admin-skin-synadmin.admin-skin-dark .user-table tbody tr[bgcolor] {
+    background-color: var(--admin-table-bg) !important;
+    box-shadow: inset 4px 0 0 var(--span-font-color);
+}
+
+body.admin-skin-synadmin.admin-skin-dark .user-table tbody tr[bgcolor]:nth-child(even) {
+    background-color: var(--admin-table-row-alt-bg) !important;
+}
+
+body.admin-skin-synadmin.admin-skin-dark .user-table tbody tr[bgcolor] td {
+    background-color: transparent !important;
+    color: var(--bar-font-color) !important;
+}
+
+body.admin-skin-synadmin .user-table button,
+body.admin-skin-synadmin .user-table a,
+body.admin-skin-synadmin .bet-table button,
+body.admin-skin-synadmin .pbresult-list-table a,
+body.admin-skin-synadmin .pbresult-list-view-but,
+body.admin-skin-synadmin .pbresult-money-but,
+body.admin-skin-synadmin .list-view-but,
+body.admin-skin-synadmin .user-panel-add-a,
+body.admin-skin-synadmin .confsite-cancel-button,
+body.admin-skin-synadmin .confsite-ok-button,
+body.admin-skin-synadmin .useredit-cancel-button,
+body.admin-skin-synadmin .useredit-ok-button {
+    background-color: var(--admin-soft-bg);
+    border: 1px solid var(--admin-border-color);
+    border-radius: 6px;
+    box-shadow: none;
+    color: var(--bar-font-color);
+}
+
+body.admin-skin-synadmin .user-table button:not(.refresh_btn):not(.recovery_btn) {
+    transition: background-color 0.16s ease, border-color 0.16s ease, color 0.16s ease, box-shadow 0.16s ease;
+}
+
+body.admin-skin-synadmin .user-table button:not(.button-active):not(.button-req):not(.refresh_btn):not(.recovery_btn) {
+    background-color: var(--admin-muted-button-bg);
+    border-color: var(--admin-muted-button-border);
+    color: var(--admin-muted-button-text);
+}
+
+body.admin-skin-synadmin .user-table .button-active {
+    background-color: var(--admin-success-bg);
+    border-color: var(--admin-success-border);
+    color: var(--admin-success-text);
+    box-shadow: inset 0 0 0 1px rgba(34, 197, 94, 0.14);
+}
+
+body.admin-skin-synadmin .user-table .button-req {
+    background-color: var(--admin-warning-bg);
+    border-color: var(--admin-warning-border);
+    color: var(--admin-warning-text);
+    box-shadow: inset 0 0 0 1px rgba(245, 158, 11, 0.14);
+}
+
+body.admin-skin-synadmin .user-table .button-active::before,
+body.admin-skin-synadmin .user-table .button-req::before {
+    content: "";
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    margin-right: 5px;
+    border-radius: 50%;
+    vertical-align: 1px;
+}
+
+body.admin-skin-synadmin .user-table .button-active::before {
+    background-color: var(--admin-success-border);
+}
+
+body.admin-skin-synadmin .user-table .button-req::before {
+    background-color: var(--admin-warning-border);
+}
+
+body.admin-skin-synadmin .confsite-ok-button,
+body.admin-skin-synadmin .useredit-ok-button,
+body.admin-skin-synadmin .pbresult-list-view-but,
+body.admin-skin-synadmin .list-view-but {
+    background-color: var(--admin-active-bg);
+    border-color: var(--admin-active-bg);
+    color: var(--admin-active-text);
+}
+
+body.admin-skin-synadmin .user-table button:hover:not([disabled]),
+body.admin-skin-synadmin .user-table a:hover,
+body.admin-skin-synadmin .bet-table button:hover,
+body.admin-skin-synadmin .pbresult-list-table a:hover,
+body.admin-skin-synadmin .pbresult-list-view-but:hover,
+body.admin-skin-synadmin .pbresult-money-but:hover,
+body.admin-skin-synadmin .list-view-but:hover,
+body.admin-skin-synadmin .user-panel-add-a:hover,
+body.admin-skin-synadmin .confsite-cancel-button:hover,
+body.admin-skin-synadmin .confsite-ok-button:hover,
+body.admin-skin-synadmin .useredit-cancel-button:hover,
+body.admin-skin-synadmin .useredit-ok-button:hover {
+    filter: brightness(1.08);
+    text-decoration: none;
+    box-shadow: 0 8px 18px rgba(124, 58, 237, 0.18);
+}
+
+body.admin-skin-synadmin .pagination button {
+    background-color: var(--admin-soft-bg);
+    color: var(--bar-font-color);
+}
+
+body.admin-skin-synadmin .pagination button.active {
+    background-color: var(--admin-active-bg);
+    color: var(--admin-active-text);
+}
+
+body.admin-skin-synadmin .switch-label {
+    background-color: var(--admin-soft-bg);
+}
+
+body.admin-skin-synadmin .switch-input:checked ~ .switch-label {
+    background-color: var(--admin-active-bg);
+}
+
+body.admin-skin-synadmin .loading {
+    background-color: var(--main-bg-color);
+}
+
+body.admin-skin-synadmin.admin-skin-dark .modal {
+    color: var(--bar-font-color) !important;
+}
+
+body.admin-skin-synadmin.admin-skin-dark .modal-content,
+body.admin-skin-synadmin.admin-skin-dark .panel,
+body.admin-skin-synadmin.admin-skin-dark .panel-body,
+body.admin-skin-synadmin.admin-skin-dark .well,
+body.admin-skin-synadmin.admin-skin-dark .list-group-item,
+body.admin-skin-synadmin.admin-skin-dark .dropdown-menu,
+body.admin-skin-synadmin.admin-skin-dark .popover,
+body.admin-skin-synadmin.admin-skin-dark .ui-widget-content,
+body.admin-skin-synadmin.admin-skin-dark .ui-datepicker {
+    background-color: var(--admin-card-bg);
+    border-color: var(--admin-border-color);
+    color: var(--bar-font-color);
+}
+
+body.admin-skin-synadmin.admin-skin-dark .modal-header,
+body.admin-skin-synadmin.admin-skin-dark .modal-footer,
+body.admin-skin-synadmin.admin-skin-dark .panel-heading,
+body.admin-skin-synadmin.admin-skin-dark .panel-footer,
+body.admin-skin-synadmin.admin-skin-dark .popover-title,
+body.admin-skin-synadmin.admin-skin-dark .ui-widget-header {
+    background-color: var(--admin-soft-bg);
+    border-color: var(--admin-border-color);
+    color: var(--bar-font-color);
+}
+
+body.admin-skin-synadmin.admin-skin-dark .close,
+body.admin-skin-synadmin.admin-skin-dark .modal-header .close {
+    color: var(--bar-font-color);
+    opacity: 0.86;
+    text-shadow: none;
+}
+
+body.admin-skin-synadmin.admin-skin-dark .form-control,
+body.admin-skin-synadmin.admin-skin-dark .input-group-addon,
+body.admin-skin-synadmin.admin-skin-dark .content[style*="background-color:white"],
+body.admin-skin-synadmin.admin-skin-dark .content[style*="background-color: white"],
+body.admin-skin-synadmin.admin-skin-dark .content[style*="background:white"],
+body.admin-skin-synadmin.admin-skin-dark .content[style*="background: white"],
+body.admin-skin-synadmin.admin-skin-dark form[style*="background-color:white"],
+body.admin-skin-synadmin.admin-skin-dark form[style*="background-color: white"],
+body.admin-skin-synadmin.admin-skin-dark form[style*="background:white"],
+body.admin-skin-synadmin.admin-skin-dark form[style*="background: white"],
+body.admin-skin-synadmin.admin-skin-dark input[style*="background-color:white"],
+body.admin-skin-synadmin.admin-skin-dark input[style*="background-color: white"],
+body.admin-skin-synadmin.admin-skin-dark input[style*="background:white"],
+body.admin-skin-synadmin.admin-skin-dark input[style*="background: white"] {
+    background-color: var(--admin-input-bg) !important;
+    border-color: var(--admin-border-color) !important;
+    color: var(--bar-font-color) !important;
+}
+
+body.admin-skin-synadmin.admin-skin-dark [style*="color:#333"],
+body.admin-skin-synadmin.admin-skin-dark [style*="color: #333"] {
+    color: var(--bar-font-color) !important;
+}
+
+body.admin-skin-synadmin.admin-skin-dark .note-editor,
+body.admin-skin-synadmin.admin-skin-dark .note-frame,
+body.admin-skin-synadmin.admin-skin-dark .note-editing-area,
+body.admin-skin-synadmin.admin-skin-dark .note-editable,
+body.admin-skin-synadmin.admin-skin-dark .note-status-output,
+body.admin-skin-synadmin.admin-skin-dark .note-modal-content,
+body.admin-skin-synadmin.admin-skin-dark .note-popover,
+body.admin-skin-synadmin.admin-skin-dark .note-popover-content,
+body.admin-skin-synadmin.admin-skin-dark .note-dropdown-menu,
+body.admin-skin-synadmin.admin-skin-dark .note-input {
+    background-color: var(--admin-input-bg) !important;
+    border-color: var(--admin-border-color) !important;
+    color: var(--bar-font-color) !important;
+}
+
+body.admin-skin-synadmin.admin-skin-dark .note-toolbar,
+body.admin-skin-synadmin.admin-skin-dark .note-modal-header,
+body.admin-skin-synadmin.admin-skin-dark .note-modal-footer {
+    background-color: var(--admin-soft-bg) !important;
+    border-color: var(--admin-border-color) !important;
+    color: var(--bar-font-color) !important;
+}
+
+body.admin-skin-synadmin.admin-skin-dark .note-btn,
+body.admin-skin-synadmin.admin-skin-dark .note-dropdown-item {
+    background-color: var(--admin-soft-bg) !important;
+    border-color: var(--admin-border-color) !important;
+    color: var(--bar-font-color) !important;
+}
+
+body.admin-skin-synadmin.admin-skin-dark .note-btn:hover,
+body.admin-skin-synadmin.admin-skin-dark .note-btn:focus,
+body.admin-skin-synadmin.admin-skin-dark .note-dropdown-item:hover {
+    background-color: var(--admin-hover-bg) !important;
+    color: var(--bar-font-color) !important;
+}
+
+body.admin-skin-synadmin.admin-skin-dark .xdsoft_datetimepicker,
+body.admin-skin-synadmin.admin-skin-dark .xdsoft_datetimepicker .xdsoft_label,
+body.admin-skin-synadmin.admin-skin-dark .xdsoft_datetimepicker .xdsoft_label > .xdsoft_select,
+body.admin-skin-synadmin.admin-skin-dark .xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box,
+body.admin-skin-synadmin.admin-skin-dark .xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box > div > div,
+body.admin-skin-synadmin.admin-skin-dark .xdsoft_datetimepicker .xdsoft_calendar td,
+body.admin-skin-synadmin.admin-skin-dark .xdsoft_datetimepicker .xdsoft_calendar th {
+    background-color: var(--admin-input-bg) !important;
+    border-color: var(--admin-border-color) !important;
+    color: var(--bar-font-color) !important;
+}
+
+body.admin-skin-synadmin.admin-skin-dark .xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_current,
+body.admin-skin-synadmin.admin-skin-dark .xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box > div > div.xdsoft_current {
+    background-color: var(--admin-active-bg) !important;
+    color: var(--admin-active-text) !important;
+}
+
+body.admin-skin-synadmin.admin-skin-dark .table-striped > tbody > tr:nth-of-type(odd),
+body.admin-skin-synadmin.admin-skin-dark .table-hover > tbody > tr:hover {
+    background-color: var(--admin-table-row-alt-bg);
+}
+
+.admin-sidebar-toggle {
+    display: none;
+}
+
+@media screen and (max-width: 900px) {
+    body.admin-responsive {
+        min-width: 0;
+        overflow-x: hidden;
+    }
+
+    body.admin-responsive::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: 40;
+        background: rgba(0, 0, 0, 0);
+        pointer-events: none;
+        transition: background 0.2s ease;
+    }
+
+    body.admin-responsive.admin-sidebar-open::before {
+        background: rgba(0, 0, 0, 0.38);
+        pointer-events: auto;
+    }
+
+    body.admin-responsive .admin-sidebar-toggle {
+        position: fixed;
+        top: 12px;
+        left: 12px;
+        z-index: 80;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        padding: 0;
+        background-color: var(--bar-bg-color);
+        border: 1px solid var(--admin-border-color, var(--span-font-color));
+        border-radius: 8px;
+        color: var(--bar-font-color);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+    }
+
+    body.admin-responsive .main-sidebar {
+        width: 260px !important;
+        height: 100vh;
+        z-index: 60;
+        overflow-y: auto;
+        transform: translateX(-105%);
+        transition: transform 0.2s ease;
+    }
+
+    body.admin-responsive.admin-sidebar-open .main-sidebar {
+        transform: translateX(0);
+    }
+
+    body.admin-responsive .main-container {
+        width: 100% !important;
+        min-width: 0 !important;
+        margin-left: 0 !important;
+        padding: 64px 10px 16px !important;
+        overflow-x: hidden;
+    }
+
+    body.admin-responsive.admin-popup-layout .main-container {
+        padding: 10px !important;
+    }
+
+    body.admin-responsive .main-navbar {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        width: 100%;
+        min-width: 0 !important;
+        padding: 12px;
+        overflow: visible;
+    }
+
+    body.admin-responsive .main-navbar h4 {
+        float: none !important;
+        margin: 0 0 8px 48px !important;
+        min-height: 32px;
+    }
+
+    body.admin-responsive .main-navbar-info-table,
+    body.admin-responsive .main-navbar-betinfo-table {
+        display: block;
+        float: none;
+        width: 100%;
+        margin: 6px 0 !important;
+        overflow-x: auto;
+    }
+
+    body.admin-responsive .main-navbar-info-table tbody,
+    body.admin-responsive .main-navbar-betinfo-table tbody {
+        display: table;
+        min-width: 560px;
+    }
+
+    body.admin-responsive .main-navbar-user-div {
+        display: flex;
+        float: none;
+        justify-content: flex-end;
+        width: 100%;
+        gap: 8px;
+    }
+
+    body.admin-responsive .main-navbar-user-div div,
+    body.admin-responsive .main-navbar-user-div p,
+    body.admin-responsive .main-navbar-user-div label {
+        float: none;
+    }
+
+    body.admin-responsive .sub-navbar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        overflow: visible;
+    }
+
+    body.admin-responsive .sub-navbar p,
+    body.admin-responsive .sub-navbar-a,
+    body.admin-responsive .sub-navbar-but,
+    body.admin-responsive .user-panel-add-a {
+        float: none;
+        margin: 2px;
+    }
+
+    body.admin-responsive .confsite-site-panel,
+    body.admin-responsive .confsite-game-panel,
+    body.admin-responsive .confsite-password-panel,
+    body.admin-responsive .user-panel,
+    body.admin-responsive .useredit-panel,
+    body.admin-responsive .bank-panel,
+    body.admin-responsive .bet-panel,
+    body.admin-responsive .pbresult-list-panel,
+    body.admin-responsive .notice-panel {
+        min-width: 0 !important;
+        width: 100%;
+        padding: 14px;
+    }
+
+    body.admin-responsive .user-table,
+    body.admin-responsive .bet-table,
+    body.admin-responsive .calculate-table,
+    body.admin-responsive .bank-table,
+    body.admin-responsive .pbresult-list-table,
+    body.admin-responsive .notice-table,
+    body.admin-responsive .table-black,
+    body.admin-responsive .table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    body.admin-responsive .confsite-site-text-div,
+    body.admin-responsive .confsite-game-text-div,
+    body.admin-responsive .confsite-password-text-div,
+    body.admin-responsive .useredit-text-div,
+    body.admin-responsive .useredit-percent-div {
+        padding-left: 0;
+    }
+
+    body.admin-responsive .confsite-site-text-div div,
+    body.admin-responsive .confsite-game-text-div div {
+        float: none;
+        width: 100%;
+    }
+
+    body.admin-responsive .confsite-site-text-div p,
+    body.admin-responsive .confsite-game-text-div p,
+    body.admin-responsive .confsite-password-text-div p,
+    body.admin-responsive .useredit-text-div p,
+    body.admin-responsive .useredit-percent-div p {
+        float: none;
+        width: 100%;
+        margin: 8px 0 4px;
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    body.admin-responsive .main-container {
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+    }
+
+    body.admin-responsive input:not([type=checkbox]):not([type=radio]):not([type=color]),
+    body.admin-responsive select,
+    body.admin-responsive textarea,
+    body.admin-responsive .pbresult-number-select,
+    body.admin-responsive .pbresult-game-select,
+    body.admin-responsive .pbresult-text-input,
+    body.admin-responsive .confsite-site-text-div input,
+    body.admin-responsive .confsite-site-text-div textarea,
+    body.admin-responsive .confsite-game-text-div .conf-text-input,
+    body.admin-responsive .confsite-game-text-div .conf-seconds-input,
+    body.admin-responsive .confsite-password-text-div input,
+    body.admin-responsive .useredit-text-div input,
+    body.admin-responsive .useredit-text-div select,
+    body.admin-responsive .useredit-percent-div input {
+        float: none;
+        width: 100% !important;
+        max-width: 100%;
+        margin: 4px 0;
+    }
+
+    body.admin-responsive .confsite-button-group,
+    body.admin-responsive .useredit-button-group {
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    body.admin-responsive .confsite-cancel-button,
+    body.admin-responsive .confsite-ok-button,
+    body.admin-responsive .useredit-cancel-button,
+    body.admin-responsive .useredit-ok-button,
+    body.admin-responsive .pbresult-list-view-but,
+    body.admin-responsive .list-view-but {
+        float: none;
+        width: auto;
+        margin: 4px 0;
+    }
+}
