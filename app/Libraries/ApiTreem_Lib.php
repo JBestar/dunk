@@ -176,7 +176,7 @@ class ApiTreem_Lib  {
         return $arrResult;
     }
 
-    public function gameUrl($uid, $nickname, $vendor, $gameId, $range)
+    public function gameUrl($uid, $nickname, $vendor, $gameId, $range = '')
     {
         if(strlen($this->mHost) < 1){
             return array('status' => 0);
