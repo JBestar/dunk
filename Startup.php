@@ -15,7 +15,6 @@
 
 	//자료기지 접속
 	$dbConn = connectDb($arrConfig);
-
 	if ($dbConn->connect_error) {
 	    echo "Connection failed.". $dbConn->connect_error;
 	    sleep(50);

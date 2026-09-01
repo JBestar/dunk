@@ -1818,7 +1818,7 @@ class ServiceLogic
 		$arrEmpPoint = array();
 		$arrMemBlank = array();
 		$arrMemBet = array();
-		$arrTransMember = [];
+		$arrPendingRecover = [];
 		
 		$arrBet = [];
 		$arrLiveUids = [];
@@ -1944,21 +1944,23 @@ class ServiceLogic
 						}
 
 						$arrEmpRatio = calcEmpPoint($objMember->ratio_cs, $betting['bet_money'], $betting['bet_time']);
-						foreach($arrEmpRatio as $ratio){
-							if(array_key_exists($ratio['mb_fid'], $arrEmpPoint ))
-								$arrEmpPoint[$ratio['mb_fid']] += $ratio['point'];
-							else 
-								$arrEmpPoint[$ratio['mb_fid']] = $ratio['point'];	
-
-							if($bNeedTrans){
-								if(array_key_exists($objMember->mb_fid, $arrTransMember ))
-									$arrTransMember[$objMember->mb_fid] += $ratio['point'];
-								else 
-									$arrTransMember[$objMember->mb_fid] = $ratio['point'];
+						if($bNeedTrans){
+							$betTotalPoint = 0;
+							foreach($arrEmpRatio as $ratio){
+								$betTotalPoint += $ratio['point'];
 							}
-							
+							if($betTotalPoint > 1){
+								$arrPendingRecover[] = [
+									'betId' => $betId,
+									'member_fid' => $objMember->mb_fid,
+									'total_point' => $betTotalPoint,
+									'arrEmpRatio' => $arrEmpRatio,
+								];
+							}
+						} else {
+							$this->applyEmpRatioPoints($arrEmpPoint, $arrEmpRatio);
+							$this->modelReward->insert(GAME_CASINO_EVOL, $betId, $arrEmpRatio, $rwCsLastFid);
 						}
-						$this->modelReward->insert(GAME_CASINO_EVOL, $betId, $arrEmpRatio, $rwCsLastFid);
 					}
 
 				} else	//베팅
@@ -2074,44 +2076,68 @@ class ServiceLogic
 		$this->modelMember->updateMemberBetTm($arrMemBet);
 		$bResult = $this->modelMember->updateMemberBlank($arrMemBlank);
 		writeLog($this->fLog, $logHead."UpdateMemBlank-Count=".count($arrMemBlank)." Result=".$bResult);
+		$this->processPendingRecoverTreem($arrPendingRecover, $arrEmpPoint, $arrMember, $arrInfo, $proxyUrl, $rwCsLastFid);
 		$bResult = $this->modelMember->addEmployeePoint($arrEmpPoint);
 		writeLog($this->fLog, $logHead."AddEmpPoint-Count=".count($arrEmpPoint)." Result=".$bResult);
 
-		writeLog($this->fLog, $logHead."TransPoint-Count=".count($arrTransMember));
-		foreach ($arrTransMember as $fid => $point) {
-			if($point <= 1)
+		return $bInsert;
+	}
+
+	private function applyEmpRatioPoints(&$arrEmpPoint, $arrEmpRatio){
+		foreach($arrEmpRatio as $ratio){
+			if(array_key_exists($ratio['mb_fid'], $arrEmpPoint))
+				$arrEmpPoint[$ratio['mb_fid']] += $ratio['point'];
+			else
+				$arrEmpPoint[$ratio['mb_fid']] = $ratio['point'];
+		}
+	}
+
+	private function processPendingRecoverTreem($arrPendingRecover, &$arrEmpPoint, $arrMember, $arrInfo, $proxyUrl, $rwCsLastFid){
+		$logHead = "<TREEM_CASINO> ";
+		writeLog($this->fLog, $logHead."PendingRecover-Count=".count($arrPendingRecover));
+		foreach($arrPendingRecover as $pending){
+			if($pending['total_point'] <= 1)
 				continue;
-			$member = findMemberByFid($arrMember, $fid);
-
-			$moneyUpdated = false;
-			if($member->mb_money >= $point){
-				$moneyUpdated = $this->modelMember->updateAssets($member, 0-$point, 0, MONEYCHANGE_WITHDRAW, MONEYCHANGE_WITHDRAW_CUT);
+			$member = findMemberByFid($arrMember, $pending['member_fid']);
+			if(is_null($member)){
+				writeLog($this->fLog, $logHead."RecoverSkip betId=".$pending['betId']." member not found");
+				continue;
 			}
-			if(!$moneyUpdated){
-				for($i=0; $i<3; $i++){
-					$result = $this->withdrawTreemEgg($arrInfo, $member->mb_treem_uid, $point, $proxyUrl);
-
-					writeLog($this->fLog, $logHead."TransPoint uid=".$member->mb_uid." point=".$point." result=".$result['status']);
-					if($result['status'] == 1){
-						if($member->mb_treem_money != $result['balance']){
-							$member->mb_treem_money = $result['balance'];
-							$bUpdated = $this->modelMember->updateGameMoney($member);
-							writeLog($this->fLog, $logHead."uid=".$member->mb_uid.", balance=".$result['balance'].", updated=".$bUpdated);
-						}
-						writeLog($this->fLog, $logHead."TransPoint uid=".$member->mb_uid.", balance=".$result['balance'].", point=".$point);
-						$this->modelTransfer->insertRow(RECOVER_TREEM, $member, $result['balance']+$point, 0-$point, $this->fLog);
-						// $this->modelMoneyHistory->insertRow(MONEYCHANGE_WITHDRAW, $member, 0-$point, "", MONEYCHANGE_WITHDRAW_CUT, $this->fLog);
-						break;
-					} else {
-						sleep(3);
-					}
-				}
-			}	
-
+			if($this->tryRecoverFromMemberTreem($member, $pending['total_point'], $arrInfo, $proxyUrl, $logHead)){
+				$this->applyEmpRatioPoints($arrEmpPoint, $pending['arrEmpRatio']);
+				$this->modelReward->insert(GAME_CASINO_EVOL, $pending['betId'], $pending['arrEmpRatio'], $rwCsLastFid);
+				writeLog($this->fLog, $logHead."RecoverOk betId=".$pending['betId']." uid=".$member->mb_uid." point=".$pending['total_point']);
+			} else {
+				writeLog($this->fLog, $logHead."RecoverFail betId=".$pending['betId']." uid=".$member->mb_uid." point=".$pending['total_point']);
+			}
 			sleep(1);
 		}
+	}
 
-		return $bInsert;
+	private function tryRecoverFromMemberTreem($member, $point, $arrInfo, $proxyUrl, $logHead){
+		if(is_null($member) || $point <= 1)
+			return false;
+
+		if($member->mb_money >= $point){
+			if($this->modelMember->updateAssets($member, 0-$point, 0, MONEYCHANGE_WITHDRAW, MONEYCHANGE_WITHDRAW_CUT))
+				return true;
+		}
+		for($i=0; $i<3; $i++){
+			$result = $this->withdrawTreemEgg($arrInfo, $member->mb_treem_uid, $point, $proxyUrl);
+			writeLog($this->fLog, $logHead."TransPoint uid=".$member->mb_uid." point=".$point." result=".$result['status']);
+			if($result['status'] == 1){
+				if($member->mb_treem_money != $result['balance']){
+					$member->mb_treem_money = $result['balance'];
+					$bUpdated = $this->modelMember->updateGameMoney($member);
+					writeLog($this->fLog, $logHead."uid=".$member->mb_uid.", balance=".$result['balance'].", updated=".$bUpdated);
+				}
+				writeLog($this->fLog, $logHead."TransPoint uid=".$member->mb_uid.", balance=".$result['balance'].", point=".$point);
+				$this->modelTransfer->insertRow(RECOVER_TREEM, $member, $result['balance']+$point, 0-$point, $this->fLog);
+				return true;
+			}
+			sleep(3);
+		}
+		return false;
 	}
 
 	//=============Treem withdraw ==============
@@ -2286,7 +2312,7 @@ class ServiceLogic
 		$arrEmpPoint = array();
 		$arrMemBlank = array();
 		$arrMemBet = array();
-		$arrTransMember = [];
+		$arrPendingRecover = [];
 		$arrLiveUids = [];
 		$slExist = !$isLive;
 		$csExist = $isLive;
@@ -2378,21 +2404,23 @@ class ServiceLogic
 					writeLog($this->fLog, $logHead."INSERT user_id=".$objMember->mb_uid.", vendorCode=".$bet['vendorCode'].", transaction_id=".$bet['transaction_id']);
 
 					$arrEmpRatio = calcEmpPoint($objMember->ratio_cs, $bet['bet'], $bet['startDate']);
-					foreach($arrEmpRatio as $ratio){
-						if(array_key_exists($ratio['mb_fid'], $arrEmpPoint ))
-							$arrEmpPoint[$ratio['mb_fid']] += $ratio['point'];
-						else 
-							$arrEmpPoint[$ratio['mb_fid']] = $ratio['point'];	
-
-						if($bNeedTrans){
-							if(array_key_exists($objMember->mb_fid, $arrTransMember ))
-								$arrTransMember[$objMember->mb_fid] += $ratio['point'];
-							else 
-								$arrTransMember[$objMember->mb_fid] = $ratio['point'];
+					if($bNeedTrans){
+						$betTotalPoint = 0;
+						foreach($arrEmpRatio as $ratio){
+							$betTotalPoint += $ratio['point'];
 						}
-						
+						if($betTotalPoint > 1){
+							$arrPendingRecover[] = [
+								'betId' => $betId,
+								'member_fid' => $objMember->mb_fid,
+								'total_point' => $betTotalPoint,
+								'arrEmpRatio' => $arrEmpRatio,
+							];
+						}
+					} else {
+						$this->applyEmpRatioPoints($arrEmpPoint, $arrEmpRatio);
+						$this->modelReward->insert(GAME_CASINO_EVOL, $betId, $arrEmpRatio, $rwCsLastFid);
 					}
-					$this->modelReward->insert(GAME_CASINO_EVOL, $betId, $arrEmpRatio, $rwCsLastFid);
 				}
 
 			} else {
@@ -2451,44 +2479,59 @@ class ServiceLogic
 		$this->modelMember->updateMemberBetTm($arrMemBet);
 		$bResult = $this->modelMember->updateMemberBlank($arrMemBlank);
 		writeLog($this->fLog, $logHead."UpdateMemBlank-Count=".count($arrMemBlank)." Result=".$bResult);
+		$this->processPendingRecoverSigma($arrPendingRecover, $arrEmpPoint, $arrMember, $arrInfo, $proxyUrl, $rwCsLastFid);
 		$bResult = $this->modelMember->addEmployeePoint($arrEmpPoint);
 		writeLog($this->fLog, $logHead."AddEmpPoint-Count=".count($arrEmpPoint)." Result=".$bResult);
 
-		writeLog($this->fLog, $logHead."TransPoint-Count=".count($arrTransMember));
-		foreach ($arrTransMember as $fid => $point) {
-			if($point <= 1)
+		return $bInsert;
+	}
+
+	private function processPendingRecoverSigma($arrPendingRecover, &$arrEmpPoint, $arrMember, $arrInfo, $proxyUrl, $rwCsLastFid){
+		$logHead = "<SIGMA> CAS>> ";
+		writeLog($this->fLog, $logHead."PendingRecover-Count=".count($arrPendingRecover));
+		foreach($arrPendingRecover as $pending){
+			if($pending['total_point'] <= 1)
 				continue;
-			$member = findMemberByFid($arrMember, $fid);
-
-			$moneyUpdated = false;
-			if($member->mb_money >= $point){
-				$moneyUpdated = $this->modelMember->updateAssets($member, 0-$point, 0, MONEYCHANGE_WITHDRAW, MONEYCHANGE_WITHDRAW_CUT);
+			$member = findMemberByFid($arrMember, $pending['member_fid']);
+			if(is_null($member)){
+				writeLog($this->fLog, $logHead."RecoverSkip betId=".$pending['betId']." member not found");
+				continue;
 			}
-			if(!$moneyUpdated){
-				for($i=0; $i<3; $i++){
-					$result = $this->withdrawSigmaEgg($arrInfo, $member->mb_sigma_uid, $point, $proxyUrl);
-
-					writeLog($this->fLog, $logHead."TransPoint uid=".$member->mb_uid." point=".$point." result=".$result['status']);
-					if($result['status'] == 1){
-						if($member->mb_sigma_money != $result['balance']){
-							$member->mb_sigma_money = $result['balance'];
-							$bUpdated = $this->modelMember->updateGameMoney($member);
-							writeLog($this->fLog, $logHead."uid=".$member->mb_uid.", balance=".$result['balance'].", updated=".$bUpdated);
-						}
-						writeLog($this->fLog, $logHead."TransPoint uid=".$member->mb_uid.", balance=".$result['balance'].", point=".$point);
-						$this->modelTransfer->insertRow(RECOVER_TREEM, $member, $result['balance']+$point, 0-$point, $this->fLog);
-						// $this->modelMoneyHistory->insertRow(MONEYCHANGE_WITHDRAW, $member, 0-$point, "", MONEYCHANGE_WITHDRAW_CUT, $this->fLog);
-						break;
-					} else {
-						sleep(3);
-					}
-				}
+			if($this->tryRecoverFromMemberSigma($member, $pending['total_point'], $arrInfo, $proxyUrl, $logHead)){
+				$this->applyEmpRatioPoints($arrEmpPoint, $pending['arrEmpRatio']);
+				$this->modelReward->insert(GAME_CASINO_EVOL, $pending['betId'], $pending['arrEmpRatio'], $rwCsLastFid);
+				writeLog($this->fLog, $logHead."RecoverOk betId=".$pending['betId']." uid=".$member->mb_uid." point=".$pending['total_point']);
+			} else {
+				writeLog($this->fLog, $logHead."RecoverFail betId=".$pending['betId']." uid=".$member->mb_uid." point=".$pending['total_point']);
 			}
-			
 			sleep(1);
 		}
+	}
 
-		return $bInsert;
+	private function tryRecoverFromMemberSigma($member, $point, $arrInfo, $proxyUrl, $logHead){
+		if(is_null($member) || $point <= 1)
+			return false;
+
+		if($member->mb_money >= $point){
+			if($this->modelMember->updateAssets($member, 0-$point, 0, MONEYCHANGE_WITHDRAW, MONEYCHANGE_WITHDRAW_CUT))
+				return true;
+		}
+		for($i=0; $i<3; $i++){
+			$result = $this->withdrawSigmaEgg($arrInfo, $member->mb_sigma_uid, $point, $proxyUrl);
+			writeLog($this->fLog, $logHead."TransPoint uid=".$member->mb_uid." point=".$point." result=".$result['status']);
+			if($result['status'] == 1){
+				if($member->mb_sigma_money != $result['balance']){
+					$member->mb_sigma_money = $result['balance'];
+					$bUpdated = $this->modelMember->updateGameMoney($member);
+					writeLog($this->fLog, $logHead."uid=".$member->mb_uid.", balance=".$result['balance'].", updated=".$bUpdated);
+				}
+				writeLog($this->fLog, $logHead."TransPoint uid=".$member->mb_uid.", balance=".$result['balance'].", point=".$point);
+				$this->modelTransfer->insertRow(RECOVER_TREEM, $member, $result['balance']+$point, 0-$point, $this->fLog);
+				return true;
+			}
+			sleep(3);
+		}
+		return false;
 	}
 	
 	//=============Sigma withdraw ==============

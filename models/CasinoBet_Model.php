@@ -537,6 +537,35 @@ class CasinoBet_Model {
 	public function updateT($fid, $bet, $fLog=null){
 
 		$betSpec = "";
+		if(array_key_exists('external', $bet)) {
+
+			$betDetail = null;
+			try{
+				if(array_key_exists('detail', $bet['external']) && !is_null($bet['external']['detail']) && array_key_exists('data', $bet['external']['detail'])){
+					$betDetail = $bet['external']['detail']['data'];
+					// writeLog($fLog, "detail-1");
+				} else $betDetail = null;
+
+
+			} catch (Exception $e) {
+				$betDetail = null;
+			}
+
+			if($betDetail == null){
+				$betSpec = "";
+			} else if(array_key_exists('participants', $betDetail)) {
+				// writeLog($fLog, "detail-2");
+				if(is_array($betDetail['participants']) && count($betDetail['participants']) > 0 && array_key_exists('bets', $betDetail['participants'][0]) ){
+					foreach($betDetail['participants'][0]['bets'] as $detail){
+						$betSpec.= $detail['code'].",".$detail['stake'].",";
+						$betSpec.= $detail['payout']."#";
+					}
+				} 
+			} 
+			if(strlen($betSpec) < 1 && !is_null($fLog)){
+				// writeLog($fLog, "detail Error=".json_encode($bet['external']));
+			}
+		}
 		$strSql = "UPDATE ".$this->mTableName." SET ";	
 	
 		//bet_round_no
