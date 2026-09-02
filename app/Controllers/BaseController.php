@@ -1261,4 +1261,150 @@ class BaseController extends Controller
 
 		return $iResult;
 	}
+
+	protected function withGiveLimitLock($callback)
+	{
+		$lockRow = $this->modelMember->db->query("SELECT GET_LOCK('dunk_adm_give_limit', 30) AS l")->getRow();
+		if(is_null($lockRow) || intval($lockRow->l) !== 1){
+			return ['ok' => false, 'msg' => '지급 처리 중입니다. 잠시 후 다시 시도해주세요.'];
+		}
+
+		try {
+			return $callback();
+		} finally {
+			$this->modelMember->db->query("SELECT RELEASE_LOCK('dunk_adm_give_limit')");
+		}
+	}
+
+	protected function getMinAgentEggBalance($siteConfs)
+	{
+		$fetchers = [];
+		$keys = [];
+
+		$addFetcher = function($key, $callable) use (&$fetchers, &$keys) {
+			if(isset($keys[$key]))
+				return;
+			$keys[$key] = true;
+			$fetchers[] = $callable;
+		};
+
+		if(!$siteConfs['evol_deny'] && !isEBalMode()){
+			$addFetcher('evol', function() { return $this->libApiCas->getAgentInfo(); });
+		}
+
+		if(!$siteConfs['slot_deny']){
+			if($_ENV['app.type'] == APP_TYPE_1 || $_ENV['app.type'] == APP_TYPE_3){
+				$slot = array_key_exists('app.slot', $_ENV) ? intval($_ENV['app.slot']) : APP_SLOT_THEPLUS;
+				if($slot == APP_SLOT_KGON){
+					$addFetcher('kgon', function() { return $this->libApiKgon->getAgentInfo(); });
+				} else if($slot == APP_SLOT_STAR){
+					$addFetcher('hslot', function() { return $this->libApiHslot->getAgentInfo(); });
+				} else if($slot == APP_SLOT_RAVE){
+					$addFetcher('rave', function() { return $this->libApiRave->getAgentInfo(); });
+				} else if($slot == APP_SLOT_TREEM){
+					$addFetcher('treem', function() { return $this->libApiTreem->getAgentInfo(); });
+				} else if($slot == APP_SLOT_SIGMA){
+					$addFetcher('sigma', function() { return $this->libApiSigma->getAgentInfo(); });
+				} else {
+					$addFetcher('theplus', function() { return $this->libApiSlot->getAgentInfo(); });
+				}
+			}
+			if($_ENV['app.type'] == APP_TYPE_1 || $_ENV['app.type'] == APP_TYPE_2){
+				$fslot = array_key_exists('app.fslot', $_ENV) ? intval($_ENV['app.fslot']) : APP_FSLOT_GSPLAY;
+				if($fslot == APP_FSLOT_GOLD){
+					$addFetcher('gslot', function() { return $this->libApiGslot->getUserInfo(); });
+				} else {
+					$addFetcher('gsplay', function() { return $this->libApiFslot->getAgentInfo(); });
+				}
+			}
+		}
+
+		if(!$siteConfs['cas_deny']){
+			$casino = array_key_exists('app.casino', $_ENV) ? intval($_ENV['app.casino']) : APP_CASINO_KGON;
+			if($casino == APP_CASINO_STAR){
+				$addFetcher('hslot', function() { return $this->libApiHslot->getAgentInfo(); });
+			} else if($casino == APP_CASINO_RAVE){
+				$addFetcher('rave', function() { return $this->libApiRave->getAgentInfo(); });
+			} else if($casino == APP_CASINO_TREEM){
+				$addFetcher('treem', function() { return $this->libApiTreem->getAgentInfo(); });
+			} else if($casino == APP_CASINO_SIGMA){
+				$addFetcher('sigma', function() { return $this->libApiSigma->getAgentInfo(); });
+			} else {
+				$addFetcher('kgon', function() { return $this->libApiKgon->getAgentInfo(); });
+			}
+		}
+
+		if(!$siteConfs['hold_deny']){
+			$addFetcher('hold', function() { return $this->libApiHold->getUserInfo(); });
+		}
+
+		if(count($fetchers) < 1){
+			return ['status' => 0, 'error' => 'NO_ACTIVE_API'];
+		}
+
+		$minBalance = null;
+		foreach($fetchers as $fetcher){
+			$arrResult = $fetcher();
+			if(is_null($arrResult) || !array_key_exists('status', $arrResult) || intval($arrResult['status']) !== 1){
+				return ['status' => 0, 'error' => 'API_FAIL'];
+			}
+			if(!array_key_exists('balance', $arrResult)){
+				return ['status' => 0, 'error' => 'API_FAIL'];
+			}
+			$balance = floor(floatval($arrResult['balance']));
+			if(is_null($minBalance) || $balance < $minBalance){
+				$minBalance = $balance;
+			}
+		}
+
+		return ['status' => 1, 'balance' => $minBalance];
+	}
+
+	protected function calcGiveAvailableLimit($siteConfs)
+	{
+		$eggResult = $this->getMinAgentEggBalance($siteConfs);
+		if(intval($eggResult['status']) !== 1){
+			return [
+				'ok' => false,
+				'msg' => '보유알 정보를 조회할 수 없어 지급/직충전을 할 수 없습니다.',
+			];
+		}
+
+		$liability = $this->modelMember->calcGiveLiability();
+		$moneySum = floor(floatval($liability->money_sum));
+		$pointSum = floor(floatval($liability->point_sum));
+		$available = floor(floatval($eggResult['balance'])) - $pointSum - $moneySum;
+		if($available < 0)
+			$available = 0;
+
+		return [
+			'ok' => true,
+			'agent_egg' => floor(floatval($eggResult['balance'])),
+			'money_sum' => $moneySum,
+			'point_sum' => $pointSum,
+			'available' => $available,
+		];
+	}
+
+	protected function validateGiveAmount($amount, $siteConfs)
+	{
+		$limit = $this->calcGiveAvailableLimit($siteConfs);
+		if(!$limit['ok']){
+			return $limit;
+		}
+
+		$amount = floor(floatval($amount));
+		if($amount > $limit['available']){
+			return [
+				'ok' => false,
+				'msg' => '보유알이 부족하여 지급/직충전할 수 없습니다. (지급가능: '.number_format($limit['available']).'원)',
+				'available' => $limit['available'],
+				'agent_egg' => $limit['agent_egg'],
+				'money_sum' => $limit['money_sum'],
+				'point_sum' => $limit['point_sum'],
+			];
+		}
+
+		return $limit;
+	}
 }

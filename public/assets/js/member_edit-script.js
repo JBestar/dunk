@@ -1,5 +1,6 @@
 $(document).ready(function() {
     addBtnEvent();
+    updateGiveLimitPlaceholder("#useredit-transfer-input-id");
 });
 
 function readConfigToObject() {

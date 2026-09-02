@@ -325,6 +325,44 @@ function collectEgg(elem, mbFid) {
 }
 
 
+function formatGiveLimitPlaceholder(available) {
+    var nAvailable = parseInt(available, 10);
+    if (isNaN(nAvailable) || nAvailable < 0)
+        nAvailable = 0;
+    return nAvailable.toLocaleString() + "원 이하 지급/직충전 가능";
+}
+
+function updateGiveLimitPlaceholder(selector) {
+    if ($(selector).length < 1)
+        return;
+
+    requestGiveAvailable(function(jResult) {
+        if (jResult.status == "success") {
+            $(selector).attr("placeholder", formatGiveLimitPlaceholder(jResult.available));
+        } else if (jResult.status == "fail") {
+            $(selector).attr("placeholder", "지급/직충전 불가");
+        }
+    });
+}
+
+function requestGiveAvailable(callback) {
+    $.ajax({
+        type: "POST",
+        dataType: "json",
+        url: FURL + "/userapi/giveavailable",
+        data: {},
+        success: function(jResult) {
+            if (typeof callback === "function")
+                callback(jResult);
+        },
+        error: function() {
+            if (typeof callback === "function")
+                callback({ status: "fail" });
+        }
+    });
+}
+
+
 function requestTrasnfer(jsonData, bReload = true){
     $(".loading").show();
     

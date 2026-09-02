@@ -1494,6 +1494,17 @@ class Member_Model extends Model
         return $objResult;
     }
 
+    // 지급/직충전 한도용 회원 부채 (사이트 머니 + 포인트)
+    public function calcGiveLiability()
+    {
+        $strSQL = 'SELECT COALESCE(SUM(mb_money), 0) AS money_sum, COALESCE(SUM(mb_point), 0) AS point_sum FROM '.$this->table;
+        $strSQL .= ' WHERE mb_level < '.LEVEL_ADMIN;
+        $strSQL .= " AND mb_state_active <> '".PERMIT_DELETE."'";
+        $strSQL .= ' AND mb_state_test = '.STATE_DISABLE;
+
+        return $this->db->query($strSQL)->getRow();
+    }
+
     // 게임별 머니
     public function calcGameEgg($iGame=0)
     {

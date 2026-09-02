@@ -1,6 +1,7 @@
 $(document).ready(function() {
     requestJoinIp();
     addBtnEvent();
+    updateGiveLimitPlaceholder("#confsite-money-input-id");
 });
 
 function readPasswordToObject() {

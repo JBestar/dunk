@@ -54,7 +54,7 @@
     <script src="<?php echo site_furl('/assets/js/member_common-script.js?t='.time());?>"></script>
     <script src="<?php echo site_furl('/assets/js/confpwd-script.js?t='.time());?>"></script>
 <?php else : ?>
-    <script src="<?php echo site_furl('/assets/js/member_common-script.js?v=1');?>"></script>
-    <script src="<?php echo site_furl('/assets/js/confpwd-script.js?v=2');?>"></script>
+    <script src="<?php echo site_furl('/assets/js/member_common-script.js?v=2');?>"></script>
+    <script src="<?php echo site_furl('/assets/js/confpwd-script.js?v=3');?>"></script>
 <?php endif ?>
 <?= $this->endSection() ?>

@@ -1697,6 +1697,36 @@ class UserApi extends BaseController
         echo json_encode($arrResult);
     }
 
+    public function giveavailable()
+    {
+        $objResult = new \stdClass();
+        if(is_login()) {
+            $strUid = $this->session->user_id;
+            $objEmp = $this->modelMember->getInfo($strUid);
+            if(is_null($objEmp) || $objEmp->mb_level < LEVEL_ADMIN){
+                $objResult->status = STATUS_FAIL;
+            } else {
+                $confsiteModel = new ConfSite_Model();
+                $siteConfs = $this->getSiteConf($confsiteModel);
+                $limit = $this->calcGiveAvailableLimit($siteConfs);
+                if(!$limit['ok']){
+                    $objResult->status = STATUS_FAIL;
+                    $objResult->msg = $limit['msg'];
+                    $objResult->available = 0;
+                } else {
+                    $objResult->status = STATUS_SUCCESS;
+                    $objResult->available = $limit['available'];
+                    $objResult->agent_egg = $limit['agent_egg'];
+                    $objResult->money_sum = $limit['money_sum'];
+                    $objResult->point_sum = $limit['point_sum'];
+                }
+            }
+        } else {
+            $objResult->status = STATUS_LOGOUT;
+        }
+        echo json_encode($objResult);
+    }
+
     public function transfer()
     {
         $jsonData = $_REQUEST['json_'];
@@ -1735,8 +1765,17 @@ class UserApi extends BaseController
                         else 
                             $iChangeType = MONEYCHANGE_GIVE;
 
-                        if($this->modelMember->updateAssets($objMember, $arrData['amount'], 0, $iChangeType, $objEmp->mb_uid))
-                        {
+                        $siteConfs = $this->getSiteConf($confsiteModel);
+                        $giveResult = $this->withGiveLimitLock(function() use ($arrData, &$objMember, $objEmp, $iChangeType, $siteConfs) {
+                            $limit = $this->validateGiveAmount($arrData['amount'], $siteConfs);
+                            if(!$limit['ok']){
+                                return ['ok' => false, 'msg' => $limit['msg']];
+                            }
+
+                            if(!$this->modelMember->updateAssets($objMember, $arrData['amount'], 0, $iChangeType, $objEmp->mb_uid)){
+                                return ['ok' => false, 'msg' => '조작이 실패되었습니다.'];
+                            }
+
                             if($arrData['type'] == 0){
                                 $chargeModel = new Charge_Model();
 
@@ -1754,10 +1793,16 @@ class UserApi extends BaseController
                                     'charge_money_after' => allMoney($objMember) + $arrData['amount'],
                                 ];
                                 $chargeModel->register($data);
-                            } 
-                            
-                            // $moneyhistoryModel->registerTransfer($objMember, $objEmp->mb_uid, $arrData['amount'], $iChangeType);
+                            }
+
+                            return ['ok' => true];
+                        });
+
+                        if($giveResult['ok']){
                             $objResult->status = STATUS_SUCCESS;
+                        } else {
+                            $objResult->status = STATUS_FAIL;
+                            $objResult->msg = $giveResult['msg'];
                         }
                     } else if($iResult == 2) {
                         $objResult->status = STATUS_FAIL;

@@ -612,8 +612,8 @@
     <script src="<?php echo site_furl('/assets/js/member_common-script.js?t='.time());?>"></script>
 	<script src="<?php echo site_furl('/assets/js/member_edit-script.js?t='.time());?>"></script>
 <?php else : ?>
-    <script src="<?php echo site_furl('/assets/js/member_common-script.js?v=1');?>"></script>
-	<script src="<?php echo site_furl('/assets/js/member_edit-script.js?v=1');?>"></script>
+    <script src="<?php echo site_furl('/assets/js/member_common-script.js?v=2');?>"></script>
+	<script src="<?php echo site_furl('/assets/js/member_edit-script.js?v=2');?>"></script>
 <?php endif ?>
 <?= $this->endSection() ?>
 
