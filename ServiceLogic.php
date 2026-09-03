@@ -1750,6 +1750,7 @@ class ServiceLogic
 		$objConf = $this->modelConfSite->getById($confId);
 		
 		$objGameCas = $this->modelConfGame->getById($gameCasId);
+		$objGameSlot = $this->modelConfGame->getById($gameSlotId);
 
 		if(is_null($arrResult))
 			return false;
@@ -1955,6 +1956,8 @@ class ServiceLogic
 									'member_fid' => $objMember->mb_fid,
 									'total_point' => $betTotalPoint,
 									'arrEmpRatio' => $arrEmpRatio,
+									'game_id' => GAME_CASINO_EVOL,
+									'rwLastFid' => $rwCsLastFid,
 								];
 							}
 						} else {
@@ -2014,6 +2017,49 @@ class ServiceLogic
 					$betId = $betting['bet_fid'];
 					$bResult = $this->modelSlotBet->updateRslot($betId, $bet);
 					writeLog($this->fLog, $logHead."Update ACCId=".$betId."=>Result-".$bResult);
+
+					$bSlotBlank = (isset($betting['point_amount']) && intval($betting['point_amount']) == 1);
+					if(!$bSlotBlank && $bet['amount'] != $betting["bet_money"]){
+						$bNeedTrans = false;
+						if(!is_null($objGameSlot) && $objGameSlot->game_percent_1 == 1){
+							if($objGameSlot->game_percent_2 != 1){
+								$bNeedTrans = true;
+							} else {
+								if($bet['amount'] > $betting["bet_money"]){
+									if($objGameSlot->game_percent_3 == 1){
+										$betSpec = isset($betting["bet_choice"]) ? $betting["bet_choice"] : "";
+										if(strlen($betSpec) == 0 || strpos(strtolower($betSpec), 'player') !== false ){
+											$bNeedTrans = true;
+										}
+									} else {
+										$bNeedTrans = true;
+									}
+								}
+							}
+							writeLog($this->fLog, $logHead." referer_id=".$bet['referer_id']." bNeedTrans=".$bNeedTrans." bet_money=".$betting["bet_money"]." win_money=".$bet["amount"]);
+						}
+
+						$arrEmpRatio = calcEmpPoint($objMember->ratio_sl, $betting['bet_money'], $betting['bet_time']);
+						if($bNeedTrans){
+							$betTotalPoint = 0;
+							foreach($arrEmpRatio as $ratio){
+								$betTotalPoint += $ratio['point'];
+							}
+							if($betTotalPoint > 1){
+								$arrPendingRecover[] = [
+									'betId' => $betId,
+									'member_fid' => $objMember->mb_fid,
+									'total_point' => $betTotalPoint,
+									'arrEmpRatio' => $arrEmpRatio,
+									'game_id' => $gameSlotId,
+									'rwLastFid' => $rwSlLastFid,
+								];
+							}
+						} else {
+							$this->applyEmpRatioPoints($arrEmpPoint, $arrEmpRatio);
+							$this->modelReward->insert($gameSlotId, $betId, $arrEmpRatio, $rwSlLastFid);
+						}
+					}
 				} else {								//베팅
 					$betting = $this->modelSlotBet->getByRslot($gameSlotId, $bet['prd_id'], $bet['id'], $lastSlFid);	//베팅내역체크
 					if(!is_null($betting)){
@@ -2023,8 +2069,8 @@ class ServiceLogic
 					
 					$bBlank = false;
 					$nBlankPt = 0;
+					$arrEmpRatio = [];
 
-					$arrEmpRatio = calcEmpPoint($objMember->ratio_sl, $bet['amount'], $bet['created_at']);
 					if($objMember->mb_blank_count > 0 && intval($objMember->mb_blank_current) >= intval($objMember->mb_blank_count)-1 ){
 						$objMember->mb_blank_current = 0;
 						$bBlank = true;
@@ -2032,24 +2078,11 @@ class ServiceLogic
 						$arrMemBlank[$objMember->mb_fid] = $objMember->mb_blank_current;
 						writeLog($this->fLog, $logHead."Blank Cross Id=".$objMember->mb_uid." Current=".$objMember->mb_blank_current." Comp=".$nBlankPt);
 					} else {
-						foreach($arrEmpRatio as $ratio){
-							
-							if(array_key_exists($ratio['mb_fid'], $arrEmpPoint ))
-								$arrEmpPoint[$ratio['mb_fid']] += $ratio['point'];
-							else 
-								$arrEmpPoint[$ratio['mb_fid']] = $ratio['point'];	
-
-							// if(array_key_exists($objMember->mb_fid, $arrTransMember ))
-							// 	$arrTransMember[$objMember->mb_fid] += $ratio['point'];
-							// else 
-							// 	$arrTransMember[$objMember->mb_fid] = $ratio['point'];
-						}
 						if($objMember->mb_blank_count > 0){
 							$objMember->mb_blank_current ++;
 							$arrMemBlank[$objMember->mb_fid] = $objMember->mb_blank_current;
 							writeLog($this->fLog, $logHead."Blank Id=".$objMember->mb_uid." Current=".$objMember->mb_blank_current);
 						}
-						
 					}
 
 					$arrMemBet[$objMember->mb_fid] = $bet['created_at'];
@@ -2059,9 +2092,11 @@ class ServiceLogic
 						
 					if($betId > 0){
 						$arrIdx['fid'] = $betId;
-						$this->modelReward->insert($gameSlotId, $betId, $arrEmpRatio, $rwSlLastFid, $bBlank);
+						if($bBlank){
+							$this->modelReward->insert($gameSlotId, $betId, $arrEmpRatio, $rwSlLastFid, $bBlank);
+							writeLog($this->fLog, $logHead."Insert Blank Reward");
+						}
 						$bInsert = true;
-						writeLog($this->fLog, $logHead."Insert Reward Count=".count($arrEmpRatio));
 					}
 				}
 
@@ -2105,7 +2140,9 @@ class ServiceLogic
 			}
 			if($this->tryRecoverFromMemberTreem($member, $pending['total_point'], $arrInfo, $proxyUrl, $logHead)){
 				$this->applyEmpRatioPoints($arrEmpPoint, $pending['arrEmpRatio']);
-				$this->modelReward->insert(GAME_CASINO_EVOL, $pending['betId'], $pending['arrEmpRatio'], $rwCsLastFid);
+				$recoverGameId = isset($pending['game_id']) ? $pending['game_id'] : GAME_CASINO_EVOL;
+				$recoverRwFid = isset($pending['rwLastFid']) ? $pending['rwLastFid'] : $rwCsLastFid;
+				$this->modelReward->insert($recoverGameId, $pending['betId'], $pending['arrEmpRatio'], $recoverRwFid);
 				writeLog($this->fLog, $logHead."RecoverOk betId=".$pending['betId']." uid=".$member->mb_uid." point=".$pending['total_point']);
 			} else {
 				writeLog($this->fLog, $logHead."RecoverFail betId=".$pending['betId']." uid=".$member->mb_uid." point=".$pending['total_point']);
