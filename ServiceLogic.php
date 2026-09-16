@@ -1734,7 +1734,6 @@ class ServiceLogic
 		];
         
 		writeLog($this->fLog, $logHead.$startAt."~".$endAt);
-		$this->modelConfSite->updateLastIdx($objConf->conf_id, $startAt."#".$arrIdx['fid']."#".$arrIdx['fid2']);
 
 		return getCurlWithProxy($url, $proxyUrl, $header);
 	}
