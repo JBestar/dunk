@@ -2254,16 +2254,19 @@ class ServiceLogic
 				writeLog($this->fLog, $logHead."RecoverSkip betId=".$pending['betId']." member not found");
 				continue;
 			}
-			if($this->tryRecoverFromMemberTreem($member, $pending['total_point'], $arrInfo, $proxyUrl, $logHead)){
+			$recoverWay = $this->tryRecoverFromMemberTreem($member, $pending['total_point'], $arrInfo, $proxyUrl, $logHead);
+			if($recoverWay === 'site' || $recoverWay === 'api'){
 				$this->applyEmpRatioPoints($arrEmpPoint, $pending['arrEmpRatio']);
 				$recoverGameId = isset($pending['game_id']) ? $pending['game_id'] : GAME_CASINO_EVOL;
 				$recoverRwFid = isset($pending['rwLastFid']) ? $pending['rwLastFid'] : $rwCsLastFid;
 				$this->modelReward->insert($recoverGameId, $pending['betId'], $pending['arrEmpRatio'], $recoverRwFid);
-				writeLog($this->fLog, $logHead."RecoverOk betId=".$pending['betId']." uid=".$member->mb_uid." point=".$pending['total_point']);
+				writeLog($this->fLog, $logHead."RecoverOk betId=".$pending['betId']." uid=".$member->mb_uid." point=".$pending['total_point']." via=".$recoverWay);
 			} else {
 				writeLog($this->fLog, $logHead."RecoverFail betId=".$pending['betId']." uid=".$member->mb_uid." point=".$pending['total_point']);
 			}
-			sleep(1);
+			// 사이트머니/422(실패): sleep 없음, API 성공만 1.0초 (HonorLink ~1req/s)
+			if($recoverWay === 'api')
+				sleep(1);
 		}
 	}
 
@@ -2273,7 +2276,7 @@ class ServiceLogic
 
 		if($member->mb_money >= $point){
 			if($this->modelMember->updateAssets($member, 0-$point, 0, MONEYCHANGE_WITHDRAW, MONEYCHANGE_WITHDRAW_CUT))
-				return true;
+				return 'site';
 		}
 		for($i=0; $i<3; $i++){
 			$result = $this->withdrawTreemEgg($arrInfo, $member->mb_treem_uid, $point, $proxyUrl);
@@ -2287,9 +2290,9 @@ class ServiceLogic
 				}
 				writeLog($this->fLog, $logHead."TransPoint uid=".$member->mb_uid.", balance=".$result['balance'].", point=".$point);
 				$this->modelTransfer->insertRow(RECOVER_TREEM, $member, $result['balance']+$point, 0-$point, $this->fLog);
-				return true;
+				return 'api';
 			}
-			// 잔액부족(422)은 재시도해도 동일 → 즉시 포기
+			// 잔액부족(422)은 재시도해도 동일 → 즉시 포기 (sleep 없음)
 			if($httpCode == HTTP_CODE_422){
 				writeLog($this->fLog, $logHead."RecoverSkip422 uid=".$member->mb_uid." point=".$point);
 				return false;
