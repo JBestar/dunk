@@ -2277,7 +2277,8 @@ class ServiceLogic
 		}
 		for($i=0; $i<3; $i++){
 			$result = $this->withdrawTreemEgg($arrInfo, $member->mb_treem_uid, $point, $proxyUrl);
-			writeLog($this->fLog, $logHead."TransPoint uid=".$member->mb_uid." point=".$point." result=".$result['status']);
+			$httpCode = isset($result['http_code']) ? intval($result['http_code']) : 0;
+			writeLog($this->fLog, $logHead."TransPoint uid=".$member->mb_uid." point=".$point." result=".$result['status']." http=".$httpCode);
 			if($result['status'] == 1){
 				if($member->mb_treem_money != $result['balance']){
 					$member->mb_treem_money = $result['balance'];
@@ -2287,6 +2288,11 @@ class ServiceLogic
 				writeLog($this->fLog, $logHead."TransPoint uid=".$member->mb_uid.", balance=".$result['balance'].", point=".$point);
 				$this->modelTransfer->insertRow(RECOVER_TREEM, $member, $result['balance']+$point, 0-$point, $this->fLog);
 				return true;
+			}
+			// 잔액부족(422)은 재시도해도 동일 → 즉시 포기
+			if($httpCode == HTTP_CODE_422){
+				writeLog($this->fLog, $logHead."RecoverSkip422 uid=".$member->mb_uid." point=".$point);
+				return false;
 			}
 			sleep(3);
 		}
@@ -2307,9 +2313,10 @@ class ServiceLogic
 
 		$logHead = "<TREEM> withdrawTreem() ";
 		$curlResult = getCurlRequestWithProxy($url, $proxyUrl, $header, $post);
-		$balance = -1;
+		$arrResult = array('status' => 0, 'http_code' => 0, 'balance' => -1);
 
 		if(!is_null($curlResult) && array_key_exists("code", $curlResult)) {
+			$arrResult['http_code'] = intval($curlResult['code']);
 			if($curlResult['code'] == HTTP_CODE_200){
                 // $curlResult['body'] =>
                 // "username": "test1",
@@ -2323,11 +2330,14 @@ class ServiceLogic
                 // "amount": 0,
                 // "message": "유저의 잔액이 0원입니다.",
                 // "cached": false
-                $arrResult = json_decode($curlResult['body'], true);
-				if($arrResult['amount'] != 0)
-					$arrResult['status'] = 1;
-				else 
-					$arrResult['status'] = 0;
+                $decoded = json_decode($curlResult['body'], true);
+				if(is_array($decoded)){
+					$arrResult = array_merge($arrResult, $decoded);
+					if(isset($decoded['amount']) && $decoded['amount'] != 0)
+						$arrResult['status'] = 1;
+					else
+						$arrResult['status'] = 0;
+				}
                 writeLog($this->fLog, $logHead."body=".$curlResult['body']);
             } else { //
                 // $curlResult['body'] =>

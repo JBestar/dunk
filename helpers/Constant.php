@@ -73,6 +73,7 @@ define('HTTP_CODE_400', 400);
 define('HTTP_CODE_403', 403);
 define('HTTP_CODE_404', 404);
 define('HTTP_CODE_409', 409);
+define('HTTP_CODE_422', 422);
 define('HTTP_CODE_429', 429);
 
 define('TREEM_MIN_INTERVAL', 61);
