@@ -306,7 +306,7 @@
 				$hTreem = null;
 			} else if($hTreem == null){
 				$hTreem = curl_multi_init();
-				$curl = $objServLogic->curlTreemBets($proxyUrl);
+				$curl = $objServLogic->curlTreemBetsRecentHourUtc($proxyUrl);
 				if($curl)
 					curl_multi_add_handle($hTreem, $curl);
 				else {
@@ -327,7 +327,7 @@
 						$tmTreemRetry = time() + $nTreemBackoff;
 						writeLog($fLog, $logHead."TREEM 429 backoff=".$nTreemBackoff." next=".date('H:i:s', $tmTreemRetry));
 					} else {
-						$bInsert = $objServLogic->registerTreemBets($result, $proxyUrl);
+						$bInsert = $objServLogic->registerTreemBetsSafe($result, $proxyUrl);
 						$nTreemBackoff = 0;
 						$tmTreemRetry = time() + TREEM_MIN_INTERVAL;
 					}

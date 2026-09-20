@@ -1738,106 +1738,6 @@ class ServiceLogic
 		return getCurlWithProxy($url, $proxyUrl, $header);
 	}
 
-	public function curlTreemBetsRecentHourUtc($proxyUrl = "", $minutes = 55, $delayMinutes = 0)
-	{
-		$confId = CONF_API_TREEM;
-		$logHead = "<TREEM> RECENT_UTC ";
-
-		$objConf = $this->modelConfSite->getById($confId);
-		if(is_null($objConf))
-			return null;
-
-		$arrInfo = explode("#", $objConf->conf_content);
-		if(count($arrInfo) < 3)
-			return null;
-
-		/*
-		 * Treem API: UTC+0
-		 * 한국시간 = UTC+9 → API 조회시간 = 한국시간 - 9시간
-		 */
-		$minutes = intval($minutes);
-		if($minutes <= 0 || $minutes >= 60)
-			$minutes = 55;
-
-		$delayMinutes = intval($delayMinutes);
-		if($delayMinutes < 0 || $delayMinutes > 10)
-			$delayMinutes = 0;
-
-		$arrIdx = getHistoryDate($objConf->conf_idx);
-		$tzKst = new DateTimeZone("Asia/Seoul");
-		$tzUtc = new DateTimeZone("UTC");
-
-		$kstEnd = new DateTime("now", $tzKst);
-		if($delayMinutes > 0)
-			$kstEnd->modify("-".$delayMinutes." minutes");
-
-		$kstStart = clone $kstEnd;
-		$kstStart->modify("-".$minutes." minutes");
-
-		// conf_idx(한국시간)가 최근 N분 안이면 시작점으로 사용
-		if(!empty($arrIdx["idx"])){
-			try {
-				$savedKst = new DateTime($arrIdx["idx"], $tzKst);
-				if($savedKst > $kstStart && $savedKst < $kstEnd)
-					$kstStart = $savedKst;
-			} catch (Exception $e) {
-				writeLog($this->fLog, $logHead."conf_idx parse error=".$arrIdx["idx"]);
-			}
-		}
-
-		if($kstStart >= $kstEnd){
-			$kstStart = clone $kstEnd;
-			$kstStart->modify("-".$minutes." minutes");
-		}
-
-		$utcStart = clone $kstStart;
-		$utcStart->setTimezone($tzUtc);
-		$utcEnd = clone $kstEnd;
-		$utcEnd->setTimezone($tzUtc);
-
-		// 14일 제한 방어
-		$utcLimit = new DateTime("now", $tzUtc);
-		$utcLimit->modify("-13 days 23 hours 50 minutes");
-		if($utcStart < $utcLimit){
-			$kstEnd = new DateTime("now", $tzKst);
-			if($delayMinutes > 0)
-				$kstEnd->modify("-".$delayMinutes." minutes");
-			$kstStart = clone $kstEnd;
-			$kstStart->modify("-".$minutes." minutes");
-			$utcStart = clone $kstStart;
-			$utcStart->setTimezone($tzUtc);
-			$utcEnd = clone $kstEnd;
-			$utcEnd->setTimezone($tzUtc);
-		}
-
-		$startAt = $utcStart->format("Y-m-d H:i:s");
-		$endAt = $utcEnd->format("Y-m-d H:i:s");
-
-		$url = $arrInfo[0]."/transactions?";
-		$url .= "start=".urlencode($startAt);
-		$url .= "&end=".urlencode($endAt);
-		$url .= "&page=1&perPage=1000&withDetails=1&order=asc";
-
-		$header = [
-			"Content-Type: application/json",
-			"Accept: application/json",
-			"Authorization: Bearer ".$arrInfo[2]
-		];
-
-		writeLog(
-			$this->fLog,
-			$logHead.
-			"KST ".$kstStart->format("Y-m-d H:i:s")." ~ ".$kstEnd->format("Y-m-d H:i:s").
-			" / UTC ".$startAt." ~ ".$endAt
-		);
-
-		$result = getCurlWithProxy($url, $proxyUrl, $header);
-		if(!is_null($result) && isset($result["code"]) && intval($result["code"]) != HTTP_CODE_200)
-			writeLog($this->fLog, $logHead."HTTP Error=".json_encode($result, JSON_UNESCAPED_UNICODE));
-
-		return $result;
-	}
-
 	public function registerTreemBets($arrResult, $proxyUrl=""){
 		$gameSlotId = GAME_SLOT_TREEM;
 		$gameCasId = GAME_CASINO_TREEM;
@@ -1926,18 +1826,7 @@ class ServiceLogic
 		$csExist = false;
 		$logHead = "<TREEM_CHECK> ";
 		foreach ($arrTrans as $bet) {
-			$createdRaw = $bet['created_at'] ?? '';
-			try {
-				// Treem created_at = UTC → conf_idx는 한국시간으로 저장
-				$createdDt = new DateTime($createdRaw, new DateTimeZone('UTC'));
-				$createdDt->setTimezone(new DateTimeZone('Asia/Seoul'));
-				$createdDt->modify('+1 second');
-				$candidateLastIdx = $createdDt->format('Y-m-d H:i:s');
-				if($lastIdx === '' || $candidateLastIdx > $lastIdx)
-					$lastIdx = $candidateLastIdx;
-			} catch (Exception $e) {
-				writeLog($this->fLog, $logHead."created_at parse error=".$createdRaw);
-			}
+			$lastIdx = date('Y-m-d H:i:s', strtotime("-32399 second", strtotime($bet['created_at'])));
 
 			if($bet['status'] != "success"){
 				writeLog($this->fLog, $logHead.$bet['type'].">> status=".$bet['status'].", user=".$bet['user']['username']." amount=".$bet['amount'].", before=".$bet['before']);
@@ -1992,13 +1881,7 @@ class ServiceLogic
 
 		foreach ($arrBet as $bet) {
 
-			try {
-				$createdDt = new DateTime($bet['created_at'], new DateTimeZone('UTC'));
-				$createdDt->setTimezone(new DateTimeZone('Asia/Seoul'));
-				$bet['created_at'] = $createdDt->format('Y-m-d H:i:s');
-			} catch (Exception $e) {
-				$bet['created_at'] = date('Y-m-d H:i:s', strtotime($bet['created_at']));
-			}
+			$bet['created_at'] = date('Y-m-d H:i:s', strtotime($bet['created_at']));
 
 			$objMember = findMemberByLiveId($arrMember, $bet['user']['username'], $gameSlotId);
 			if(is_null($objMember)){
@@ -2746,84 +2629,7 @@ class ServiceLogic
 		return $arrResult;
 	}
 
-	public function registerTreemBetsSafe($arrResult, $proxyUrl = "")
-	{
-		$fixedResult = $this->normalizeTreemHistoryResult($arrResult);
-		if(is_null($fixedResult)){
-			writeLog($this->fLog, "<TREEM> SAFE Normalize failed");
-			return false;
-		}
-		return $this->registerTreemBets($fixedResult, $proxyUrl);
-	}
-
-	private function normalizeTreemHistoryResult($arrResult)
-	{
-		if(is_null($arrResult) || !is_array($arrResult))
-			return null;
-
-		if(!array_key_exists("code", $arrResult))
-			return $arrResult;
-
-		if($arrResult["code"] != HTTP_CODE_200)
-			return $arrResult;
-
-		$jsonData = json_decode($arrResult["body"], true);
-		if(is_null($jsonData) || !array_key_exists("data", $jsonData) || !is_array($jsonData["data"]))
-			return $arrResult;
-
-		$arrTrans = array();
-		foreach($jsonData["data"] as $bet){
-			$type = strtolower($bet["type"] ?? "");
-			$status = $bet["status"] ?? "success";
-
-			if(!in_array($type, array("bet", "win", "cancel"), true))
-				continue;
-			if($status !== "success")
-				continue;
-			if(!isset($bet["details"]["game"]))
-				continue;
-			if(!isset($bet["user"]["username"]))
-				continue;
-
-			if($type === "bet")
-				$bet["amount"] = abs(intval($bet["amount"] ?? 0));
-			else
-				$bet["amount"] = intval($bet["amount"] ?? 0);
-
-			$arrTrans[] = $bet;
-		}
-
-		usort($arrTrans, function ($a, $b) {
-			$at = strtotime($a["created_at"] ?? $a["processed_at"] ?? "1970-01-01 00:00:00");
-			$bt = strtotime($b["created_at"] ?? $b["processed_at"] ?? "1970-01-01 00:00:00");
-			if($at == $bt){
-				$ap = $this->getTreemTypePriority($a["type"] ?? "");
-				$bp = $this->getTreemTypePriority($b["type"] ?? "");
-				if($ap == $bp)
-					return intval($a["id"] ?? 0) <=> intval($b["id"] ?? 0);
-				return $ap <=> $bp;
-			}
-			return $at <=> $bt;
-		});
-
-		$jsonData["data"] = $arrTrans;
-		$arrResult["body"] = json_encode($jsonData, JSON_UNESCAPED_UNICODE);
-		writeLog($this->fLog, "<TREEM> SAFE Normalize Count=".count($arrTrans));
-		return $arrResult;
-	}
-
-	private function getTreemTypePriority($type)
-	{
-		$type = strtolower($type);
-		if($type === "bet")
-			return 1;
-		if($type === "win")
-			return 2;
-		if($type === "cancel")
-			return 3;
-		return 9;
-	}
-
 }
+
 
 ?>
