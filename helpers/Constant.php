@@ -78,7 +78,6 @@ define('HTTP_CODE_429', 429);
 
 define('TREEM_MIN_INTERVAL', 61);
 define('TREEM_BACKOFF_MAX', 600);
-define('TREEM_RECOVER_DRAIN_MAX', 20);
 
 define('TRANS_SITE_TREEM', 17); 
 define('TRANS_TREEM_SITE', 18); 

@@ -370,18 +370,9 @@
 			if($bSigmaSl)
 				$bSigmaCs = !$bSigmaCs;
 
-			$sleepSec = $bInsert ? $secRepeat : $secSleep;
-			if($bTreem && $objServLogic->hasPendingTreemRecover()){
-				$until = $tmTreemRetry > 0 ? $tmTreemRetry : (time() + $sleepSec);
-				$objServLogic->drainTreemRecoverUntil($until);
-				$remain = $until - time();
-				if($remain > 0)
-					sleep($remain);
-			} else if(!$bInsert){
+			if(!$bInsert)
 				sleep($secSleep);
-			} else {
-				sleep($secRepeat);	//usleep(500000);
-			}
+			else sleep($secRepeat);	//usleep(500000);
 		}
 		
 	}
