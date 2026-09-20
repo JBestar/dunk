@@ -30,6 +30,12 @@ class ServiceLogic
 	private $modelSlotPrd;
 	
 	public $fLog;
+
+	/** @var array Treem 정산회수 대기열 (history 폴링과 분리) */
+	private $treemRecoverQueue = array();
+	/** @var array|null Treem agent conf (host#code#token) */
+	private $treemRecoverAgentInfo = null;
+	private $treemRecoverProxyUrl = "";
 	
 	function __construct($dbConn, $fLog){
 		// $this->mSnoopy = new Snoopy();
@@ -2227,7 +2233,7 @@ class ServiceLogic
 		$this->modelMember->updateMemberBetTm($arrMemBet);
 		$bResult = $this->modelMember->updateMemberBlank($arrMemBlank);
 		writeLog($this->fLog, $logHead."UpdateMemBlank-Count=".count($arrMemBlank)." Result=".$bResult);
-		$this->processPendingRecoverTreem($arrPendingRecover, $arrEmpPoint, $arrMember, $arrInfo, $proxyUrl, $rwCsLastFid);
+		$this->enqueuePendingRecoverTreem($arrPendingRecover, $arrInfo, $proxyUrl);
 		$bResult = $this->modelMember->addEmployeePoint($arrEmpPoint);
 		writeLog($this->fLog, $logHead."AddEmpPoint-Count=".count($arrEmpPoint)." Result=".$bResult);
 
@@ -2243,28 +2249,71 @@ class ServiceLogic
 		}
 	}
 
-	private function processPendingRecoverTreem($arrPendingRecover, &$arrEmpPoint, $arrMember, $arrInfo, $proxyUrl, $rwCsLastFid){
-		$logHead = "<TREEM_CASINO> ";
-		writeLog($this->fLog, $logHead."PendingRecover-Count=".count($arrPendingRecover));
+	private function enqueuePendingRecoverTreem($arrPendingRecover, $arrInfo, $proxyUrl){
+		$nAdd = 0;
 		foreach($arrPendingRecover as $pending){
 			if($pending['total_point'] <= 1)
 				continue;
-			$member = findMemberByFid($arrMember, $pending['member_fid']);
+			$this->treemRecoverQueue[] = $pending;
+			$nAdd++;
+		}
+		if($nAdd > 0){
+			$this->treemRecoverAgentInfo = $arrInfo;
+			$this->treemRecoverProxyUrl = $proxyUrl;
+		}
+		writeLog($this->fLog, "<TREEM_CASINO> RecoverQueued+".$nAdd." total=".count($this->treemRecoverQueue));
+	}
+
+	public function hasPendingTreemRecover(){
+		return count($this->treemRecoverQueue) > 0;
+	}
+
+	public function drainTreemRecoverUntil($untilTs){
+		$logHead = "<TREEM_CASINO> ";
+		$started = count($this->treemRecoverQueue);
+		if($started < 1)
+			return 0;
+
+		writeLog($this->fLog, $logHead."RecoverDrain start=".$started." until=".date('H:i:s', intval($untilTs)));
+		$arrEmpPoint = array();
+		$nProc = 0;
+		while(count($this->treemRecoverQueue) > 0){
+			if($untilTs > 0 && time() >= $untilTs)
+				break;
+
+			$pending = array_shift($this->treemRecoverQueue);
+			if($pending['total_point'] <= 1)
+				continue;
+
+			$member = $this->modelMember->getByFid($pending['member_fid']);
 			if(is_null($member)){
 				writeLog($this->fLog, $logHead."RecoverSkip betId=".$pending['betId']." member not found");
 				continue;
 			}
-			if($this->tryRecoverFromMemberTreem($member, $pending['total_point'], $arrInfo, $proxyUrl, $logHead)){
+			if(is_null($this->treemRecoverAgentInfo)){
+				writeLog($this->fLog, $logHead."RecoverSkip betId=".$pending['betId']." agent info missing");
+				continue;
+			}
+
+			if($this->tryRecoverFromMemberTreem($member, $pending['total_point'], $this->treemRecoverAgentInfo, $this->treemRecoverProxyUrl, $logHead)){
 				$this->applyEmpRatioPoints($arrEmpPoint, $pending['arrEmpRatio']);
 				$recoverGameId = isset($pending['game_id']) ? $pending['game_id'] : GAME_CASINO_EVOL;
-				$recoverRwFid = isset($pending['rwLastFid']) ? $pending['rwLastFid'] : $rwCsLastFid;
+				$recoverRwFid = isset($pending['rwLastFid']) ? $pending['rwLastFid'] : 0;
 				$this->modelReward->insert($recoverGameId, $pending['betId'], $pending['arrEmpRatio'], $recoverRwFid);
 				writeLog($this->fLog, $logHead."RecoverOk betId=".$pending['betId']." uid=".$member->mb_uid." point=".$pending['total_point']);
 			} else {
 				writeLog($this->fLog, $logHead."RecoverFail betId=".$pending['betId']." uid=".$member->mb_uid." point=".$pending['total_point']);
 			}
+			$nProc++;
 			sleep(1);
 		}
+
+		if(count($arrEmpPoint) > 0){
+			$bResult = $this->modelMember->addEmployeePoint($arrEmpPoint);
+			writeLog($this->fLog, $logHead."AddEmpPoint-Count=".count($arrEmpPoint)." Result=".$bResult);
+		}
+		writeLog($this->fLog, $logHead."RecoverDrain done proc=".$nProc." remain=".count($this->treemRecoverQueue));
+		return $nProc;
 	}
 
 	private function tryRecoverFromMemberTreem($member, $point, $arrInfo, $proxyUrl, $logHead){
